@@ -1,1 +1,726 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Soylent Code</title>
+  <meta name="author" content="Ryan Bergman">
+
+  
+  <meta name="description" content="Recently I decided to upgrade my old school Jekyll Bootstrap blog engine to use Octopress. I wanted to do this for a few reasons: The theme I had &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ryber.github.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Soylent Code" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37146294-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Soylent Code</a></h1>
+  
+    <h2>Soylent Code is People! It's peeeeople!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ryber.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+   <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/">Migrating Jekyll Bootstrap to Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-07T06:25:00-06:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently I decided to upgrade my old school Jekyll Bootstrap blog engine to use Octopress. I wanted to do this for a few reasons:</p>
+
+<ul>
+<li>The theme I had going on for Jekyll was pretty crappy on mobile.</li>
+<li>Octopress seems to have polished the Jekyll experience. I’m not interested in doing much programming of my own blogging software, and more interested in using other peoples stuff.</li>
+</ul>
+
+
+<p>So&#8230;the process was not all wine and roses. Here is what you need to do:</p>
+
+<ol>
+<li><p>Octopress requires Ruby 1.9, so I needed an upgrade.  <a href="http://www.ruby-lang.org/en/downloads/">I used RVM as described here</a>. I have not messed with Ruby in a while. Quite impressive. When you install RVM it automatically installs the latest version of Ruby (2.0 at the time). Then when you cd into the Octopress directory Ruby recognizes that there is a .rvmc file that is requiring a specific version of Ruby and then asks you to install it. So do so with &#8220;rmv install ruby-1.9.3-p392&#8221;. From here on out, when you work on a project with a .rvmc file it will use the version of ruby required. Pretty neat huh?</p></li>
+<li><p>Go ahead and install Octopress into a new directory via the <a href="http://octopress.org/docs/setup/">regular install methods listed here</a></p></li>
+<li><p>At this point I did a commit so I could revert back to the basic install should I screw something up (and I did a couple of times)</p></li>
+<li><p>The directory structure of Octopress is different from Jekyll Bootstrap. In order to figure out where to move my old posts I did a <code>rake post[“HelloWorld”]</code>. Then, Git shows you right where they need to go. So I copied my posts from my old ryber.github.com directory to the new location. I had to edit them because they contained includes that were not present (or needed) in Octopress. Then I deleted the HelloWorld page.</p></li>
+<li><p>The <code>config.yml</code> files are also quite different. You can’t just copy it over without breaking everything. Open up the Octopress one and copy over the values where applicable.</p></li>
+<li><p>At this point you can do a <code>rake generate</code> and <code>rake preview</code> to take a look.</p></li>
+<li><p>In the ryber directory I deleted all of the content and committed that. Now I had a empty repository.</p></li>
+<li><p>Then I moved all of the files EXCEPT the .git folder from the new octopress folder into the original ryber one. If you are in the terminal doing this you might then need to cd out and back into the folder in order to get rvm to recognize the .rvmrc file.</p></li>
+<li><p>At this point I found I had to do the <code>bundle install</code>  again for some reason? I also did a <code>rake setup_github_pages</code> to set up the _deploy folders sub repository. Now I was ready to go. At this point you can do a rake generate and rakre preview to take a look and make any additional adjustments.</p></li>
+<li><p>Originally I pushed everything up to github expecting that it would generate the site on it’s own just like it did with Jekyll. This does not work. Octopress does not work with the built in Github page generation stuff and you will receive a very sad email from Github saying it didn’t work. You need to do a couple of things to get around it.</p>
+
+<ul>
+<li>Create a <code>.nojekyll</code> file in the root directory (it can be empty). This tells Github not to try and generate the site.</li>
+<li>When you want to deploy you need to do a <code>rake deploy</code>. This does a lot of things. I suggest carefully reading this page to get the details. Take particular note of how your new sub-git-repo in the _deploy folder works because it can be a bit funky if you have not worked with that kind of setup before.</li>
+</ul>
+</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/26/programmers-wanted/">Programmers Wanted</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-26T00:00:00-06:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have been working as a software developer for about 15 years and I’ve never once feared I would not be able to find a job. Through two recessions, one of which was the biggest economic catastrophe since the great depression, I’ve always had options. I don’t think of myself as a particularly special individual.</p>
+
+<p>The first tech company I worked for (a start-up), folded when the founder’s mom pulled our funding. I had a job less than a week later. The second company I worked for was bought by a competitor. Even though I was not let go myself, my inbox and voicemail were flooded the day it was made public. I was able to leisurely browse and consider offers from all over town. Many with friends who wooed me with lunch and booze. Everyone was hiring. My co-workers who were let go all had jobs within a month. Most of the rest of the staff quit for greener pastures over the following six months. This was during the middle of the worst economic collapse in 80 years.</p>
+
+<p>We need more programmers. The competition is fierce. I spend more than a bit of time for work just recruiting and I can tell you that it’s damn hard. Even when you have good salaries, good benefits, cool technology, and the right company culture, finding people is always hard. It’s not unique to Des Moines either. The same story is true all over the country from northern Virginia to Silicon Valley, if you are even a remotely talented programmer you can make very good money at a pretty low stress job where creativity is richly rewarded.</p>
+
+<p>It’s not going to stop. Companies are finding they can’t just offshore their key products. The quality is just not there because good software requires good communication and that can’t happen when the developers are half a world away. Even if the quality was there we are horribly short of talented developers in India and elsewhere. Think of everything you own that has a computer in it. You phone, your car, your TV. We are painfully short of programmers and the shortage is scheduled to last for the next forever.</p>
+
+<p>If you are a parent and wondering what kinds of jobs you should encourage your children to follow you would do well to expose them to software development. It’s not for everyone; but it’s also not looked at seriously by enough kids.</p>
+
+<p>When I was a kid I would turn on my TI 99/4a and my only option was to program. There was nothing else. Today you have to go out and dig a little more. Still there are some great learning opportunities. Here are a few:</p>
+
+<ul>
+    <li><a href="http://www.codecademy.com/">Code Academy</a>: lets you learn to program from the safety of your browser.</li>
+    <li><a href="http://www.alice.org/">Alice</a> is a 3d game programming environment for kids.</li>
+</ul>
+
+
+<p>P.S. When I say &#8220;kids&#8221; I don&#8217;t mean &#8220;boys&#8221;. We are even more horribly short on girls.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/24/sprints-are-a-procrustean-bed/">Sprints Are a Procrustean Bed</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-24T00:00:00-06:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’m not a fan of scrum as a methodology or sprints as a practice. I think it is ripe with inefficiencies and waste. The best explanation I can provide comes from the Greeks.</p>
+
+<p>In Greek mythology there is a character named Procrustes. Now old “Crusty” as I like to call him would invite people passing by his place to stay the night. He had a bed for guests and he would get quite upset if they didn’t fit the bed perfectly. So he would make sure they would by either stretching them if they were too short or chopping off their legs if they were too tall. Eventually Theseus stopped by and fitted Crusty to his own bed.</p>
+
+<p><img src="/assets/images/procrustes.png" align="right" alt="Crusty is helping his guest fit the bed" hspace="10" vspace="10" /></p>
+
+<p>Although it’s not a widely used metaphor today, writers have been using “Procrustean Bed” ever since to describe an arbitrary standard to which reality must be fit. Development sprints are often a Procrustean Bed. We place our stories into them and they tend to expand or contract to meet the time requirement. The very act of saying “this must be done in x time” seems to make the thing take x time. If it’s a simple task the developers tend to buffer it with all kinds of other things (needed or not). If it’s too big to fit then corners get cut.</p>
+
+<p>I much prefer to just do a queue-pull method and concentrate on one thing at a time and letting that thing take the time it needs. I find that the shorter tasks take less time, the longer ones are done right and the team is more honest with the product owners and themselves about how things are going.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/30/my-life-as-a-cable-cutter/">My Life as a Cable Cutter</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-30T00:00:00-06:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>About 8 months ago my family look the plunge and ditched DirectTV for a hodge-podge of Broadcast TV and streaming/download services. Like many people we realized that we were paying over $100 a month to watch House Hunters International and Spongebob Squarepants; it just didn’t seem worth it. We haven’t regretted it for a minute. Lots of people have asked me about our setup so here it is:</p>
+
+<h3>TV locations:</h3>
+
+<p>We have 3 TV’s. Two on the main level. The one in the “Front Room” is the primary entertainment TV where we do the majority of our TV and movie watching. There is another in the “Family Room” which is mostly the kids (I have 4 girls 10, 6, 3, 3). The third TV is in our bedroom on the second floor. All of the TV’s are modern flat screens that are digital ready.</p>
+
+<h3>Antenna:</h3>
+
+<p>I went through several rounds of antennas before getting the right one. None of the smaller indoor ones would work. I ended up getting [this one] (http://goo.gl/0sD5Q) from Best Buy. It was on one of those tables of things that had been opened and returned so I think I got it for $90. I installed it in the attic. Lucky for me some former owner of my house ran a huge number of phone wires from the basement up to the attic&#8230;except they weren’t connected to anything. So I tied the coax to the end in the basement and then pulled it up into the attic. From the basement I ran the coax into a amplification splitter like [this one] (http://goo.gl/1opPD). Then I ran coax through the ceiling and up the floor close to air return registers. To get to the second floor bedroom I just reversed the line on the outside of the house that had previously been used by the satellite. I could have another splitter in the attic and send it down the wall and into a cable TV port that was never used but that’s for a future project.</p>
+
+<p>Overall reception is pretty good. I’m getting all the major networks plus their ”extra” channels. The picture seems better than it did with satellite and they don’t go out as much during storms.</p>
+
+<h3>Tivo and other boxes</h3>
+
+<p>One of the main things we used our DirectTV box for was DVRing shows. We realized that most of what we were DVRing were broadcast network shows and the few other things we were recording, (like Breaking Bad and The Walking Dead) were available the day after the broadcast on Amazon for a couple of bucks. We still wanted a DVR for broadcast and we also wanted something that would play purchased shows from Amazon or Apple. Since AppleTv does not yet have DVR abilities we got a Tivo.</p>
+
+<p>I have not been blown over by the Tivo. Supposedly this version was to be the magic device that brought together TV with all of the different online services. Yet right off the bat I had to buy a separate wireless card which seemed awkward in 2012. Then most of the online apps (Netflix, Hulu etc) are noticeably slower and crappier than their Roku counterparts. Still the DVR part is quite nice and it’s cool that it can download entire shows from Amazon. Boxee was not around here when I made the switch (or at least I was completely unaware of it). So I’d advise anyone to look at it before settling on a Tivo.</p>
+
+<p>For the family room we get Netflix and Hulu through the Nintendo Wii and in our bedroom we have a Roku. I have to say I really like the Roku. It’s super fast and easy and has by far the best experience of the group. If they would just throw a big old hard drive in there I would replace the Tivo in a heartbeat.</p>
+
+<p>For online services we have Netflix, Hulu and Amazon Prime. We don’t really watch Amazon Prime at all. My wife does quite a bit of our shopping from Amazon and we get prime as part of that but I think I’ve logged into it once. We do get Amazon season passes to our favorite AMC shows but that’s a separate service and they will only download to the Tivo. We also don’t use Hulu a great deal. We might get rid of that if we don’t start watching it more. Netflix streaming on the other hand is the bees knees. We love it and watch it all the time. It’s the secret sauce to the entire thing. The recent addition of Disney content only makes it better.</p>
+
+<p>Overall I can easily say that we really don’t miss Satellite/Cable at all. My only regret is that we didn’t do it sooner. I highly recommend it. Still I would like to petition the powers at be for the following:</p>
+
+<ul>
+<li>HBO Go without a satellite/cable subscription.</li>
+<li>A generic OSS way to stream recorded shows from one device to another. I should be able to watch DVR content on the Tivo from my Roku</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/15/inferred-interfaces-in-static-type-systems/">Inferred Interfaces in Static Type Systems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-15T00:00:00-05:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One of the primary criticisms of static languages is that they require needless levels of boilerplate. This can be painfully true, and any C# or Java developer can most likely point to a weird workaround they had to do to use some sealed/final Spring or .Net class. Eventually most large projects become littered with wrappers and adapters and mappers to get objects to “fit” inside the rigid static typing system. But why does the type system have to be so inflexible?</p>
+
+<p>I’ve had an idea for some time that goes something like this. Lets say you have this C# method:</p>
+
+<pre><code>public void DoSomething(HttpRequest request){
+request.Params ...
+}
+</code></pre>
+
+<p>Oh Noes! the dreaded HttpRequest class. So full of sealed horribleness; and all we want is the stupid Params. If I want to be able to test this I can either go through the annoyingly complex process of building a HttpRequest object or I can try and swap out HttpRequest for Microsofts wrapper abstraction (or my own). None of that is nice and in the end I will have a bunch of code I don’t need or want.</p>
+
+<p>Wouldn’t it be great if I could just add a interface to HttpRequest? It would solve most of my problems. It would be mockable and could define just the parts I need. Unfortunately I can’t break into Redmond and add an interface to that class.</p>
+
+<p>But why not? Compilers are fast and smart and can figure out all kinds of things. Let say I made this interface for my method:</p>
+
+<pre><code> public interface IHttpRequest { Params {get;set;}}
+</code></pre>
+
+<p>I don’t see any reason the compiler (and IDE’s) could not look at the requested interface, look at HttpRequest and say “yep, that works.” It would STILL be type safe. It would STILL happen at compile time. It would NOT require anything to happen at runtime, and it would NOT be the same as duck typing because the object could not be just anything that (might) fulfill the request at runtime. The compiler would simply make a shorthand reference the first time it sees that HttpRequest implements IHttpRequest in the context of the package/assembly.</p>
+
+<p>Maybe for speed there would have to be some kind of keyword on the interface or the param? Maybe not. Hey Anders or whoever is in charge at Oracle&#8230;give me a call, we can work it out.</p>
+
+<p>Can anyone verify if there are static languages that do this? I have a hunch that Scala’s “traits” are somewhat like this but I’m not sure.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/11/6-simple-rules-for-handling-collections/">6 Simple Rules for Handling Collections.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-11T00:00:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Simple rules for handling collections. This applies mostly to static languages like C# and Java:</p>
+
+<ol>
+<li>Always use generics if you can. Especially in C# where there are major performance advantages.</li>
+
+<li>Methods should always accept the simplest abstraction of a collection as possible. Iterable<t> in java, IEnumerable<t> in C#. This gives classes using the method the most flexibility. If you don’t need it to be a list, don’t ask for one.</t></t></li>
+
+<li>When returning a list return the most fully functioning implementation you can (without going out of your way&#8230;.this is a very loose rule).</li>
+
+<li>When returning collections; if you don’t want people to modify the list then return a Immutable/Readonly list&#8230;and let them know it. Don’t hide a Immutable list behind simple interfaces.</li>
+
+<li>If the collection you return gets passed around a lot, think about making it into a little class. This can either be a wrapper or just extending a collection type. This will let you tweek the implementation and show intent better.</li>
+
+<li>If #5 is applying to a hashtable, dictionary or map have an even lower tolerance for when you make it a class. I almost never expose a map publicly.</li>
+</ol></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/01/a-new-kind-of-cs-major/">A New Kind of CS Major</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-01T00:00:00-05:00" pubdate data-updated="true">Jun 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Let me preface this blog post by admitting that I do not have a computer science degree. I majored in community &amp; regional planning. I started out as a fine art major. I tended to avoid mathematics because I found it horribly boring and as a result difficult. I have however, been programming since I got a Texas Instruments 99/4A when I was in 3rd grade.</p>
+
+<p>The programming world has been preoccupied with CS vs programmers the last week. I wanted to weigh in on an important point that I don’t think has been made.</p>
+
+<p>Almost anyone can write working software.</p>
+
+<p>Some people can write very efficient software (you can easily make the case that CS helps with this.)</p>
+
+<p>In the world of business programming the most desirable trait for code is that it reads well and that other HUMANS can understand it and work with it. A very elegant, program that can solve abstract problems doesn’t mean anything if other programmers can’t grok how to use it. Once more, code that is easy to understand and read is often also efficient and working.</p>
+
+<p>If I were to create a new major for programmers I think I would put it in the business school. Not with engineering or mathematics. It would center on how to communicate (with humans) through code. How to work with a business to determine requirements. How to make money. It would have required courses in TDD, BDD, CI, agile processes, graphic design, speech communications, and yes, a lot of CS. Most importantly it would have lots of labs where students must make working programs together.</p>
+
+<p>I have been hiring programmers for over 10 years. My impression of recent CS grads is that they have only 1/3rd of the skills I really want. I do think a CS degree is a great start to a career in IT but we really need the universities to give us something a little different.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/11/pair-programming-bingo-part-ii/">Pair Programming Bingo Part II</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-11T00:00:00-06:00" pubdate data-updated="true">Nov 11<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last sprint&#8217;s pair programming bingo worked out pretty good. There was more awareness of pairing and a desire to make sure everyone filled some squares. This sprint we changed it a little. Our PO generated some cards from <a href="http://print-bingo.com/.">http://print-bingo.com/.</a> The cards are random and seem to have a better shot at actually getting bingo for someone.</p>
+
+<p><img src="/assets/images/tumblr_luie36O8TT1qhdwsd.jpg" alt=""/></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/28/pair-programming-bingo/">Pair Programming Bingo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-28T00:00:00-05:00" pubdate data-updated="true">Oct 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>We have several different teams all working on the same codebase. Recently we did a cross team retrospective and a couple of related issues came up:</p>
+
+<ol><li>The teams wanted to know more about what the other teams were doing.</li>
+<li>A majority of the team members are interested in pairing as a concept but have been reluctant or unsure of how to practice it. This is something the agile coaches have been working on but we really need a kick int he pants.</li>
+</ol><p>What came out of the retro was a great idea: Pair Programming Bingo. It works like this:</p>
+
+<p>Each team has a “Bingo Board” listing all team members along the top and the sides. You get to mark a square once you have paired with another team member for at least a morning or afternoon session. We also have a column for “outside” meaning any member of a different team. members who get “bingo” by having a complete line get a prize. Teams that get a blockout get even bigger prizes. One idea is to line the bingo maps up and make it into a kind of competition.</p>
+
+<p><img src="/assets/images/tumblr_ltsg5dsDmL1qhdwsd.jpg" alt=""/></p>
+
+<p>and yes we realize you would only need ½ of a chart but we decided to keep both sides to represent who was the driver and who was the navigator. Anything to encourage more pairing!</p>
+
+<p>More to come as it evolves</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/20/night-of-the-undead-code/">Night of the Undead Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-20T00:00:00-05:00" pubdate data-updated="true">Oct 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’ve <a href="http://ryber.tumblr.com/2011/04/19/the-big-book-of-dead-code">written before about dead code</a> and how it can gunk up you system, slow you down, and cause all kinds of problems. So with Halloween on its way I wanted to muse on something even worse than dead code&#8230;.undead code. You see most of the code you end up killing in a dead code hunt is not dead yet, its only mostly dead. You have to find out if it’s really holding on for true love or planning on eating your face. So how do you tell? Lets find out.</p>
+
+<p><strong>Dead-Parrot Dead</strong>: This is the easy stuff. The class or method that is never invoked. The library that’s only imported but never used. This kind of code is easy to remove, it’s very low risk. Don’t listen to the people who tell you that the code is just resting or stunned. It’s kicked the bucket, shuffled off it’s mortal coil, run down the curtain and joined the bleedin&#8217; choir invisibile!! THIS IS EX-CODE!! Clean up the body.  Kill Satisfaction: <em>1 Zombie head</em></p>
+
+<p><img src="/assets/images/tumblr_lte7e4nuW21qhdwsd.jpg" alt=""/></p>
+
+<p><strong>Ghost Code</strong>: Ghost code is actually the most common. You probably have it all over your code base and you don’t even know it.  I’ve known developers who have spent their entire careers on projects writing code nobody asked for. Unless you can tie code to a specific business case and it’s bringing value right now (NOT “maybe someday”) then all it’s doing is getting in the way and sucking away your time. Exorcise it now and put it out of it’s misery. Kill Satisfaction: <em>3 Zombie Heads</em></p>
+
+<p><strong>Zombie Code</strong>: A more subtle form of dead code is zombie code. Code that looks alive but actually wants to eat your brain. This is code that is unreachable due to various reasons.  Perhaps its related to a particular entry in a config file that never has a different value. It can also be spotted by a tell tale magic bool being passed to a method which is only ever called with “true” or “false”. At worst the code  is strung throughout complex classes and methods that are only used in one particular way with limited expectations. If a developer ever tells you his code is “flexible” be wary, it might be a zombie.</p>
+
+<p>These kind of scenarios can be a little harder to dig out, but often have a single kill point. Once you shoot it in the head it leads to an avalanche of deleted code. <em>Kill Satisfaction: 6 heads.</em></p>
+
+<p><strong>Vampire Frameworks</strong>: <img src="/assets/images/tumblr_lte6ts4mYD1qhdwsd.jpg" align="right"/> Frameworks are pretty, they solve all of your problems and their perfect 19 year old bodies sparkle while they seduce you with their smoldering eyes. Don&#8217;t be fooled though! Any frameworks that forces you to generate boilerplate after boilerplate that you don&#8217;t find useful (or understand) is pure eeeevil. Even worse are the ones that generate these boilerplate classes themselves and inject their unholy poison all over your app. They suck away your flexibility, your ability to test and your ability to be lightweight. They often are quite good at doing something the way they think you should do it but as soon as you need to do something different (about day 3 in) they make your life a living hell.</p>
+
+<p>Once established, killing off a framework can be quite hard. You need to stop them as early as possible. Kill Satisfaction: 10 heads.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>About</h1>
+  
+  <a href="/about"><img src="https://si0.twimg.com/profile_images/2730894596/895cb6a31d003c316637a82f3ff7b3ce_bigger.jpeg" alt="Me" /></a>
+  <h4><a href="/about">About</a></h4>
+  Soylent Code is people! Well, mostly just one person. My name is Ryan Bergman and I&#8217;m a software geek in Des Moines Iowa. This blog is a place where I can share some thoughts or just write down things I need to remember later. 		
+</section>
+		<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/">Migrating Jekyll Bootstrap To Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/26/programmers-wanted/">Programmers Wanted</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/sprints-are-a-procrustean-bed/">Sprints are a Procrustean Bed</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/30/my-life-as-a-cable-cutter/">My Life as a Cable Cutter</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/15/inferred-interfaces-in-static-type-systems/">Inferred Interfaces in Static Type Systems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/ryber">@ryber</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ryber',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("ryber", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/ryber" class="twitter-follow-button" data-show-count="false">Follow @ryber</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Ryan Bergman -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

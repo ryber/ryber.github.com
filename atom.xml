@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Soylent Code]]></title>
+  <link href="http://ryber.github.com/atom.xml" rel="self"/>
+  <link href="http://ryber.github.com/"/>
+  <updated>2013-03-07T07:19:20-06:00</updated>
+  <id>http://ryber.github.com/</id>
+  <author>
+    <name><![CDATA[Ryan Bergman]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Migrating Jekyll Bootstrap To Octopress]]></title>
+    <link href="http://ryber.github.com/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/"/>
+    <updated>2013-03-07T06:25:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress</id>
+    <content type="html"><![CDATA[<p>Recently I decided to upgrade my old school Jekyll Bootstrap blog engine to use Octopress. I wanted to do this for a few reasons:</p>
+
+<ul>
+<li>The theme I had going on for Jekyll was pretty crappy on mobile.</li>
+<li>Octopress seems to have polished the Jekyll experience. I’m not interested in doing much programming of my own blogging software, and more interested in using other peoples stuff.</li>
+</ul>
+
+
+<p>So&#8230;the process was not all wine and roses. Here is what you need to do:</p>
+
+<ol>
+<li><p>Octopress requires Ruby 1.9, so I needed an upgrade.  <a href="http://www.ruby-lang.org/en/downloads/">I used RVM as described here</a>. I have not messed with Ruby in a while. Quite impressive. When you install RVM it automatically installs the latest version of Ruby (2.0 at the time). Then when you cd into the Octopress directory Ruby recognizes that there is a .rvmc file that is requiring a specific version of Ruby and then asks you to install it. So do so with &#8220;rmv install ruby-1.9.3-p392&#8221;. From here on out, when you work on a project with a .rvmc file it will use the version of ruby required. Pretty neat huh?</p></li>
+<li><p>Go ahead and install Octopress into a new directory via the <a href="http://octopress.org/docs/setup/">regular install methods listed here</a></p></li>
+<li><p>At this point I did a commit so I could revert back to the basic install should I screw something up (and I did a couple of times)</p></li>
+<li><p>The directory structure of Octopress is different from Jekyll Bootstrap. In order to figure out where to move my old posts I did a <code>rake post[“HelloWorld”]</code>. Then, Git shows you right where they need to go. So I copied my posts from my old ryber.github.com directory to the new location. I had to edit them because they contained includes that were not present (or needed) in Octopress. Then I deleted the HelloWorld page.</p></li>
+<li><p>The <code>config.yml</code> files are also quite different. You can’t just copy it over without breaking everything. Open up the Octopress one and copy over the values where applicable.</p></li>
+<li><p>At this point you can do a <code>rake generate</code> and <code>rake preview</code> to take a look.</p></li>
+<li><p>In the ryber directory I deleted all of the content and committed that. Now I had a empty repository.</p></li>
+<li><p>Then I moved all of the files EXCEPT the .git folder from the new octopress folder into the original ryber one. If you are in the terminal doing this you might then need to cd out and back into the folder in order to get rvm to recognize the .rvmrc file.</p></li>
+<li><p>At this point I found I had to do the <code>bundle install</code>  again for some reason? I also did a <code>rake setup_github_pages</code> to set up the _deploy folders sub repository. Now I was ready to go. At this point you can do a rake generate and rakre preview to take a look and make any additional adjustments.</p></li>
+<li><p>Originally I pushed everything up to github expecting that it would generate the site on it’s own just like it did with Jekyll. This does not work. Octopress does not work with the built in Github page generation stuff and you will receive a very sad email from Github saying it didn’t work. You need to do a couple of things to get around it.</p>
+
+<ul>
+<li>Create a <code>.nojekyll</code> file in the root directory (it can be empty). This tells Github not to try and generate the site.</li>
+<li>When you want to deploy you need to do a <code>rake deploy</code>. This does a lot of things. I suggest carefully reading this page to get the details. Take particular note of how your new sub-git-repo in the _deploy folder works because it can be a bit funky if you have not worked with that kind of setup before.</li>
+</ul>
+</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Programmers Wanted]]></title>
+    <link href="http://ryber.github.com/blog/2013/02/26/programmers-wanted/"/>
+    <updated>2013-02-26T00:00:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2013/02/26/programmers-wanted</id>
+    <content type="html"><![CDATA[<p>I have been working as a software developer for about 15 years and I’ve never once feared I would not be able to find a job. Through two recessions, one of which was the biggest economic catastrophe since the great depression, I’ve always had options. I don’t think of myself as a particularly special individual.</p>
+
+<p>The first tech company I worked for (a start-up), folded when the founder’s mom pulled our funding. I had a job less than a week later. The second company I worked for was bought by a competitor. Even though I was not let go myself, my inbox and voicemail were flooded the day it was made public. I was able to leisurely browse and consider offers from all over town. Many with friends who wooed me with lunch and booze. Everyone was hiring. My co-workers who were let go all had jobs within a month. Most of the rest of the staff quit for greener pastures over the following six months. This was during the middle of the worst economic collapse in 80 years.</p>
+
+<p>We need more programmers. The competition is fierce. I spend more than a bit of time for work just recruiting and I can tell you that it’s damn hard. Even when you have good salaries, good benefits, cool technology, and the right company culture, finding people is always hard. It’s not unique to Des Moines either. The same story is true all over the country from northern Virginia to Silicon Valley, if you are even a remotely talented programmer you can make very good money at a pretty low stress job where creativity is richly rewarded.</p>
+
+<p>It’s not going to stop. Companies are finding they can’t just offshore their key products. The quality is just not there because good software requires good communication and that can’t happen when the developers are half a world away. Even if the quality was there we are horribly short of talented developers in India and elsewhere. Think of everything you own that has a computer in it. You phone, your car, your TV. We are painfully short of programmers and the shortage is scheduled to last for the next forever.</p>
+
+<p>If you are a parent and wondering what kinds of jobs you should encourage your children to follow you would do well to expose them to software development. It’s not for everyone; but it’s also not looked at seriously by enough kids.</p>
+
+<p>When I was a kid I would turn on my TI 99/4a and my only option was to program. There was nothing else. Today you have to go out and dig a little more. Still there are some great learning opportunities. Here are a few:</p>
+
+<ul>
+    <li><a href="http://www.codecademy.com/">Code Academy</a>: lets you learn to program from the safety of your browser.</li>
+    <li><a href="http://www.alice.org/">Alice</a> is a 3d game programming environment for kids.</li>
+</ul>
+
+
+<p>P.S. When I say &#8220;kids&#8221; I don&#8217;t mean &#8220;boys&#8221;. We are even more horribly short on girls.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sprints are a Procrustean Bed]]></title>
+    <link href="http://ryber.github.com/blog/2013/02/24/sprints-are-a-procrustean-bed/"/>
+    <updated>2013-02-24T00:00:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2013/02/24/sprints-are-a-procrustean-bed</id>
+    <content type="html"><![CDATA[<p>I’m not a fan of scrum as a methodology or sprints as a practice. I think it is ripe with inefficiencies and waste. The best explanation I can provide comes from the Greeks.</p>
+
+<p>In Greek mythology there is a character named Procrustes. Now old “Crusty” as I like to call him would invite people passing by his place to stay the night. He had a bed for guests and he would get quite upset if they didn’t fit the bed perfectly. So he would make sure they would by either stretching them if they were too short or chopping off their legs if they were too tall. Eventually Theseus stopped by and fitted Crusty to his own bed.</p>
+
+<p><img src="http://ryber.github.com/assets/images/procrustes.png" align="right" alt="Crusty is helping his guest fit the bed" hspace="10" vspace="10" /></p>
+
+<p>Although it’s not a widely used metaphor today, writers have been using “Procrustean Bed” ever since to describe an arbitrary standard to which reality must be fit. Development sprints are often a Procrustean Bed. We place our stories into them and they tend to expand or contract to meet the time requirement. The very act of saying “this must be done in x time” seems to make the thing take x time. If it’s a simple task the developers tend to buffer it with all kinds of other things (needed or not). If it’s too big to fit then corners get cut.</p>
+
+<p>I much prefer to just do a queue-pull method and concentrate on one thing at a time and letting that thing take the time it needs. I find that the shorter tasks take less time, the longer ones are done right and the team is more honest with the product owners and themselves about how things are going.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Life as a Cable Cutter]]></title>
+    <link href="http://ryber.github.com/blog/2012/12/30/my-life-as-a-cable-cutter/"/>
+    <updated>2012-12-30T00:00:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2012/12/30/my-life-as-a-cable-cutter</id>
+    <content type="html"><![CDATA[<p>About 8 months ago my family look the plunge and ditched DirectTV for a hodge-podge of Broadcast TV and streaming/download services. Like many people we realized that we were paying over $100 a month to watch House Hunters International and Spongebob Squarepants; it just didn’t seem worth it. We haven’t regretted it for a minute. Lots of people have asked me about our setup so here it is:</p>
+
+<h3>TV locations:</h3>
+
+<p>We have 3 TV’s. Two on the main level. The one in the “Front Room” is the primary entertainment TV where we do the majority of our TV and movie watching. There is another in the “Family Room” which is mostly the kids (I have 4 girls 10, 6, 3, 3). The third TV is in our bedroom on the second floor. All of the TV’s are modern flat screens that are digital ready.</p>
+
+<h3>Antenna:</h3>
+
+<p>I went through several rounds of antennas before getting the right one. None of the smaller indoor ones would work. I ended up getting [this one] (http://goo.gl/0sD5Q) from Best Buy. It was on one of those tables of things that had been opened and returned so I think I got it for $90. I installed it in the attic. Lucky for me some former owner of my house ran a huge number of phone wires from the basement up to the attic&#8230;except they weren’t connected to anything. So I tied the coax to the end in the basement and then pulled it up into the attic. From the basement I ran the coax into a amplification splitter like [this one] (http://goo.gl/1opPD). Then I ran coax through the ceiling and up the floor close to air return registers. To get to the second floor bedroom I just reversed the line on the outside of the house that had previously been used by the satellite. I could have another splitter in the attic and send it down the wall and into a cable TV port that was never used but that’s for a future project.</p>
+
+<p>Overall reception is pretty good. I’m getting all the major networks plus their ”extra” channels. The picture seems better than it did with satellite and they don’t go out as much during storms.</p>
+
+<h3>Tivo and other boxes</h3>
+
+<p>One of the main things we used our DirectTV box for was DVRing shows. We realized that most of what we were DVRing were broadcast network shows and the few other things we were recording, (like Breaking Bad and The Walking Dead) were available the day after the broadcast on Amazon for a couple of bucks. We still wanted a DVR for broadcast and we also wanted something that would play purchased shows from Amazon or Apple. Since AppleTv does not yet have DVR abilities we got a Tivo.</p>
+
+<p>I have not been blown over by the Tivo. Supposedly this version was to be the magic device that brought together TV with all of the different online services. Yet right off the bat I had to buy a separate wireless card which seemed awkward in 2012. Then most of the online apps (Netflix, Hulu etc) are noticeably slower and crappier than their Roku counterparts. Still the DVR part is quite nice and it’s cool that it can download entire shows from Amazon. Boxee was not around here when I made the switch (or at least I was completely unaware of it). So I’d advise anyone to look at it before settling on a Tivo.</p>
+
+<p>For the family room we get Netflix and Hulu through the Nintendo Wii and in our bedroom we have a Roku. I have to say I really like the Roku. It’s super fast and easy and has by far the best experience of the group. If they would just throw a big old hard drive in there I would replace the Tivo in a heartbeat.</p>
+
+<p>For online services we have Netflix, Hulu and Amazon Prime. We don’t really watch Amazon Prime at all. My wife does quite a bit of our shopping from Amazon and we get prime as part of that but I think I’ve logged into it once. We do get Amazon season passes to our favorite AMC shows but that’s a separate service and they will only download to the Tivo. We also don’t use Hulu a great deal. We might get rid of that if we don’t start watching it more. Netflix streaming on the other hand is the bees knees. We love it and watch it all the time. It’s the secret sauce to the entire thing. The recent addition of Disney content only makes it better.</p>
+
+<p>Overall I can easily say that we really don’t miss Satellite/Cable at all. My only regret is that we didn’t do it sooner. I highly recommend it. Still I would like to petition the powers at be for the following:</p>
+
+<ul>
+<li>HBO Go without a satellite/cable subscription.</li>
+<li>A generic OSS way to stream recorded shows from one device to another. I should be able to watch DVR content on the Tivo from my Roku</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Inferred Interfaces in Static Type Systems]]></title>
+    <link href="http://ryber.github.com/blog/2012/10/15/inferred-interfaces-in-static-type-systems/"/>
+    <updated>2012-10-15T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2012/10/15/inferred-interfaces-in-static-type-systems</id>
+    <content type="html"><![CDATA[<p>One of the primary criticisms of static languages is that they require needless levels of boilerplate. This can be painfully true, and any C# or Java developer can most likely point to a weird workaround they had to do to use some sealed/final Spring or .Net class. Eventually most large projects become littered with wrappers and adapters and mappers to get objects to “fit” inside the rigid static typing system. But why does the type system have to be so inflexible?</p>
+
+<p>I’ve had an idea for some time that goes something like this. Lets say you have this C# method:</p>
+
+<pre><code>public void DoSomething(HttpRequest request){
+request.Params ...
+}
+</code></pre>
+
+<p>Oh Noes! the dreaded HttpRequest class. So full of sealed horribleness; and all we want is the stupid Params. If I want to be able to test this I can either go through the annoyingly complex process of building a HttpRequest object or I can try and swap out HttpRequest for Microsofts wrapper abstraction (or my own). None of that is nice and in the end I will have a bunch of code I don’t need or want.</p>
+
+<p>Wouldn’t it be great if I could just add a interface to HttpRequest? It would solve most of my problems. It would be mockable and could define just the parts I need. Unfortunately I can’t break into Redmond and add an interface to that class.</p>
+
+<p>But why not? Compilers are fast and smart and can figure out all kinds of things. Let say I made this interface for my method:</p>
+
+<pre><code> public interface IHttpRequest { Params {get;set;}}
+</code></pre>
+
+<p>I don’t see any reason the compiler (and IDE’s) could not look at the requested interface, look at HttpRequest and say “yep, that works.” It would STILL be type safe. It would STILL happen at compile time. It would NOT require anything to happen at runtime, and it would NOT be the same as duck typing because the object could not be just anything that (might) fulfill the request at runtime. The compiler would simply make a shorthand reference the first time it sees that HttpRequest implements IHttpRequest in the context of the package/assembly.</p>
+
+<p>Maybe for speed there would have to be some kind of keyword on the interface or the param? Maybe not. Hey Anders or whoever is in charge at Oracle&#8230;give me a call, we can work it out.</p>
+
+<p>Can anyone verify if there are static languages that do this? I have a hunch that Scala’s “traits” are somewhat like this but I’m not sure.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[6 Simple Rules For Handling Collections.]]></title>
+    <link href="http://ryber.github.com/blog/2012/06/11/6-simple-rules-for-handling-collections/"/>
+    <updated>2012-06-11T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2012/06/11/6-simple-rules-for-handling-collections</id>
+    <content type="html"><![CDATA[<p>Simple rules for handling collections. This applies mostly to static languages like C# and Java:</p>
+
+<ol>
+<li>Always use generics if you can. Especially in C# where there are major performance advantages.</li>
+
+<li>Methods should always accept the simplest abstraction of a collection as possible. Iterable<t> in java, IEnumerable<t> in C#. This gives classes using the method the most flexibility. If you don’t need it to be a list, don’t ask for one.</t></t></li>
+
+<li>When returning a list return the most fully functioning implementation you can (without going out of your way&#8230;.this is a very loose rule).</li>
+
+<li>When returning collections; if you don’t want people to modify the list then return a Immutable/Readonly list&#8230;and let them know it. Don’t hide a Immutable list behind simple interfaces.</li>
+
+<li>If the collection you return gets passed around a lot, think about making it into a little class. This can either be a wrapper or just extending a collection type. This will let you tweek the implementation and show intent better.</li>
+
+<li>If #5 is applying to a hashtable, dictionary or map have an even lower tolerance for when you make it a class. I almost never expose a map publicly.</li>
+</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A New Kind of CS Major]]></title>
+    <link href="http://ryber.github.com/blog/2012/06/01/a-new-kind-of-cs-major/"/>
+    <updated>2012-06-01T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2012/06/01/a-new-kind-of-cs-major</id>
+    <content type="html"><![CDATA[<p>Let me preface this blog post by admitting that I do not have a computer science degree. I majored in community &amp; regional planning. I started out as a fine art major. I tended to avoid mathematics because I found it horribly boring and as a result difficult. I have however, been programming since I got a Texas Instruments 99/4A when I was in 3rd grade.</p>
+
+<p>The programming world has been preoccupied with CS vs programmers the last week. I wanted to weigh in on an important point that I don’t think has been made.</p>
+
+<p>Almost anyone can write working software.</p>
+
+<p>Some people can write very efficient software (you can easily make the case that CS helps with this.)</p>
+
+<p>In the world of business programming the most desirable trait for code is that it reads well and that other HUMANS can understand it and work with it. A very elegant, program that can solve abstract problems doesn’t mean anything if other programmers can’t grok how to use it. Once more, code that is easy to understand and read is often also efficient and working.</p>
+
+<p>If I were to create a new major for programmers I think I would put it in the business school. Not with engineering or mathematics. It would center on how to communicate (with humans) through code. How to work with a business to determine requirements. How to make money. It would have required courses in TDD, BDD, CI, agile processes, graphic design, speech communications, and yes, a lot of CS. Most importantly it would have lots of labs where students must make working programs together.</p>
+
+<p>I have been hiring programmers for over 10 years. My impression of recent CS grads is that they have only 1/3rd of the skills I really want. I do think a CS degree is a great start to a career in IT but we really need the universities to give us something a little different.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pair Programming Bingo Part II]]></title>
+    <link href="http://ryber.github.com/blog/2011/11/11/pair-programming-bingo-part-ii/"/>
+    <updated>2011-11-11T00:00:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2011/11/11/pair-programming-bingo-part-ii</id>
+    <content type="html"><![CDATA[<p>Last sprint&#8217;s pair programming bingo worked out pretty good. There was more awareness of pairing and a desire to make sure everyone filled some squares. This sprint we changed it a little. Our PO generated some cards from <a href="http://print-bingo.com/.">http://print-bingo.com/.</a> The cards are random and seem to have a better shot at actually getting bingo for someone.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_luie36O8TT1qhdwsd.jpg" alt=""/></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pair Programming Bingo]]></title>
+    <link href="http://ryber.github.com/blog/2011/10/28/pair-programming-bingo/"/>
+    <updated>2011-10-28T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/10/28/pair-programming-bingo</id>
+    <content type="html"><![CDATA[<p>We have several different teams all working on the same codebase. Recently we did a cross team retrospective and a couple of related issues came up:</p>
+
+<ol><li>The teams wanted to know more about what the other teams were doing.</li>
+<li>A majority of the team members are interested in pairing as a concept but have been reluctant or unsure of how to practice it. This is something the agile coaches have been working on but we really need a kick int he pants.</li>
+</ol><p>What came out of the retro was a great idea: Pair Programming Bingo. It works like this:</p>
+
+<p>Each team has a “Bingo Board” listing all team members along the top and the sides. You get to mark a square once you have paired with another team member for at least a morning or afternoon session. We also have a column for “outside” meaning any member of a different team. members who get “bingo” by having a complete line get a prize. Teams that get a blockout get even bigger prizes. One idea is to line the bingo maps up and make it into a kind of competition.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_ltsg5dsDmL1qhdwsd.jpg" alt=""/></p>
+
+<p>and yes we realize you would only need ½ of a chart but we decided to keep both sides to represent who was the driver and who was the navigator. Anything to encourage more pairing!</p>
+
+<p>More to come as it evolves</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Night of the Undead Code]]></title>
+    <link href="http://ryber.github.com/blog/2011/10/20/night-of-the-undead-code/"/>
+    <updated>2011-10-20T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/10/20/night-of-the-undead-code</id>
+    <content type="html"><![CDATA[<p>I’ve <a href="http://ryber.tumblr.com/2011/04/19/the-big-book-of-dead-code">written before about dead code</a> and how it can gunk up you system, slow you down, and cause all kinds of problems. So with Halloween on its way I wanted to muse on something even worse than dead code&#8230;.undead code. You see most of the code you end up killing in a dead code hunt is not dead yet, its only mostly dead. You have to find out if it’s really holding on for true love or planning on eating your face. So how do you tell? Lets find out.</p>
+
+<p><strong>Dead-Parrot Dead</strong>: This is the easy stuff. The class or method that is never invoked. The library that’s only imported but never used. This kind of code is easy to remove, it’s very low risk. Don’t listen to the people who tell you that the code is just resting or stunned. It’s kicked the bucket, shuffled off it’s mortal coil, run down the curtain and joined the bleedin&#8217; choir invisibile!! THIS IS EX-CODE!! Clean up the body.  Kill Satisfaction: <em>1 Zombie head</em></p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_lte7e4nuW21qhdwsd.jpg" alt=""/></p>
+
+<p><strong>Ghost Code</strong>: Ghost code is actually the most common. You probably have it all over your code base and you don’t even know it.  I’ve known developers who have spent their entire careers on projects writing code nobody asked for. Unless you can tie code to a specific business case and it’s bringing value right now (NOT “maybe someday”) then all it’s doing is getting in the way and sucking away your time. Exorcise it now and put it out of it’s misery. Kill Satisfaction: <em>3 Zombie Heads</em></p>
+
+<p><strong>Zombie Code</strong>: A more subtle form of dead code is zombie code. Code that looks alive but actually wants to eat your brain. This is code that is unreachable due to various reasons.  Perhaps its related to a particular entry in a config file that never has a different value. It can also be spotted by a tell tale magic bool being passed to a method which is only ever called with “true” or “false”. At worst the code  is strung throughout complex classes and methods that are only used in one particular way with limited expectations. If a developer ever tells you his code is “flexible” be wary, it might be a zombie.</p>
+
+<p>These kind of scenarios can be a little harder to dig out, but often have a single kill point. Once you shoot it in the head it leads to an avalanche of deleted code. <em>Kill Satisfaction: 6 heads.</em></p>
+
+<p><strong>Vampire Frameworks</strong>: <img src="http://ryber.github.com/assets/images/tumblr_lte6ts4mYD1qhdwsd.jpg" align="right"/> Frameworks are pretty, they solve all of your problems and their perfect 19 year old bodies sparkle while they seduce you with their smoldering eyes. Don&#8217;t be fooled though! Any frameworks that forces you to generate boilerplate after boilerplate that you don&#8217;t find useful (or understand) is pure eeeevil. Even worse are the ones that generate these boilerplate classes themselves and inject their unholy poison all over your app. They suck away your flexibility, your ability to test and your ability to be lightweight. They often are quite good at doing something the way they think you should do it but as soon as you need to do something different (about day 3 in) they make your life a living hell.</p>
+
+<p>Once established, killing off a framework can be quite hard. You need to stop them as early as possible. Kill Satisfaction: 10 heads.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Natural Selection in Code]]></title>
+    <link href="http://ryber.github.com/blog/2011/08/17/natural-selection-in-code/"/>
+    <updated>2011-08-17T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/08/17/natural-selection-in-code</id>
+    <content type="html"><![CDATA[<p>Your code is not your child. It’s not a sculpture or a painting. It’s not a hand crafted table and chair set. It’s not going to be around in 5 years, hell it’s not going to be around in 2 months if it ever sees the light of day at all. Eventually you will move on to another project, someone else is going to work on your code, they will have their own ideas, their own needs. They will use your code in ways you never intended, or wanted. They will change your code, for the better, and for the worse. There is nothing you can or should do about any of this. It’s the circle of life. Don’t get attached.</p>
+
+<p>Like nature, code in a large project with many developers undergoes Darwinian pressures of natural selection.  If you write truly great and clean code. If the purpose is obvious. If there are simple, easy to understand examples of it’s use in both production code and tests then your code will grow and get used. Other developers will start to use it as a pattern, they will use your classes in unexpected and surprising ways counter to your original design. Code that is ugly, hard to understand and use, or that does not provide benefit over other code (even new code) will not get used and eventually will be killed off. If you are an “architect” or “tech lead” the most damage you can do to a project is to interfere with natural selection and force other developers to do things a certain way. Particularly when the classes you wrote suck.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_lq2zdp8yD81qhdwsd.jpg" alt=""/></p>
+
+<p>Forcing people to use your magical “flexible” framework will only prolong hardships in your app. Despite your best attempts, new mini-frameworks will crop up like weeds as developers either try to get around your bad code or simply don’t understand that it “already does that”. The fact is if your code had been good to begin with people would have happily extended and used it.</p>
+
+<p>So don’t worry when nobody is using the divine classes you spent so much time on. Figure out why, make improvements, compete. Developers are like water and will always follow the path of least resistance. Make your code that path. Make it the yellow freakin’ brick road. Encourage your own bad code to die, kill off others without worrying about upsetting them. It’s for the greater good after all. Most of all don’t fall in love with your code. It’s not long for this world.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wherefore art var?]]></title>
+    <link href="http://ryber.github.com/blog/2011/08/01/wherefore-art-var/"/>
+    <updated>2011-08-01T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/08/01/wherefore-art-var</id>
+    <content type="html"><![CDATA[<p>To expand on my little rant about Java 7 let me rant about the one feature that almost all other modern languages have that Java lacks and really bugs me.</p>
+
+<p>var</p>
+
+<p>Yes, var, it seems like such a little thing, such a minor feature, but it makes refactoring so much easier. Take this statement:</p>
+
+<pre><code>  var foo = someObj.GetFoo();
+</code></pre>
+
+<p>Note how nowhere in this statement does it explicitly say what foo is. It’s still statically typed because the compiler can infer type from GetFoo’s return. Some people might think that’s a problem but we have modern IDE’s so it’s really no big deal.</p>
+
+<p>The power comes when I want to refactor GetFoo, now as long as whatever it returns has the same signature as the original everything is OK and I never have to touch this file. I might be introducing a interface, or a abstract class or even completely replacing it with some other implementation. It matters not, all that matters is that my change had the smallest impact possible.</p>
+
+<p>In Java 7 they are introducing some generics stuff where you don’t have to state the type twice. So instead of</p>
+
+<pre><code>   Map&lt;String,String&gt; foo = new Map&lt;string,string&gt;();
+</code></pre>
+
+<p>you can do</p>
+
+<pre><code>  Map&lt;String,String&gt; foo = new Map&lt;&gt;();
+</code></pre>
+
+<p>This completely misses the point of type inference. All it does is save me some keystokes but it does little to assist future refactorings. The fact that Sun/Oracle spent time on this rather than proper inference features is mind boggling and almost insulting.</p>
+
+<p>P.S. <a href="http://projectlombok.org/features/val.html">someone has made a library to attempt this</a>. I can’t speak for how well it works or it’s impact as I have not yet used it. I suspect that for type inference to really work well it needs to be baked into the compiler.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java 7: The pink bunny suit of updates]]></title>
+    <link href="http://ryber.github.com/blog/2011/07/30/java-7-the-pink-bunny-suit-of-updates/"/>
+    <updated>2011-07-30T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/07/30/java-7-the-pink-bunny-suit-of-updates</id>
+    <content type="html"><![CDATA[<p>Recently I changed jobs and with it the programming language I get to spend the majority of my time in. I had been doing mostly C# day in day out with occasional forlays into java. Now I’ll be doing Java full time so I wanted to get back into what was hip and happening in the world of java</p>
+
+<p>What I’ve found is a party that all the cool kids left hours ago. I don’t know if it’s the oracle takeover or if it started before that but the whole scene just feels sad and lonely. The recent announcement of the features in Java 7 adds to it.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_lp5jz1qhkJ1qhdwsd.jpg" alt=""/></p>
+
+<p>7 can easily be summed up as the programmers version of Ralph’s present from his aunt in “A Christmas Story”. We wanted lambdas and all we got we got was strings in case statements. Seriously, they should have just snuck the strings-in-cases thing in without pointing it out because everyone is just making fun of the fact that it took until version 7 to get it.</p>
+
+<p>Oh well, I guess the Scala party down the road is where everyone went. I hear they have a keg&#8230;and closures.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Some Thoughts on GeoLearning]]></title>
+    <link href="http://ryber.github.com/blog/2011/07/17/some-thoughts-on-geolearning/"/>
+    <updated>2011-07-17T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/07/17/some-thoughts-on-geolearning</id>
+    <content type="html"><![CDATA[<p>The resume I snail-mailed into GeoLearning over eleven years ago was replica British WWII propaganda poster. I didn’t have a lot of “official” experience at the time so I thought I would make up for it in style. It worked, The CEO called me the day he got it, we went to lunch, then over to CompUSA and picked out a new G4 Macintosh. I pushed my first product live a few days later. That was Geo; fast paced and personal.</p>
+
+<p>Eleven years is a lifetime in the tech world to be somewhere. I often tell people that in reality Geo was at least three different companies over my tenure. There was the early cowboy hacker startup phase; the professional services “we’ll customize anything for anyone” middle phase; and finally the SASS app agile/TDD rock star halcyon days that ended with our eventual acquisition. It really was the kind of place where it was what you made of it. You could learn a lot, work on interesting projects, improve the product on your own initiative, and interact with some of the best peers in town. That’s not to say it was all wine and roses but overall people with the right attitude and a little patience could go quite far.</p>
+
+<p>The key was, the company was never satisfied with itself. It was constantly experimenting and changing and had great courage to make leaps other companies would never have considered. Sometimes we failed epically, but failure was OK as long as you learned. In the end, that’s one of the best things you can find in a company.</p>
+
+<p>I really owe my career to the people I worked with at Geo. I don’t know where my career would have taken me elsewhere but I’m sure it would not have been as good. So a big thanks to Frank and the executive team for creating a company environment where IT was allowed to be IT; and a huge thank you to all of my fellow developers, you guys are truly rock stars.</p>
+
+<p>As to why I am leaving. Let’s just say that the new company is not GeoLearning.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Big Book Of Dead Code]]></title>
+    <link href="http://ryber.github.com/blog/2011/04/19/the-big-book-of-dead-code/"/>
+    <updated>2011-04-19T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/04/19/the-big-book-of-dead-code</id>
+    <content type="html"><![CDATA[<p>Several years ago I became the inheritor of a rather large codebase that had been farmed out to an R&amp;D team of contractors. I could go on with a litany of grievances about the delivered product but I&#8217;ll leave most of those for other posts. Todays issue is about dead code. When we got the application it was quite bloated with unfinished and forgotten features. Imagine going to look into a bug only to find that there are 3 different modules that do the same thing; only one of which was actually used. There were entire assemblies that did nothing, or very little. Lots of modules were &#8220;flexible&#8221; but then configured to just work one (very simple) way.</p>
+
+<p>How it got this way could be a good masters thesis on the dangers of waterfall and cramming every possible requirement into a bloated spec at the begining, but regardless of that, the team had a problem.</p>
+
+<p>Extra and unnecessary code made building slow, made performance slow, and made testing slow and very difficult. It was confusing for developers to to have to deal with and it wasted all kinds of time with rabbit holes and marathon sessions in the debugger. Worst of all there were few tests to document the behavior.</p>
+
+<p>Finally after a particularly difficult weekend the team had had enough. We made some time, got out the machete and started to hack away at the dead flesh. The result was a faster, less confusing, less buggy system that performed all of the same duties as the original app. Dev velocity went up as build times and time in the debugger went down. Occasionally there would be second guessing, &#8220;What if we need that some day?&#8221;, &#8220;Well, that way IS more flexible&#8221;, but you know what? That&#8217;s what version control is for. To this day I have yet to go hunting back in time looking for some of that dead code.</p>
+
+<p>The other result was legend&#8230;&#8221;The Big Book of Dead Code&#8221;. The more and more code I hacked away the angrier I got. I watched as developers I knew from the R&amp;D team disappeared like they had never existed. It was never their fault that they were asked to write something the product never needed to begin with.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_ljwfsjJT9O1qhdwsd.jpg" alt=""/></p>
+
+<p>We needed to be able to show to management how much waste a gigantic 2 year waterfall project produced. So I took the diffs and wrote a little script (called &#8220;Bring Out Yer Dead&#8221;) that took the deleted code, removed all of the spaces, tabs and line breaks, formatted everything into a sigle block of raw text and then printed it all out in a 9pt font front and back. As the code was removed the book grew.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_ljwft3bUOZ1qhdwsd.jpg" alt=""/></p>
+
+<p>It ended up being easily over 500 pages. 500 pages of blood, sweat, yak hair and money. The book became famous, people would come from far and wide to gaze in wonder. I never saw the look on the owners faces when they were shown it, but I was told that it was very sobering. It ended up becoming a symbol of development black holes. Never again would management tolerate non-incremental development and gold plated specs. We would deliver small bits quickly, we would adjust requirements as needed. We would do only what needed to be done. Keep it simple! Yagni! &#8220;Bring out Yer Dead!&#8221;</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_ljwftmvV0B1qhdwsd.jpg" alt=""/></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[C# Build Times]]></title>
+    <link href="http://ryber.github.com/blog/2011/04/18/c-build-times/"/>
+    <updated>2011-04-18T00:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2011/04/18/c-build-times</id>
+    <content type="html"><![CDATA[<p>Today a friend was expressing concern about C# test loop times. Even going so far as comparing it to <em>gasp</em> C++</p>
+
+<p>He challenged me to &#8221; please see if you can get a smallish project, maybe 1K unit tests (ignore other tests) to build and run in &lt;45s &amp; blog it!!&#8221;</p>
+
+<p>Well, lately I&#8217;ve been working on setting up a integration test suite for Ninject, so I was familiar with it as not just a small, fast C# library, But one that is quite popular.</p>
+
+<p>So here is the result. For just the build/test of the core project total time from the command line is between 4-5 seconds. 2 of that is running the 223 unit and integration tests.</p>
+
+<p><img src="http://ryber.github.com/assets/images/tumblr_ljvimpibdW1qhdwsd.png" alt=""/></p>
+
+<p>For a total CI package/build including generating packages for .Net 2.0, 3.5, 4.0, 3.5 compact, and silverlight 2, 3 and 4 which adds up to 669 tests takes around 1:45 - 2 minutes.</p>
+
+<p>So I&#8217;d say that shows that .net is at least capable of having fast cycle times. The thing that&#8217;s still missing are good autotest tools. IntelliJ and Eclipse smoke VS in terms of testing and refactoring. ReSharper&#8230;as good as it is&#8230;does nothing for the rest of the bloat in studio.</p>
+
+<p>Now, if only we could get JetBrains to make a ReSharper for MonoDevelop we would be all set.</p>
+]]></content>
+  </entry>
+  
+</feed>

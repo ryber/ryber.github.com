@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Migrating Jekyll Bootstrap To Octopress - Soylent Code</title>
+  <meta name="author" content="Ryan Bergman">
+
+  
+  <meta name="description" content="Recently I decided to upgrade my old school Jekyll Bootstrap blog engine to use Octopress. I wanted to do this for a few reasons: The theme I had &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ryber.github.com/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Soylent Code" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37146294-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Soylent Code</a></h1>
+  
+    <h2>Soylent Code is People! It's peeeeople!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ryber.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+   <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Migrating Jekyll Bootstrap to Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-07T06:25:00-06:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Recently I decided to upgrade my old school Jekyll Bootstrap blog engine to use Octopress. I wanted to do this for a few reasons:</p>
+
+<ul>
+<li>The theme I had going on for Jekyll was pretty crappy on mobile.</li>
+<li>Octopress seems to have polished the Jekyll experience. I’m not interested in doing much programming of my own blogging software, and more interested in using other peoples stuff.</li>
+</ul>
+
+
+<p>So&#8230;the process was not all wine and roses. Here is what you need to do:</p>
+
+<ol>
+<li><p>Octopress requires Ruby 1.9, so I needed an upgrade.  <a href="http://www.ruby-lang.org/en/downloads/">I used RVM as described here</a>. I have not messed with Ruby in a while. Quite impressive. When you install RVM it automatically installs the latest version of Ruby (2.0 at the time). Then when you cd into the Octopress directory Ruby recognizes that there is a .rvmc file that is requiring a specific version of Ruby and then asks you to install it. So do so with &#8220;rmv install ruby-1.9.3-p392&#8221;. From here on out, when you work on a project with a .rvmc file it will use the version of ruby required. Pretty neat huh?</p></li>
+<li><p>Go ahead and install Octopress into a new directory via the <a href="http://octopress.org/docs/setup/">regular install methods listed here</a></p></li>
+<li><p>At this point I did a commit so I could revert back to the basic install should I screw something up (and I did a couple of times)</p></li>
+<li><p>The directory structure of Octopress is different from Jekyll Bootstrap. In order to figure out where to move my old posts I did a <code>rake post[“HelloWorld”]</code>. Then, Git shows you right where they need to go. So I copied my posts from my old ryber.github.com directory to the new location. I had to edit them because they contained includes that were not present (or needed) in Octopress. Then I deleted the HelloWorld page.</p></li>
+<li><p>The <code>config.yml</code> files are also quite different. You can’t just copy it over without breaking everything. Open up the Octopress one and copy over the values where applicable.</p></li>
+<li><p>At this point you can do a <code>rake generate</code> and <code>rake preview</code> to take a look.</p></li>
+<li><p>In the ryber directory I deleted all of the content and committed that. Now I had a empty repository.</p></li>
+<li><p>Then I moved all of the files EXCEPT the .git folder from the new octopress folder into the original ryber one. If you are in the terminal doing this you might then need to cd out and back into the folder in order to get rvm to recognize the .rvmrc file.</p></li>
+<li><p>At this point I found I had to do the <code>bundle install</code>  again for some reason? I also did a <code>rake setup_github_pages</code> to set up the _deploy folders sub repository. Now I was ready to go. At this point you can do a rake generate and rakre preview to take a look and make any additional adjustments.</p></li>
+<li><p>Originally I pushed everything up to github expecting that it would generate the site on it’s own just like it did with Jekyll. This does not work. Octopress does not work with the built in Github page generation stuff and you will receive a very sad email from Github saying it didn’t work. You need to do a couple of things to get around it.</p>
+
+<ul>
+<li>Create a <code>.nojekyll</code> file in the root directory (it can be empty). This tells Github not to try and generate the site.</li>
+<li>When you want to deploy you need to do a <code>rake deploy</code>. This does a lot of things. I suggest carefully reading this page to get the details. Take particular note of how your new sub-git-repo in the _deploy folder works because it can be a bit funky if you have not worked with that kind of setup before.</li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan Bergman</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-07T06:25:00-06:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ryber.github.com/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/" data-via="ryber" data-counturl="http://ryber.github.com/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/26/programmers-wanted/" title="Previous Post: Programmers Wanted">&laquo; Programmers Wanted</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About</h1>
+  
+  <a href="/about"><img src="https://si0.twimg.com/profile_images/2730894596/895cb6a31d003c316637a82f3ff7b3ce_bigger.jpeg" alt="Me" /></a>
+  <h4><a href="/about">About</a></h4>
+  Soylent Code is people! Well, mostly just one person. My name is Ryan Bergman and I'm a software geek in Des Moines Iowa. This blog is a place where I can share some thoughts or just write down things I need to remember later. 		
+</section>
+		<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/">Migrating Jekyll Bootstrap To Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/26/programmers-wanted/">Programmers Wanted</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/sprints-are-a-procrustean-bed/">Sprints are a Procrustean Bed</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/30/my-life-as-a-cable-cutter/">My Life as a Cable Cutter</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/15/inferred-interfaces-in-static-type-systems/">Inferred Interfaces in Static Type Systems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ryber">@ryber</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ryber',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("ryber", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/ryber" class="twitter-follow-button" data-show-count="false">Follow @ryber</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Ryan Bergman -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

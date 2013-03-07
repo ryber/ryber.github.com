@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Night of the Undead Code - Soylent Code</title>
+  <meta name="author" content="Ryan Bergman">
+
+  
+  <meta name="description" content="I’ve written before about dead code and how it can gunk up you system, slow you down, and cause all kinds of problems. So with Halloween on its way I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ryber.github.com/blog/2011/10/20/night-of-the-undead-code/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Soylent Code" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37146294-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Soylent Code</a></h1>
+  
+    <h2>Soylent Code is People! It's peeeeople!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ryber.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+   <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Night of the Undead Code</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-20T00:00:00-05:00" pubdate data-updated="true">Oct 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I’ve <a href="http://ryber.tumblr.com/2011/04/19/the-big-book-of-dead-code">written before about dead code</a> and how it can gunk up you system, slow you down, and cause all kinds of problems. So with Halloween on its way I wanted to muse on something even worse than dead code&#8230;.undead code. You see most of the code you end up killing in a dead code hunt is not dead yet, its only mostly dead. You have to find out if it’s really holding on for true love or planning on eating your face. So how do you tell? Lets find out.</p>
+
+<p><strong>Dead-Parrot Dead</strong>: This is the easy stuff. The class or method that is never invoked. The library that’s only imported but never used. This kind of code is easy to remove, it’s very low risk. Don’t listen to the people who tell you that the code is just resting or stunned. It’s kicked the bucket, shuffled off it’s mortal coil, run down the curtain and joined the bleedin&#8217; choir invisibile!! THIS IS EX-CODE!! Clean up the body.  Kill Satisfaction: <em>1 Zombie head</em></p>
+
+<p><img src="/assets/images/tumblr_lte7e4nuW21qhdwsd.jpg" alt=""/></p>
+
+<p><strong>Ghost Code</strong>: Ghost code is actually the most common. You probably have it all over your code base and you don’t even know it.  I’ve known developers who have spent their entire careers on projects writing code nobody asked for. Unless you can tie code to a specific business case and it’s bringing value right now (NOT “maybe someday”) then all it’s doing is getting in the way and sucking away your time. Exorcise it now and put it out of it’s misery. Kill Satisfaction: <em>3 Zombie Heads</em></p>
+
+<p><strong>Zombie Code</strong>: A more subtle form of dead code is zombie code. Code that looks alive but actually wants to eat your brain. This is code that is unreachable due to various reasons.  Perhaps its related to a particular entry in a config file that never has a different value. It can also be spotted by a tell tale magic bool being passed to a method which is only ever called with “true” or “false”. At worst the code  is strung throughout complex classes and methods that are only used in one particular way with limited expectations. If a developer ever tells you his code is “flexible” be wary, it might be a zombie.</p>
+
+<p>These kind of scenarios can be a little harder to dig out, but often have a single kill point. Once you shoot it in the head it leads to an avalanche of deleted code. <em>Kill Satisfaction: 6 heads.</em></p>
+
+<p><strong>Vampire Frameworks</strong>: <img src="/assets/images/tumblr_lte6ts4mYD1qhdwsd.jpg" align="right"/> Frameworks are pretty, they solve all of your problems and their perfect 19 year old bodies sparkle while they seduce you with their smoldering eyes. Don&#8217;t be fooled though! Any frameworks that forces you to generate boilerplate after boilerplate that you don&#8217;t find useful (or understand) is pure eeeevil. Even worse are the ones that generate these boilerplate classes themselves and inject their unholy poison all over your app. They suck away your flexibility, your ability to test and your ability to be lightweight. They often are quite good at doing something the way they think you should do it but as soon as you need to do something different (about day 3 in) they make your life a living hell.</p>
+
+<p>Once established, killing off a framework can be quite hard. You need to stop them as early as possible. Kill Satisfaction: 10 heads.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan Bergman</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-20T00:00:00-05:00" pubdate data-updated="true">Oct 20<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ryber.github.com/blog/2011/10/20/night-of-the-undead-code/" data-via="ryber" data-counturl="http://ryber.github.com/blog/2011/10/20/night-of-the-undead-code/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/17/natural-selection-in-code/" title="Previous Post: Natural Selection in Code">&laquo; Natural Selection in Code</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/10/28/pair-programming-bingo/" title="Next Post: Pair Programming Bingo">Pair Programming Bingo &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About</h1>
+  
+  <a href="/about"><img src="https://si0.twimg.com/profile_images/2730894596/895cb6a31d003c316637a82f3ff7b3ce_bigger.jpeg" alt="Me" /></a>
+  <h4><a href="/about">About</a></h4>
+  Soylent Code is people! Well, mostly just one person. My name is Ryan Bergman and I'm a software geek in Des Moines Iowa. This blog is a place where I can share some thoughts or just write down things I need to remember later. 		
+</section>
+		<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/07/migrating-jekyll-bootstrap-to-octopress/">Migrating Jekyll Bootstrap To Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/26/programmers-wanted/">Programmers Wanted</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/sprints-are-a-procrustean-bed/">Sprints are a Procrustean Bed</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/30/my-life-as-a-cable-cutter/">My Life as a Cable Cutter</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/15/inferred-interfaces-in-static-type-systems/">Inferred Interfaces in Static Type Systems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ryber">@ryber</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ryber',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("ryber", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/ryber" class="twitter-follow-button" data-show-count="false">Follow @ryber</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Ryan Bergman -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
