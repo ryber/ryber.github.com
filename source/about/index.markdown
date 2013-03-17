@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-<img src="assets/images/me.jpeg" alt="I have a hat" align="left" hspace="10" vspace="10" />
+<img src="/assets/images/me.jpeg" alt="I have a hat" align="left" hspace="10" vspace="10" />
 
 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa. I work for 
 John Deere Intelligent Solutions Group where I work mostly on applications merging agronomic data from

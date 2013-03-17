@@ -3,7 +3,7 @@ layout: post
 title: "Migrating Jekyll Bootstrap to Octopress"
 date: 2013-03-15 11:29
 comments: true
-categories: 
+tags: [jekyll, octopress]
 ---
 
 Even though Octopres uses Jekyll for generating pages it's layout and the way they expect you to use it with Github Pages is actually quite different. This is my recipe for migrating:
