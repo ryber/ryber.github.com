@@ -118,6 +118,19 @@ rake preview
 
 ## Final Steps
 
+Before you do this check the Octopress rake file and change the ```deploy_default``` method to "push". You will find it in a section at the top that looks like this;
+
+```
+## -- Rsync Deploy config -- ##
+# Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
+ssh_user       = "user@domain.com"
+ssh_port       = "22"
+document_root  = "~/website.com/"
+rsync_delete   = true
+rsync_args     = ""  # Any extra arguments to pass to rsync
+deploy_default = "push" 
+```
+
 Now we are going to replace your old site with the new site (at last!)
 
 We need to clear out all of the files on the master branch to make way for the new content.
