@@ -5,7 +5,7 @@ date: 2013-03-15 11:29
 comments: true
 categories: 
 ---
-Back in the 90’s when Netscape created JavaScript it wasn’t really a done deal. They were battling with Microsoft who was pushing VB as a in-browser scripting language and they wanted something to compete with that and to complement Java. A lot of things were considered and eventually Brendan Eich created JavaScript in 10 days and the rest is history.
+Back in the 90’s when Netscape was trying to figure out how to add scripting to HTML a lot of things were considered including Java, Python, Tcl and Perl. Eventually Brendan Eich created JavaScript in 10 days and the rest is history.
 
 But what if it had played out differently? In the early running Tcl was a favorite but was ruled out for not being “Javaish” enough. What if it had been picked? I imagine we would be in about the same situation we are today. It would have been dismissed in the early days as underpowered and slow. Then as browsers became faster and tools like “tclQuery” became more robust it would have gained in popularity. Eventually as the Stockholm syndrome set in someone would extract Google’s Tcl engine into a server side platform and hipsters everywhere would form start-ups using “Node.Tcl”.
 
