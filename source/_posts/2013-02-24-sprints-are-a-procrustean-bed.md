@@ -2,8 +2,7 @@
 layout: post
 title: "Sprints are a Procrustean Bed"
 description: ""
-category: 
-tags: [agile, scrum]
+category: Agile
 ---
 
 

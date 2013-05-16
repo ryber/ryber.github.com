@@ -3,7 +3,7 @@ layout: post
 title: "The Rise Of Node.Tcl"
 date: 2013-03-15 11:29
 comments: true
-categories: 
+categories: Code
 ---
 Back in the 90’s when Netscape was trying to figure out how to add scripting to HTML a lot of things were considered including Java, Python, Tcl and Perl. Eventually Brendan Eich created JavaScript in 10 days and the rest is history.
 

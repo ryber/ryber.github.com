@@ -2,8 +2,7 @@
 layout: post
 title: "My Life as a Cable Cutter"
 description: ""
-category: 
-tags: [cable, tv]
+category: Entertainment
 ---
 
 

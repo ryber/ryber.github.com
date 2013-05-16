@@ -2,8 +2,7 @@
 layout: post
 title: "Programmers Wanted"
 description: ""
-category: 
-tags: [jobs]
+category: Jobs
 ---
 
 

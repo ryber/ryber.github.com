@@ -3,7 +3,7 @@ layout: post
 title: "Partial Class Syndrome"
 date: 2013-05-13 20:07
 comments: true
-categories: 
+categories: code
 ---
 
 The other day I ran into a smelly code scenario. Not only was it smelly, it was eerily familiar. I've run into this several times in this particular codebase and I finally put a name on it. "Partial Class Syndrome".
