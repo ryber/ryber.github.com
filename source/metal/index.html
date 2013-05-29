@@ -4,16 +4,16 @@
 	function smellTheGlove(){
 
 		 var result = document.getElementById("magik").value
-	     result = result.replace(/ae/g,"æ")
-		 result = result.replace(/a/g, "ä")
-		 result = result.replace(/A/g, "ä")
-		 result = result.replace(/e/g, "ë")
-		 result = result.replace(/E/g, "Ë")
-		 result = result.replace(/o/g, "ö")
-		 result = result.replace(/O/g, "Ö")
-		 result = result.replace(/u/g, "ü")
-		 result = result.replace(/U/g, "Ü")
-		 result = result.replace(/B/g, "ß")
+	    result = result.replace(/ae/g, unescape("%E6"))
+		 result = result.replace(/a/g, unescape("%E4"))
+		 result = result.replace(/A/g, unescape("%C4"))
+		 result = result.replace(/e/g, unescape("%EB"))
+		 result = result.replace(/E/g, unescape("%CB"))
+		 result = result.replace(/o/g, unescape("%F6"))
+		 result = result.replace(/O/g, unescape("%D6"))
+		 result = result.replace(/u/g, unescape("%FC"))
+		 result = result.replace(/U/g, unescape("%DC"))
+		 result = result.replace(/B/g, unescape("%DF"))
 		 
 		document.getElementById("result").value = result
 	}
