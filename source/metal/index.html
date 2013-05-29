@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript">
+	function smellTheGlove(){
+
+		 var result = document.getElementById("magik").value
+	     result = result.replace(/ae/g,"æ")
+		 result = result.replace(/a/g, "ä")
+		 result = result.replace(/A/g, "ä")
+		 result = result.replace(/e/g, "ë")
+		 result = result.replace(/E/g, "Ë")
+		 result = result.replace(/o/g, "ö")
+		 result = result.replace(/O/g, "Ö")
+		 result = result.replace(/u/g, "ü")
+		 result = result.replace(/U/g, "Ü")
+		 result = result.replace(/B/g, "ß")
+		 
+		document.getElementById("result").value = result
+	}
+</script>
+</head>
+<body bgcolor="black" text="silver">
+
+<table border="6">
+ <tr>
+   <td><img src="/assets/images/an_spinning_flaming_skull.gif" /></td>
+	<td><h1>H&#235;&#228;vy M&#235;t&#228;liz&#235;r</h1></td>
+<td><img src="/assets/images/an_spinning_flaming_skull.gif" /></td>
+</tr>
+</table>
+
+<br>
+<form>
+	<textarea name="magik" id="magik" cols="100" rows="10" style="background-color: silver">Blue Oyster Cult</textarea>
+	<br />
+	<input type="button" onclick="javascript:smellTheGlove()" value="Smell The Glove" />
+	<br />
+	<textarea name="result" id="result" cols="100" rows="10" style="background-color: silver"></textarea>
+</form>
+
+</body>
+</html>
