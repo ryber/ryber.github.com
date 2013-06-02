@@ -1,23 +1,18 @@
 <html>
 <head>
+   <title>Heavy Metalizr</title>
+   
+<script type="text/javascript">
+	var exports = {}
+</script>
+
+<script type="text/javascript" src="/assets/js/HeavyMetalizr.js" ></script>
 <script type="text/javascript">
 	function smellTheGlove(){
 
 		 var result = document.getElementById("magik").value
-	     result = result.replace(/ae/g, unescape("%E6"))
-	     result = result.replace(/AE/g, unescape("%C6"))
-		 result = result.replace(/a/g, unescape("%E4"))
-		 result = result.replace(/A/g, unescape("%C4"))
-		 result = result.replace(/e/g, unescape("%EB"))
-		 result = result.replace(/E/g, unescape("%CB"))
-		 result = result.replace(/o/g, unescape("%F6"))
-		 result = result.replace(/O/g, unescape("%D6"))
-		 result = result.replace(/u/g, unescape("%FC"))
-		 result = result.replace(/U/g, unescape("%DC"))
-		 result = result.replace(/B/g, unescape("%DF"))
-		 result = result.replace(/D/g, unescape("%D0"))
 		 
-		document.getElementById("result").value = result
+		document.getElementById("result").value = exports.HeavyMetalizr(result)
 	}
 </script>
 
