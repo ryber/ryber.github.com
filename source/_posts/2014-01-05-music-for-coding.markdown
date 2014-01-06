@@ -20,7 +20,7 @@ Don’t chalk up Robyn as just another disposable  dance club act. The electroni
 Whenever I listen to Santigold I imagine this is the music the the rastafarian hackers from space station Zion are listening to in Neuromancer.
 <br /><br /><br /><br />
 ## The Soundtrack to Conan the Barbarian <img align="right" alt="A man, wearing nothing but a loincloth and a horned helm, strides forth, holding a sword aloft in his left hand. A blond woman kneels in front of him, holding a curved blade with both hands." src="http:////upload.wikimedia.org/wikipedia/en/thumb/8/81/Conan_the_Barbarian_by_Renato_Casaro.jpg/220px-Conan_the_Barbarian_by_Renato_Casaro.jpg" width="220" height="312" />
-The soundtrack was made first, and then the movie was basically a giant music video. It's also basically a giant expansion of Carmina Burana. Perfect background music for epic coding.
+The soundtrack was made first, and then the movie was basically a giant music video for a remix of Carmina Burana. Perfect background music for epic coding.
 
 ## A few others
 <p>
