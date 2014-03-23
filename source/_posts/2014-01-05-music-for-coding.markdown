@@ -3,7 +3,7 @@ layout: post
 title: "Music For Coding"
 date: 2014-01-05 18:43
 comments: true
-categories: 
+categories:
 ---
 A short list of my favorite coding music:
 
@@ -12,6 +12,7 @@ In the late 80’s and early 90’s as I was getting into hacker culture InSoc w
 
 ## Kraftwerk: The Mix <img alt="The Mix" align="right" src="http://upload.wikimedia.org/wikipedia/en/thumb/0/00/The_Mix.jpg/220px-The_Mix.jpg" width="220" height="219" />
 It may be cliche for a programmer to love Kraftwerk, but I don’t care. More than just a best-of “The Mix” is rare in the world of electronic re-mix albums in that it’s mostly better than the originals. I particularly find the version of “Computer Love” to be the best out there.
+<br /><br />
 
 ## Robyn: Body Talk <img alt="Body Talk"  align="right" src="http://upload.wikimedia.org/wikipedia/en/thumb/7/70/Body_Talk.jpg/220px-Body_Talk.jpg" width="220" height="220" class="thumbborder" />
 Don’t chalk up Robyn as just another disposable  dance club act. The electronic music she produces is impeccably produced and well crafted. It has numerous interesting patterns and layers that pay back on repeated plays. The Body Talk series is by far the best. For something even more abstract check out her work with Röyksopp.
@@ -33,4 +34,3 @@ The soundtrack was made first, and then the movie was basically a giant music vi
 <li>Daivd Bowie’s Berlin trilogy (Low, Heroes, Lodger)</li>
 </ul>
 </p>
-
