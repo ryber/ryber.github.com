@@ -9,7 +9,7 @@ Last week at O'Reilly’s Software Architecture Conference Glenn Vanderburg from
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zDEpeWQHtFU" frameborder="0" allowfullscreen></iframe>
 
-I can remember when I made that tweet and I was thinking less about if programming itself was engineering and more about if programmers were engineers. My father was an architect who designed prisons, schools and shopping malls (ok, all prisons). My father-in-law is a mechanical engineer who worked for the US Army Corp on top secret projects like the stealth bomber. So I am loath to call myself an architect or an engineer in their presence.
+I can remember when I made that tweet and I was thinking less about if programming itself was engineering and more about if programmers were engineers. My father was an architect who designed prisons, schools and shopping malls (ok, all prisons). My father-in-law is a mechanical engineer who worked for the US Army Corps of Engineers on top secret projects like the stealth bomber. So I am loath to call myself an architect or an engineer in their presence.
 
 As my father once said when I told him I was considering taking a job as a software architect: “pssh, you’re not an architect until you prove to the state that your work isn’t going to kill someone”
 
