@@ -17,8 +17,9 @@ That’s an important point. Architects and engineers (at least structural, mech
 
 In software development you can take a 3 week Node.js bootcamp from a 22 year old and get a job writing financial systems.
 
-There is currently an almost unlimited demand for programmers that need to write everything from missile guidance systems to throw away mobile video games and we seem to have almost no control at all over how these developers are educated. It is unrealistic to think we could require an accreditation system like engineers or doctors have as some have proposed. Personally, I’m a big fan of the craftsman idea of apprenticeships like carpenters and sushi chefs but even this could probably never be enforced and will be relegated to boutique consulting companies. 
+If programming is engineering. How do we get programmers to act like engineers (i.e. professionals)?
 
-It occurred to me while watching Glenn that the attitude I (and many others) have had of deriding programming as engineering serves to feed into the idea that writing crap software is ok. Are we just throwing the baby out with the bathwater? “Oh well, everything is confusing, abstract and messy so might as well write a giant mudball.”
+There is an almost unlimited demand for programmers that need to write everything from missile guidance systems to cheap Candy Crush knock-offs and we seem to have almost no control at all over how these developers are educated. The universities don't teach the art of programming. Most employers don't either. I love the craftsman movement but so far it only exists in it's own little alternate reality bubble.
 
-Perhaps if we reorient a little towards calling our practice engineering it would help foster the professionalism many of us long for.
+It occurred to me while watching Glenn that the attitude I (and many others) have had of deriding programming as engineering serves to feed into the idea that writing crap software is ok. Perhaps if we reorient a little towards calling our practice engineering it would help foster the professionalism many of us long for.
+
