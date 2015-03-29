@@ -1,0 +1,29 @@
+---
+layout: post
+title: "How we saved $200,000 per year with a hackathon"
+date: 2015-03-28 07:09
+comments: true
+categories:
+---
+
+At my current gig we have a fairly large Java web application. It has a Fitnesse suite of around 2000 tests that until recently took about 12-13 minutes to run on a good machine.
+
+One of our developers (<a href="https://twitter.com/briandanenhauer">@briandanenhauer</a>) felt the there was something wrong with that time and used one of our hackathons to do something about it. He ran the tests under a profiler and found a significant problem with the way we (and Fitnesse) were wiring in fixtures.
+
+Fitnesse has a Import fixture which can be used to import the java packages containing your fixtures. For example:
+
+```
+|Import|
+|info.fitnesse.fixturegallery|
+|info.fitnesse.anotherPackage|
+```
+
+Our project had attempted to package our fixtures into feature specific packages. Over time this had left us with over 50 fixture sub-packages.
+
+Whenever Fitnesse needed to find a fixture it would loop over the list of imports and look in each package for the fixture. If it didn’t find it it would throw an exception up and then continue looking until it found it. This was resulting in literally millions of exceptions being thrown throughout the run of the main suite.
+
+@briandanenhauer did the simple thing and flattened all of our fixtures into one package and one corresponding row in the import fixture.
+
+The the result was dramatic. A full build of our system went from 13-14 minutes to 6-7! The team was floored and there was much rejoycing! <img src="/assets/images/rejoicing.gif" align="right" />
+I did a very quick and dirty calculation on the savings in dev time and came up with $200,000 per year for our staff. That would be if every developer ran verify only once per workday (and we know it’s more).
+That’s a powerful argument for hackathons or just letting your developers have time to make their projects better.
