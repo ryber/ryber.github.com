@@ -5,7 +5,7 @@ date: 2015-03-22 09:15
 comments: true
 categories:
 ---
-Last week at O'Reilly’s Software Architecture Conference Glenn Vanderburg from LivingSocial referenced (anonymously) something I tweeted a few months back about software engineering. It’s a very good presentation and I think Glenn makes a very strong argument that programming is engineering. Go ahead and watch it. My tweet comes in early around 1:07
+Last week at O'Reilly’s Software Architecture Conference Glenn Vanderburg from LivingSocial referenced (anonymously) <a href="https://twitter.com/ryber/status/562310762979655680">something I tweeted</a> a few months back about software engineering. It’s a very good presentation and I think Glenn makes a very strong argument that programming is engineering. Go ahead and watch it. My tweet comes in early around 1:07
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zDEpeWQHtFU" frameborder="0" allowfullscreen></iframe>
 
@@ -22,4 +22,3 @@ If programming is engineering. How do we get programmers to act like engineers (
 There is an almost unlimited demand for programmers that need to write everything from missile guidance systems to cheap Candy Crush knock-offs and we seem to have almost no control at all over how these developers are educated. The universities don't teach the art of programming. Most employers don't either. I love the craftsman movement but so far it only exists in it's own little alternate reality bubble.
 
 It occurred to me while watching Glenn that the attitude I (and many others) have had of deriding programming as engineering serves to feed into the idea that writing crap software is ok. Perhaps if we reorient a little towards calling our practice engineering it would help foster the professionalism many of us long for.
-
