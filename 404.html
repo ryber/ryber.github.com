@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>404</title>
+		<meta http-equiv="refresh" content="5;URL='/'">
+		<script type="text/javascript">
+			var path = window.location.pathname.substr(1),
+			newPath = '/';
+			
+			if(path.indexOf('20') == 0){
+				newPath = '/blog/' + path;
+			}
+			
+			
+			window.location=newPath;
+		</script>
+	</html>
+	<body>
+		<h1>404</h1>
+	</body>
+</html>
