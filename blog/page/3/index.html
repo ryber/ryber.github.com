@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan Bergman">
 
   
-  <meta name="description" content="Here is the deck from my Agile 2012 Presentation on the dangers of dead code. Enjoy. ">
+  <meta name="description" content="There was a spirited discussion today about the effect of bright light glare on application color themes. A lot of discussion about solorization and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,106 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/05/15/color-themes-under-glare/">Color Themes Under Glare</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-15T20:56:00-07:00" pubdate data-updated="true">May 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There was a spirited discussion today about the effect of bright light glare on application color themes. A lot of discussion about solorization and saturations and such. My point in the discussion was that all of that is irrelevant because the main factor is not the sun on the colors. It&#8217;s the color&#8217;s impact on the glass screens reflection of the light. Dark themes turn screens into mirrors. Ever noticed that you can see your face reflecting back at you in a dark screen but not a light one? Well the same happens with the sun.</p>
+
+<p>Here is my unscientific experiment. Same screen with Intellij put into a dark and light screen and angled such that a light is reflecting back at the camera:</p>
+
+<h3>Dark</h3>
+
+<p><img src="/assets/images/dark_glare.jpg" alt="dark theme" /></p>
+
+<h3>Light</h3>
+
+<p><img src="/assets/images/light_glare.jpg" alt="dark theme" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/13/partial-class-syndrome/">Partial Class Syndrome</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-13T20:07:00-07:00" pubdate data-updated="true">May 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The other day I ran into a smelly code scenario. Not only was it smelly, it was eerily familiar. I&#8217;ve run into this several times in this particular codebase and I finally put a name on it. &#8220;Partial Class Syndrome&#8221;.</p>
+
+<p>Now anyone familiar with C# knows that you can split one class over several different files by using the <a href="http://msdn.microsoft.com/en-us/library/wa80x488(v=vs.80).aspx" >partial</a> keyword. It&#8217;s really a pretty horrible thing to do there is a very very limited scope for it being a good idea. Generated code like web service stubs are often partial so you can add to them without extending them. Other than that partials are super crappy. They make code hard to read and understand and they encourage classes to get way too big. In fact a partial sometimes shows up in code when a class gets so big that people want a quick and dirty way to make it <em>look</em> smaller.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/en/b/b8/Three_Stooges_Intro_Card_1936.jpg" alt="The Boys" /></p>
+
+<p>Anyway this project is Java and so can&#8217;t do partials. At least you would hope not. Yet there I was looking at three classes. We can call them Larry, Moe and Curly. These three were all basically the same class with some different methods. They had the same dependencies, they took and returned the same classes, did similar things and even had similar names. On top of that they were all held by a big model class that used them interchangeably calling one and passing it&#8217;s data into the others.</p>
+
+<p>So here I was working in Moe and finding that I needed the functionality of Curly. I was also getting confused about which class did what due to the similarity.</p>
+
+<p>The &#8220;fix&#8221; of course was to:</p>
+
+<p>1) Merge them together. This resulted in a pretty huge class which I was uncomfortable with but at least it solved the ambiguous confusion.</p>
+
+<p>2) Simplify the model&#8217;s use of the code to just let the new big class handle the back and forth with it&#8217;s own methods. This actually resulted in a lot of methods being removed or made private.</p>
+
+<p>3) Extract smaller specialty classes that deal with unique things. I&#8217;m still doing this step. This is always the hard part but if you look carefully you can find the classes hidden in there. Pay particular attention to feature envy.</p>
+
+<p>I ended up with a single class that is smaller than the three from before and something that&#8217;s easier to read and understand. It’s still too big for my taste but It’s better than what was there before&#8230;at least for now.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/04/17/embracing-nihilism-as-a-software-development-philosophy/">Embracing Nihilism as a Software Development Philosophy</a></h1>
     
     
@@ -101,7 +201,7 @@
   
 
 
-<time datetime="2013-04-17T18:44:00-05:00" pubdate data-updated="true">Apr 17<span>th</span>, 2013</time>
+<time datetime="2013-04-17T18:44:00-07:00" pubdate data-updated="true">Apr 17<span>th</span>, 2013</time>
         
       </p>
     
@@ -142,7 +242,7 @@
   
 
 
-<time datetime="2013-03-15T11:29:00-05:00" pubdate data-updated="true">Mar 15<span>th</span>, 2013</time>
+<time datetime="2013-03-15T11:29:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2013</time>
         
       </p>
     
@@ -184,7 +284,7 @@
   
 
 
-<time datetime="2013-03-15T11:29:00-05:00" pubdate data-updated="true">Mar 15<span>th</span>, 2013</time>
+<time datetime="2013-03-15T11:29:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2013</time>
         
       </p>
     
@@ -413,7 +513,7 @@
   
 
 
-<time datetime="2013-02-26T00:00:00-06:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
+<time datetime="2013-02-26T00:00:00-08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
         
       </p>
     
@@ -467,7 +567,7 @@
   
 
 
-<time datetime="2013-02-24T00:00:00-06:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+<time datetime="2013-02-24T00:00:00-08:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
         
       </p>
     
@@ -511,7 +611,7 @@
   
 
 
-<time datetime="2012-12-30T00:00:00-06:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
+<time datetime="2012-12-30T00:00:00-08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
         
       </p>
     
@@ -575,7 +675,7 @@
   
 
 
-<time datetime="2012-10-15T00:00:00-05:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+<time datetime="2012-10-15T00:00:00-07:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
         
       </p>
     
@@ -633,7 +733,7 @@ request.Params ...
   
 
 
-<time datetime="2012-06-11T00:00:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2012</time>
+<time datetime="2012-06-11T00:00:00-07:00" pubdate data-updated="true">Jun 11<span>th</span>, 2012</time>
         
       </p>
     
@@ -655,92 +755,6 @@ request.Params ...
 
 <li>If #5 is applying to a hashtable, dictionary or map have an even lower tolerance for when you make it a class. I almost never expose a map publicly.</li>
 </ol></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/01/a-new-kind-of-cs-major/">A New Kind of CS Major</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-01T00:00:00-05:00" pubdate data-updated="true">Jun 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Let me preface this blog post by admitting that I do not have a computer science degree. I majored in community &amp; regional planning. I started out as a fine art major. I tended to avoid mathematics because I found it horribly boring and as a result difficult. I have however, been programming since I got a Texas Instruments 99/4A when I was in 3rd grade.</p>
-
-<p>The programming world has been preoccupied with CS vs programmers the last week. I wanted to weigh in on an important point that I don’t think has been made.</p>
-
-<p>Almost anyone can write working software.</p>
-
-<p>Some people can write very efficient software (you can easily make the case that CS helps with this.)</p>
-
-<p>In the world of business programming the most desirable trait for code is that it reads well and that other HUMANS can understand it and work with it. A very elegant, program that can solve abstract problems doesn’t mean anything if other programmers can’t grok how to use it. Once more, code that is easy to understand and read is often also efficient and working.</p>
-
-<p>If I were to create a new major for programmers I think I would put it in the business school. Not with engineering or mathematics. It would center on how to communicate (with humans) through code. How to work with a business to determine requirements. How to make money. It would have required courses in TDD, BDD, CI, agile processes, graphic design, speech communications, and yes, a lot of CS. Most importantly it would have lots of labs where students must make working programs together.</p>
-
-<p>I have been hiring programmers for over 10 years. My impression of recent CS grads is that they have only 1/3rd of the skills I really want. I do think a CS degree is a great start to a career in IT but we really need the universities to give us something a little different.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/11/pair-programming-bingo-part-ii/">Pair Programming Bingo Part II</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-11T00:00:00-06:00" pubdate data-updated="true">Nov 11<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Last sprint&#8217;s pair programming bingo worked out pretty good. There was more awareness of pairing and a desire to make sure everyone filled some squares. This sprint we changed it a little. Our PO generated some cards from <a href="http://print-bingo.com/.">http://print-bingo.com/.</a> The cards are random and seem to have a better shot at actually getting bingo for someone.</p>
-
-<p><img src="/assets/images/tumblr_luie36O8TT1qhdwsd.jpg" alt=""/></p>
-</div>
   
   
 
@@ -771,6 +785,14 @@ request.Params ...
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/08/07/aesthetic-criticism/">Aesthetic Criticism</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/08/07/monoliths-vs-microservices/">Monoliths vs Microservices</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/08/24/the-nature-of-programming/">The Nature Of Programming</a>
       </li>
     
@@ -780,14 +802,6 @@ request.Params ...
     
       <li class="post">
         <a href="/blog/2015/08/04/so-what-do-we-do-with-the-architects/">So What Do We Do With The Architects?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/28/how-we-saved-00/">How we saved $200,000 per year with a hackathon</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/22/are-programmers-engineers/">Are Programmers Engineers?</a>
       </li>
     
   </ul>
@@ -834,7 +848,7 @@ request.Params ...
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Ryan Bergman -
+  Copyright &copy; 2018 - Ryan Bergman -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://richontheroadfall10.blogspot.com/2010/09/indiana-to-iowa.html">Rich Beatty</a></span>
 </p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Soylent Code]]></title>
   <link href="http://ryber.github.com/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://ryber.github.com/"/>
-  <updated>2017-08-24T16:16:56-05:00</updated>
+  <updated>2018-08-07T09:20:35-07:00</updated>
   <id>http://ryber.github.com/</id>
   <author>
     <name><![CDATA[Ryan Bergman]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Partial Class Syndrome]]></title>
     <link href="http://ryber.github.com/blog/2013/05/13/partial-class-syndrome/"/>
-    <updated>2013-05-13T20:07:00-05:00</updated>
+    <updated>2013-05-13T20:07:00-07:00</updated>
     <id>http://ryber.github.com/blog/2013/05/13/partial-class-syndrome</id>
     <content type="html"><![CDATA[<p>The other day I ran into a smelly code scenario. Not only was it smelly, it was eerily familiar. I've run into this several times in this particular codebase and I finally put a name on it. "Partial Class Syndrome".</p>
 
