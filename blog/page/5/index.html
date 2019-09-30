@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Color Themes Under Glare - Soylent Code</title>
+  <title>Soylent Code</title>
   <meta name="author" content="Ryan Bergman">
 
   
-  <meta name="description" content="There was a spirited discussion today about the effect of bright light glare on application color themes. A lot of discussion about solorization and &hellip;">
+  <meta name="description" content="Today a friend was expressing concern about C# test loop times. Even going so far as comparing it to gasp C++ He challenged me to &#8221; please see &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ryber.github.com/blog/2013/05/15/color-themes-under-glare/">
+  <link rel="canonical" href="http://ryber.github.com/blog/page/5/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -77,12 +77,15 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Color Themes Under Glare</h1>
+      <h1 class="entry-title"><a href="/blog/2011/04/18/c-build-times/">C# Build Times</a></h1>
     
     
       <p class="meta">
@@ -98,80 +101,43 @@
   
 
 
-<time datetime="2013-05-15T20:56:00-05:00" pubdate data-updated="true">May 15<span>th</span>, 2013</time>
+<time datetime="2011-04-18T00:00:00-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>There was a spirited discussion today about the effect of bright light glare on application color themes. A lot of discussion about solorization and saturations and such. My point in the discussion was that all of that is irrelevant because the main factor is not the sun on the colors. It&#8217;s the color&#8217;s impact on the glass screens reflection of the light. Dark themes turn screens into mirrors. Ever noticed that you can see your face reflecting back at you in a dark screen but not a light one? Well the same happens with the sun.</p>
+  <div class="entry-content"><p>Today a friend was expressing concern about C# test loop times. Even going so far as comparing it to <em>gasp</em> C++</p>
 
-<p>Here is my unscientific experiment. Same screen with Intellij put into a dark and light screen and angled such that a light is reflecting back at the camera:</p>
+<p>He challenged me to &#8221; please see if you can get a smallish project, maybe 1K unit tests (ignore other tests) to build and run in &lt;45s &amp; blog it!!&#8221;</p>
 
-<h3>Dark</h3>
+<p>Well, lately I&#8217;ve been working on setting up a integration test suite for Ninject, so I was familiar with it as not just a small, fast C# library, But one that is quite popular.</p>
 
-<p><img src="/assets/images/dark_glare.jpg" alt="dark theme" /></p>
+<p>So here is the result. For just the build/test of the core project total time from the command line is between 4-5 seconds. 2 of that is running the 223 unit and integration tests.</p>
 
-<h3>Light</h3>
+<p><img src="/assets/images/tumblr_ljvimpibdW1qhdwsd.png" alt=""/></p>
 
-<p><img src="/assets/images/light_glare.jpg" alt="dark theme" /></p>
+<p>For a total CI package/build including generating packages for .Net 2.0, 3.5, 4.0, 3.5 compact, and silverlight 2, 3 and 4 which adds up to 669 tests takes around 1:45 - 2 minutes.</p>
+
+<p>So I&#8217;d say that shows that .net is at least capable of having fast cycle times. The thing that&#8217;s still missing are good autotest tools. IntelliJ and Eclipse smoke VS in terms of testing and refactoring. ReSharper&#8230;as good as it is&#8230;does nothing for the rest of the bloat in studio.</p>
+
+<p>Now, if only we could get JetBrains to make a ReSharper for MonoDevelop we would be all set.</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Ryan Bergman</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2013-05-15T20:56:00-05:00" pubdate data-updated="true">May 15<span>th</span>, 2013</time>
-      
-
-
-    </p>
+    </article>
+  
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ryber.github.com/blog/2013/05/15/color-themes-under-glare/" data-via="ryber" data-counturl="http://ryber.github.com/blog/2013/05/15/color-themes-under-glare/" >Tweet</a>
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/05/13/partial-class-syndrome/" title="Previous Post: Partial Class Syndrome">&laquo; Partial Class Syndrome</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/07/04/hacking-for-health/" title="Next Post: Hacking For Health">Hacking For Health &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
 </div>
-  </section>
-
-</div>
-
 <aside class="sidebar">
   
     <section>
@@ -179,7 +145,7 @@
   
   <a href="/about"><img src="/assets/images/smallme.jpg" alt="Me" /></a>
   <h4><a href="/about">About</a></h4>
-  Soylent Code is people! Well, mostly just one person. My name is Ryan Bergman and I'm a software geek in Des Moines Iowa. This blog is a place where I can share some thoughts or just write down things I need to remember later.     
+  Soylent Code is people! Well, mostly just one person. My name is Ryan Bergman and I&#8217;m a software geek in Des Moines Iowa. This blog is a place where I can share some thoughts or just write down things I need to remember later.     
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -211,7 +177,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/ryber">@ryber</a> on GitHub
@@ -246,7 +212,6 @@
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -261,10 +226,7 @@
       var disqus_shortname = 'soylentcode';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://ryber.github.com/blog/2013/05/15/color-themes-under-glare/';
-        var disqus_url = 'http://ryber.github.com/blog/2013/05/15/color-themes-under-glare/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
