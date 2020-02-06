@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan Bergman">
 
   
-  <meta name="description" content="Simple rules for handling collections. This applies mostly to static languages like C# and Java: Always use generics if you can. Especially in C# &hellip;">
+  <meta name="description" content="One of the primary criticisms of static languages is that they require needless levels of boilerplate. This can be painfully true, and any C# or Java &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/15/inferred-interfaces-in-static-type-systems/">Inferred Interfaces in Static Type Systems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-15T00:00:00-05:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One of the primary criticisms of static languages is that they require needless levels of boilerplate. This can be painfully true, and any C# or Java developer can most likely point to a weird workaround they had to do to use some sealed/final Spring or .Net class. Eventually most large projects become littered with wrappers and adapters and mappers to get objects to “fit” inside the rigid static typing system. But why does the type system have to be so inflexible?</p>
+
+<p>I’ve had an idea for some time that goes something like this. Lets say you have this C# method:</p>
+
+<pre><code>public void DoSomething(HttpRequest request){
+request.Params ...
+}
+</code></pre>
+
+<p>Oh Noes! the dreaded HttpRequest class. So full of sealed horribleness; and all we want is the stupid Params. If I want to be able to test this I can either go through the annoyingly complex process of building a HttpRequest object or I can try and swap out HttpRequest for Microsofts wrapper abstraction (or my own). None of that is nice and in the end I will have a bunch of code I don’t need or want.</p>
+
+<p>Wouldn’t it be great if I could just add a interface to HttpRequest? It would solve most of my problems. It would be mockable and could define just the parts I need. Unfortunately I can’t break into Redmond and add an interface to that class.</p>
+
+<p>But why not? Compilers are fast and smart and can figure out all kinds of things. Let say I made this interface for my method:</p>
+
+<pre><code> public interface IHttpRequest { Params {get;set;}}
+</code></pre>
+
+<p>I don’t see any reason the compiler (and IDE’s) could not look at the requested interface, look at HttpRequest and say “yep, that works.” It would STILL be type safe. It would STILL happen at compile time. It would NOT require anything to happen at runtime, and it would NOT be the same as duck typing because the object could not be just anything that (might) fulfill the request at runtime. The compiler would simply make a shorthand reference the first time it sees that HttpRequest implements IHttpRequest in the context of the package/assembly.</p>
+
+<p>Maybe for speed there would have to be some kind of keyword on the interface or the param? Maybe not. Hey Anders or whoever is in charge at Oracle&#8230;give me a call, we can work it out.</p>
+
+<p>Can anyone verify if there are static languages that do this? I have a hunch that Scala’s “traits” are somewhat like this but I’m not sure.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -506,60 +564,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/19/the-big-book-of-dead-code/">The Big Book of Dead Code</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-19T00:00:00-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Several years ago I became the inheritor of a rather large codebase that had been farmed out to an R&amp;D team of contractors. I could go on with a litany of grievances about the delivered product but I&#8217;ll leave most of those for other posts. Todays issue is about dead code. When we got the application it was quite bloated with unfinished and forgotten features. Imagine going to look into a bug only to find that there are 3 different modules that do the same thing; only one of which was actually used. There were entire assemblies that did nothing, or very little. Lots of modules were &#8220;flexible&#8221; but then configured to just work one (very simple) way.</p>
-
-<p>How it got this way could be a good masters thesis on the dangers of waterfall and cramming every possible requirement into a bloated spec at the begining, but regardless of that, the team had a problem.</p>
-
-<p>Extra and unnecessary code made building slow, made performance slow, and made testing slow and very difficult. It was confusing for developers to to have to deal with and it wasted all kinds of time with rabbit holes and marathon sessions in the debugger. Worst of all there were few tests to document the behavior.</p>
-
-<p>Finally after a particularly difficult weekend the team had had enough. We made some time, got out the machete and started to hack away at the dead flesh. The result was a faster, less confusing, less buggy system that performed all of the same duties as the original app. Dev velocity went up as build times and time in the debugger went down. Occasionally there would be second guessing, &#8220;What if we need that some day?&#8221;, &#8220;Well, that way IS more flexible&#8221;, but you know what? That&#8217;s what version control is for. To this day I have yet to go hunting back in time looking for some of that dead code.</p>
-
-<p>The other result was legend&#8230;&#8221;The Big Book of Dead Code&#8221;. The more and more code I hacked away the angrier I got. I watched as developers I knew from the R&amp;D team disappeared like they had never existed. It was never their fault that they were asked to write something the product never needed to begin with.</p>
-
-<p><img src="/assets/images/tumblr_ljwfsjJT9O1qhdwsd.jpg" alt=""/></p>
-
-<p>We needed to be able to show to management how much waste a gigantic 2 year waterfall project produced. So I took the diffs and wrote a little script (called &#8220;Bring Out Yer Dead&#8221;) that took the deleted code, removed all of the spaces, tabs and line breaks, formatted everything into a sigle block of raw text and then printed it all out in a 9pt font front and back. As the code was removed the book grew.</p>
-
-<p><img src="/assets/images/tumblr_ljwft3bUOZ1qhdwsd.jpg" alt=""/></p>
-
-<p>It ended up being easily over 500 pages. 500 pages of blood, sweat, yak hair and money. The book became famous, people would come from far and wide to gaze in wonder. I never saw the look on the owners faces when they were shown it, but I was told that it was very sobering. It ended up becoming a symbol of development black holes. Never again would management tolerate non-incremental development and gold plated specs. We would deliver small bits quickly, we would adjust requirements as needed. We would do only what needed to be done. Keep it simple! Yagni! &#8220;Bring out Yer Dead!&#8221;</p>
-
-<p><img src="/assets/images/tumblr_ljwftmvV0B1qhdwsd.jpg" alt=""/></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -584,6 +588,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2020/02/06/software-engineering-daily/">Software Engineering Daily</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/09/30/walking-into-mordor/">Walking Into Mordor</a>
       </li>
     
@@ -597,10 +605,6 @@
     
       <li class="post">
         <a href="/blog/2017/08/24/the-nature-of-programming/">The Nature Of Programming</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/22/viscosity-vs-velocity/">Viscosity vs Velocity</a>
       </li>
     
   </ul>
@@ -647,7 +651,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2019 - Ryan Bergman -
+  Copyright &copy; 2020 - Ryan Bergman -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://richontheroadfall10.blogspot.com/2010/09/indiana-to-iowa.html">Rich Beatty</a></span>
 </p>
 

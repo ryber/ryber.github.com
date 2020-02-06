@@ -4,7 +4,7 @@
   <title><![CDATA[Soylent Code]]></title>
   <link href="http://ryber.github.com/atom.xml" rel="self"/>
   <link href="http://ryber.github.com/"/>
-  <updated>2019-09-30T15:01:08-05:00</updated>
+  <updated>2020-02-06T08:52:29-06:00</updated>
   <id>http://ryber.github.com/</id>
   <author>
     <name><![CDATA[Ryan Bergman]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Software Engineering Daily]]></title>
+    <link href="http://ryber.github.com/blog/2020/02/06/software-engineering-daily/"/>
+    <updated>2020-02-06T08:40:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2020/02/06/software-engineering-daily</id>
+    <content type="html"><![CDATA[<p>I had the honor of appearing on <a href="https://softwareengineeringdaily.com/2020/02/03/john-deere-farm-software-with-ryan-bergman/">&#8216;Software Engineering Daily&#8217; podcast</a> to talk about practices at John Deere. Topics of discussion include autonomous vehicles, team autonomy and devops overload</p>
+
+<p>Subscribe: <a href="https://itunes.apple.com/us/podcast/software-engineering-daily/id1019576853?mt=2&amp;ls=1#episodeGuid=http%3A%2F%2Fsoftwareengineeringdaily.com%2F%3Fp%3D8700" title="Subscribe on Apple Podcasts" rel="nofollow">Apple Podcasts</a> | <a href="https://subscribeonandroid.com/softwareengineeringdaily.com/feed/podcast/" title="Subscribe on Android" rel="nofollow">Android</a> | <a href="https://softwareengineeringdaily.com/feed/podcast/" title="Subscribe via RSS" rel="nofollow">RSS</a></p>
+
+
+<p><audio controls>
+  <source src="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio></p>
+
+<p><a href="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" title="Download" rel="nofollow" download="John_Deere_Engineering.mp3">Download</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Walking Into Mordor]]></title>
@@ -564,20 +584,6 @@ public void canCountRegistrations() {
 </code></pre>
 
 <p>You can find more examples in <a href="https://github.com/ryber/Halleck/blob/master/src/test/java/BDDTests/RegistrationTests.java">this project</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Joda Time Presentation]]></title>
-    <link href="http://ryber.github.com/blog/2013/07/20/joda-time-presentation/"/>
-    <updated>2013-07-20T11:18:00-05:00</updated>
-    <id>http://ryber.github.com/blog/2013/07/20/joda-time-presentation</id>
-    <content type="html"><![CDATA[<p>Recently I did a little presentation on Joda Time after converting a codebase to use it. Here is the deck:</p>
-
-<div class="videoWrapper">
-<iframe src="https://docs.google.com/presentation/d/1u9-BQ-gGJiNBYz55dUw2gRf1pUqO5b-CutWPPe0W17w/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</div>
-
 ]]></content>
   </entry>
   

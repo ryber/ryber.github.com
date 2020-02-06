@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan Bergman">
 
   
-  <meta name="description" content="Lately quite a lot of people have been asking me about my weight. I lost over 35 lbs in about 4 months and I’ve been a little surprised at how many &hellip;">
+  <meta name="description" content="Recently I did a little presentation on Joda Time after converting a codebase to use it. Here is the deck: ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/20/joda-time-presentation/">Joda Time Presentation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-20T11:18:00-05:00" pubdate data-updated="true">Jul 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently I did a little presentation on Joda Time after converting a codebase to use it. Here is the deck:</p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/1u9-BQ-gGJiNBYz55dUw2gRf1pUqO5b-CutWPPe0W17w/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -752,64 +793,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/15/inferred-interfaces-in-static-type-systems/">Inferred Interfaces in Static Type Systems</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-15T00:00:00-05:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>One of the primary criticisms of static languages is that they require needless levels of boilerplate. This can be painfully true, and any C# or Java developer can most likely point to a weird workaround they had to do to use some sealed/final Spring or .Net class. Eventually most large projects become littered with wrappers and adapters and mappers to get objects to “fit” inside the rigid static typing system. But why does the type system have to be so inflexible?</p>
-
-<p>I’ve had an idea for some time that goes something like this. Lets say you have this C# method:</p>
-
-<pre><code>public void DoSomething(HttpRequest request){
-request.Params ...
-}
-</code></pre>
-
-<p>Oh Noes! the dreaded HttpRequest class. So full of sealed horribleness; and all we want is the stupid Params. If I want to be able to test this I can either go through the annoyingly complex process of building a HttpRequest object or I can try and swap out HttpRequest for Microsofts wrapper abstraction (or my own). None of that is nice and in the end I will have a bunch of code I don’t need or want.</p>
-
-<p>Wouldn’t it be great if I could just add a interface to HttpRequest? It would solve most of my problems. It would be mockable and could define just the parts I need. Unfortunately I can’t break into Redmond and add an interface to that class.</p>
-
-<p>But why not? Compilers are fast and smart and can figure out all kinds of things. Let say I made this interface for my method:</p>
-
-<pre><code> public interface IHttpRequest { Params {get;set;}}
-</code></pre>
-
-<p>I don’t see any reason the compiler (and IDE’s) could not look at the requested interface, look at HttpRequest and say “yep, that works.” It would STILL be type safe. It would STILL happen at compile time. It would NOT require anything to happen at runtime, and it would NOT be the same as duck typing because the object could not be just anything that (might) fulfill the request at runtime. The compiler would simply make a shorthand reference the first time it sees that HttpRequest implements IHttpRequest in the context of the package/assembly.</p>
-
-<p>Maybe for speed there would have to be some kind of keyword on the interface or the param? Maybe not. Hey Anders or whoever is in charge at Oracle&#8230;give me a call, we can work it out.</p>
-
-<p>Can anyone verify if there are static languages that do this? I have a hunch that Scala’s “traits” are somewhat like this but I’m not sure.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -834,6 +817,10 @@ request.Params ...
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2020/02/06/software-engineering-daily/">Software Engineering Daily</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/09/30/walking-into-mordor/">Walking Into Mordor</a>
       </li>
     
@@ -847,10 +834,6 @@ request.Params ...
     
       <li class="post">
         <a href="/blog/2017/08/24/the-nature-of-programming/">The Nature Of Programming</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/22/viscosity-vs-velocity/">Viscosity vs Velocity</a>
       </li>
     
   </ul>
@@ -897,7 +880,7 @@ request.Params ...
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2019 - Ryan Bergman -
+  Copyright &copy; 2020 - Ryan Bergman -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://richontheroadfall10.blogspot.com/2010/09/indiana-to-iowa.html">Rich Beatty</a></span>
 </p>
 

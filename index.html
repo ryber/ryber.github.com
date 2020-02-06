@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan Bergman">
 
   
-  <meta name="description" content="This is probably my favorite talk I&#8217;ve ever done. The video is from DevOpsDays - Des Moines ">
+  <meta name="description" content="I had the honor of appearing on &#8216;Software Engineering Daily&#8217; podcast to talk about practices at John Deere. Topics of discussion include &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2020/02/06/software-engineering-daily/">Software Engineering Daily</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2020-02-06T08:40:00-06:00" pubdate data-updated="true">Feb 6<span>th</span>, 2020</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I had the honor of appearing on <a href="https://softwareengineeringdaily.com/2020/02/03/john-deere-farm-software-with-ryan-bergman/">&#8216;Software Engineering Daily&#8217; podcast</a> to talk about practices at John Deere. Topics of discussion include autonomous vehicles, team autonomy and devops overload</p>
+
+<p>Subscribe: <a href="https://itunes.apple.com/us/podcast/software-engineering-daily/id1019576853?mt=2&amp;ls=1#episodeGuid=http%3A%2F%2Fsoftwareengineeringdaily.com%2F%3Fp%3D8700" title="Subscribe on Apple Podcasts" rel="nofollow">Apple Podcasts</a> | <a href="https://subscribeonandroid.com/softwareengineeringdaily.com/feed/podcast/" title="Subscribe on Android" rel="nofollow">Android</a> | <a href="https://softwareengineeringdaily.com/feed/podcast/" title="Subscribe via RSS" rel="nofollow">RSS</a></p>
+
+
+<p><audio controls>
+  <source src="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio></p>
+
+<p><a href="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" title="Download" rel="nofollow" download="John_Deere_Engineering.mp3">Download</a></p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -556,50 +603,6 @@ That’s a powerful argument for hackathons or just letting your developers have
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/12/04/microservices-as-jars/">Microservices as Jars</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-12-04T06:30:00-06:00" pubdate data-updated="true">Dec 4<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A couple of months ago Uncle Bob Matrin wrote about <a href="http://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html">microservices as jars</a> (or gems or dlls etc). I’ve been harboring the same idea for a while so I was encouraged to see him talking about it. I’ve also seen both positive and downright hostile responses to him. I’ve been honing in on a way to do this and I think I see where the hostility comes from.</p>
-
-<p><img src="/assets/images/Kim_Cheese.jpg" align="right" /> You see there are two rules about microservices. 1) They need to be isolated and 2) They need to be more isolated than that. In fact they need to be Kim Jong-un isolated. When you run a microservice as it’s own deployable behind it’s own REST interface then it’s easy. You can use whatever libraries, languages, even operating systems you want. However, when deploying a jar inside of another application you are suddenly no longer free. The runtime will demand only one version of your orgs favorite MVC for example, and everyone better be on the same page.</p>
-
-<p>So when crafting a jar you need to be dependent on as little as possible. I personally find freedom from frameworks liberating. Besides it’s a “MICRO” service, you don’t need an IOC framework or an ORM at all. In practice I can see many organizations having problems with this, Green developers like glueing frameworks together. Things like Spring make it look like it would be easy to just add yet another jar into the component scan. You need to stop! Because that leads to the dark side….dependency, coupling, and weeks spent upgrading 20 jars at once to Spring 4.1.X when just one of them needs to go.</p>
-
-<p>I know Uncle Bob knows all this already. I’m not sure he emphasized it enough or appreciates how many people will attempt to implement his idea in completely wrong ways.</p>
-
-<p>But I’m going to do it anyway.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -622,6 +625,10 @@ That’s a powerful argument for hackathons or just letting your developers have
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2020/02/06/software-engineering-daily/">Software Engineering Daily</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/09/30/walking-into-mordor/">Walking Into Mordor</a>
       </li>
     
@@ -635,10 +642,6 @@ That’s a powerful argument for hackathons or just letting your developers have
     
       <li class="post">
         <a href="/blog/2017/08/24/the-nature-of-programming/">The Nature Of Programming</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/22/viscosity-vs-velocity/">Viscosity vs Velocity</a>
       </li>
     
   </ul>
@@ -685,7 +688,7 @@ That’s a powerful argument for hackathons or just letting your developers have
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2019 - Ryan Bergman -
+  Copyright &copy; 2020 - Ryan Bergman -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://richontheroadfall10.blogspot.com/2010/09/indiana-to-iowa.html">Rich Beatty</a></span>
 </p>
 
