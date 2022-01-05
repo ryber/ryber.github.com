@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Soylent Code</title>
+  <meta name="author" content="Ryan Bergman">
+
+  
+  <meta name="description" content="Several years ago I became the inheritor of a rather large codebase that had been farmed out to an R&amp;D team of contractors. I could go on with a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ryber.github.com/blog/page/5/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Soylent Code" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37146294-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Soylent Code</a></h1>
+  
+    <h2>Soylent Code is People! It's peeeeople!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ryber.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+   <li><a href="/metal" title="Heavy Metalizr">H&#235;&#228;vy M&#235;t&#228;lizr</a></li>
+   <li><a href="http://bergman99.blogspot.com/" title="The Bergman 99">The Bergman 99</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/19/the-big-book-of-dead-code/">The Big Book of Dead Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-19T00:00:00-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Several years ago I became the inheritor of a rather large codebase that had been farmed out to an R&amp;D team of contractors. I could go on with a litany of grievances about the delivered product but I&#8217;ll leave most of those for other posts. Todays issue is about dead code. When we got the application it was quite bloated with unfinished and forgotten features. Imagine going to look into a bug only to find that there are 3 different modules that do the same thing; only one of which was actually used. There were entire assemblies that did nothing, or very little. Lots of modules were &#8220;flexible&#8221; but then configured to just work one (very simple) way.</p>
+
+<p>How it got this way could be a good masters thesis on the dangers of waterfall and cramming every possible requirement into a bloated spec at the begining, but regardless of that, the team had a problem.</p>
+
+<p>Extra and unnecessary code made building slow, made performance slow, and made testing slow and very difficult. It was confusing for developers to to have to deal with and it wasted all kinds of time with rabbit holes and marathon sessions in the debugger. Worst of all there were few tests to document the behavior.</p>
+
+<p>Finally after a particularly difficult weekend the team had had enough. We made some time, got out the machete and started to hack away at the dead flesh. The result was a faster, less confusing, less buggy system that performed all of the same duties as the original app. Dev velocity went up as build times and time in the debugger went down. Occasionally there would be second guessing, &#8220;What if we need that some day?&#8221;, &#8220;Well, that way IS more flexible&#8221;, but you know what? That&#8217;s what version control is for. To this day I have yet to go hunting back in time looking for some of that dead code.</p>
+
+<p>The other result was legend&#8230;&#8221;The Big Book of Dead Code&#8221;. The more and more code I hacked away the angrier I got. I watched as developers I knew from the R&amp;D team disappeared like they had never existed. It was never their fault that they were asked to write something the product never needed to begin with.</p>
+
+<p><img src="/assets/images/tumblr_ljwfsjJT9O1qhdwsd.jpg" alt=""/></p>
+
+<p>We needed to be able to show to management how much waste a gigantic 2 year waterfall project produced. So I took the diffs and wrote a little script (called &#8220;Bring Out Yer Dead&#8221;) that took the deleted code, removed all of the spaces, tabs and line breaks, formatted everything into a sigle block of raw text and then printed it all out in a 9pt font front and back. As the code was removed the book grew.</p>
+
+<p><img src="/assets/images/tumblr_ljwft3bUOZ1qhdwsd.jpg" alt=""/></p>
+
+<p>It ended up being easily over 500 pages. 500 pages of blood, sweat, yak hair and money. The book became famous, people would come from far and wide to gaze in wonder. I never saw the look on the owners faces when they were shown it, but I was told that it was very sobering. It ended up becoming a symbol of development black holes. Never again would management tolerate non-incremental development and gold plated specs. We would deliver small bits quickly, we would adjust requirements as needed. We would do only what needed to be done. Keep it simple! Yagni! &#8220;Bring out Yer Dead!&#8221;</p>
+
+<p><img src="/assets/images/tumblr_ljwftmvV0B1qhdwsd.jpg" alt=""/></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/18/c-build-times/">C# Build Times</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today a friend was expressing concern about C# test loop times. Even going so far as comparing it to <em>gasp</em> C++</p>
+
+<p>He challenged me to &#8221; please see if you can get a smallish project, maybe 1K unit tests (ignore other tests) to build and run in &lt;45s &amp; blog it!!&#8221;</p>
+
+<p>Well, lately I&#8217;ve been working on setting up a integration test suite for Ninject, so I was familiar with it as not just a small, fast C# library, But one that is quite popular.</p>
+
+<p>So here is the result. For just the build/test of the core project total time from the command line is between 4-5 seconds. 2 of that is running the 223 unit and integration tests.</p>
+
+<p><img src="/assets/images/tumblr_ljvimpibdW1qhdwsd.png" alt=""/></p>
+
+<p>For a total CI package/build including generating packages for .Net 2.0, 3.5, 4.0, 3.5 compact, and silverlight 2, 3 and 4 which adds up to 669 tests takes around 1:45 - 2 minutes.</p>
+
+<p>So I&#8217;d say that shows that .net is at least capable of having fast cycle times. The thing that&#8217;s still missing are good autotest tools. IntelliJ and Eclipse smoke VS in terms of testing and refactoring. ReSharper&#8230;as good as it is&#8230;does nothing for the rest of the bloat in studio.</p>
+
+<p>Now, if only we could get JetBrains to make a ReSharper for MonoDevelop we would be all set.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+ <h1>About</h1>
+  
+  <a href="/about"><img src="/assets/images/smallme.jpg" alt="Me" /></a>
+  <h4><a href="/about">About</a></h4>
+  Soylent Code is people! Well, mostly just one person. My name is Ryan Bergman and I&#8217;m a software geek in Des Moines Iowa. This blog is a place where I can share some thoughts or just write down things I need to remember later.     
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2020/02/06/software-engineering-daily/">Software Engineering Daily</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2019/09/30/walking-into-mordor/">Walking Into Mordor</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/08/07/aesthetic-criticism/">Aesthetic Criticism</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/08/07/monoliths-vs-microservices/">Monoliths vs Microservices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/08/24/the-nature-of-programming/">The Nature Of Programming</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/ryber">@ryber</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ryber',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+<section>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2020 - Ryan Bergman -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://richontheroadfall10.blogspot.com/2010/09/indiana-to-iowa.html">Rich Beatty</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'soylentcode';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

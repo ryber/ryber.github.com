@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Soylent Code]]></title>
+  <link href="http://ryber.github.com/atom.xml" rel="self"/>
+  <link href="http://ryber.github.com/"/>
+  <updated>2020-02-06T08:52:29-06:00</updated>
+  <id>http://ryber.github.com/</id>
+  <author>
+    <name><![CDATA[Ryan Bergman]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Software Engineering Daily]]></title>
+    <link href="http://ryber.github.com/blog/2020/02/06/software-engineering-daily/"/>
+    <updated>2020-02-06T08:40:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2020/02/06/software-engineering-daily</id>
+    <content type="html"><![CDATA[<p>I had the honor of appearing on <a href="https://softwareengineeringdaily.com/2020/02/03/john-deere-farm-software-with-ryan-bergman/">&#8216;Software Engineering Daily&#8217; podcast</a> to talk about practices at John Deere. Topics of discussion include autonomous vehicles, team autonomy and devops overload</p>
+
+<p>Subscribe: <a href="https://itunes.apple.com/us/podcast/software-engineering-daily/id1019576853?mt=2&amp;ls=1#episodeGuid=http%3A%2F%2Fsoftwareengineeringdaily.com%2F%3Fp%3D8700" title="Subscribe on Apple Podcasts" rel="nofollow">Apple Podcasts</a> | <a href="https://subscribeonandroid.com/softwareengineeringdaily.com/feed/podcast/" title="Subscribe on Android" rel="nofollow">Android</a> | <a href="https://softwareengineeringdaily.com/feed/podcast/" title="Subscribe via RSS" rel="nofollow">RSS</a></p>
+
+
+<p><audio controls>
+  <source src="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio></p>
+
+<p><a href="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" title="Download" rel="nofollow" download="John_Deere_Engineering.mp3">Download</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Walking Into Mordor]]></title>
+    <link href="http://ryber.github.com/blog/2019/09/30/walking-into-mordor/"/>
+    <updated>2019-09-30T14:55:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2019/09/30/walking-into-mordor</id>
+    <content type="html"><![CDATA[<p>This is probably my favorite talk I&#8217;ve ever done. The video is from DevOpsDays -  Des Moines</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k6_xlRUNzF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMuwKDPIo7BEn3ftVW0CEFn9ixRxgwG7jebqrvYiMgDuWyGpmo9Rym4KRBV_V0dURIZIBFwOuciAs_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aesthetic Criticism]]></title>
+    <link href="http://ryber.github.com/blog/2018/08/07/aesthetic-criticism/"/>
+    <updated>2018-08-07T09:15:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2018/08/07/aesthetic-criticism</id>
+    <content type="html"><![CDATA[<p>Here is the deck from my Agile 2018 presentation on Aesthetic Criticism for software teams:</p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRSDuIbTCSXjhB-CqVO84jkSz830tCY3lR_24I28ULb6znkE4WGagSZDvBS3JOs2jbIG62e7PU4BsBR/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Monoliths vs Microservices]]></title>
+    <link href="http://ryber.github.com/blog/2018/08/07/monoliths-vs-microservices/"/>
+    <updated>2018-08-07T09:09:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2018/08/07/monoliths-vs-microservices</id>
+    <content type="html"><![CDATA[<p>Here is the deck from my Agile 2018 presentation on Monoliths vs Microservices:</p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQbtuFYw1Q2sa3QefLXlSF0Lpg23xNfnmtP0WgEB2wOyBygHQmOFQEGbkS9syO_9KgdRQSpEEB-XxJs/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Nature Of Programming]]></title>
+    <link href="http://ryber.github.com/blog/2017/08/24/the-nature-of-programming/"/>
+    <updated>2017-08-24T10:47:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2017/08/24/the-nature-of-programming</id>
+    <content type="html"><![CDATA[<p>In the weeks since the google manifesto I’ve been thinking about what I see as a fundamental misunderstanding the nature of software development I wanted to get it off my chest.</p>
+
+<h4>Is Programming Math and Engineering?</h4>
+
+<p>Yes! Of course it is. Where the author fails is in narrowly defining math and engineering to traditionally male dominated professions. Historically and across cultures women have dominated domestic crafts. Weaving, knitting, embroidery, tailoring, basket and pottery making are all forms of “thing thinking” that require high-level problem solving, mathematics and a deep understanding of materials. Yet we do not value them at the same level of men’s work. This is partially due to the more temporal and replaceable nature of these crafts but it’s also because we do not value women at the same level we value men. So we call the things men do “engineering” and the work women do “crafts”. The fact that men’s traditional crafts involve stone and metal, and women’s involve clay and yarn is irrelevant to the skills needed or women’s interest in them. Just ask Hobby Lobby.</p>
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Loomwork.jpg#/media/File:Loomwork.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Loomwork.jpg" alt="Loomwork.jpg" height="480" width="640"></a><div style="font-size:8px">photo by <a href="https://en.wikipedia.org/wiki/User:Randyoo" class="extiw" title="en:User:Randyoo">Randy Oostdyk</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1314700">Link</a><br /></div>
+  <i>Weaving involves configuring complex repeating patterns of information into a machine that renders that information to new forms. (Sound familiar?)</i>
+  </p></p>
+
+<h4>Is Programming Human Language?</h4>
+
+<p>Yes! Of course it is. When we program we have several different audiences. The compiler or runtime is one. Other developers that must read and understand our program is another. Some of the worst code I’ve ever worked on was written by coders with poor communication skills. Naming things is hard, composing code into a readable flow is hard. By applying basic composition skills to our code we can help those that come after us.</p>
+
+<p>Larry Wall, the creator of the massively influential Perl programming language has spoken and written extensively on the connection between human linguistics and programming. Perl itself was informed and designed with linguistic principles.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ju1IMxGSuNE" frameborder="0" allowfullscreen></iframe>
+
+
+<h4>Is Programming Applied Sociology?</h4>
+
+<p>Yes! Of course it is. As all programmers who have been around a while will tell you. Writing the right code is much harder than writing the code right. Programmers must be part of the process of gathering requirements and empathising with customers. We have to work hard to ask the right questions, give meaningful critiques, and understand the problems that need to be solved.</p>
+
+<h4>Is Programming STEM?</h4>
+
+<p>Maybe? My personal feeling is that part of the problem of getting women and men who do not conform to stereotypical “Big Bang Theory” nerdom is in the public perception and marketing of the career. We are working against a harmful and counterproductive vision of the coder as a socially awkward genius sitting in a dark room. Most programming isn’t writing router software or physics engines.  Developing software for humans requires a high degree of general purpose problem solving, teamwork and empathy. Many of the best programmers I’ve worked with did not come into programming through traditional educational paths and I’m not convinced that grouping programming with math and engineering is beneficial to it from a marketing perspective. Perhaps it should be in business, design, or even on it’s own.</p>
+
+<p>We are also working against a toxic and misogynistic culture that drives the women who do want to engage out. The most baffling thing about the manifesto is it’s choice to basically ignore the voices of women who will tell you why they left. It’s not a mystery we need brain scans to find out. Just ask.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Viscosity vs Velocity]]></title>
+    <link href="http://ryber.github.com/blog/2016/08/22/viscosity-vs-velocity/"/>
+    <updated>2016-08-22T13:27:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2016/08/22/viscosity-vs-velocity</id>
+    <content type="html"><![CDATA[<p>Velocity is a largely meaningless “measurement”. It’s relative, it’s based on estimation (which we are all horrible at), and it’s subject to all kinds of external forces that impact teams.</p>
+
+<p>A much better thing to measure are the forces hampering our teams from delivering. I like to think of this as viscosity. In science, viscosity is a measurement for how fluid a liquid is.  Water flows faster and easier than honey. Similarly, our teams will go as fast as they are capable of. The real issue is finding what is slowing them down.</p>
+
+<p>I came up with an entirely unscientific method for calculating a team’s viscosity. In the course of a team delivering something to their customer:</p>
+
+<ol>
+<li><strong>Start with 1 point</strong></li>
+<li><strong>Add 1 Point</strong> for each external team or person (not on the team) you are dependent on in order to deliver. This could be DBA’s architects, operations, security, marketing, etc etc. It could also be another team responsible for some other part of a feature. Maybe your teams are split between “back end” and “UI” for example.</li>
+<li><strong>Add 1 Point</strong> for each required technology needed that your team is not proficient in.</li>
+</ol>
+
+
+<p>Easy huh? Your goal is a value of <strong>1</strong>. Obviously not all values of 1 are equal but it should give you a target to work on. You are free to play with the point system. Maybe dependencies outside of your company or area cost more?</p>
+
+<p> Teams that are self sufficient are going to be faster or at least be more responsible for their own speed. What would it take to get a team with all of the skills and people needed to deliver?</p>
+
+<p>Of course teams impact other teams. Viscosity is all about how a liquid moves in relation to itself. What’s really fun is to take all of the viscosity points for an organization and cross them together. So rather than just run the points of each team, inherit the points from your dependencies. So if your team is dependent on a team with a viscosity of 5 then you now also have 5 as well (plus whatever else).</p>
+
+<p>Map this out and you will start to see the big bottlenecks of your organization. You could create a nice dependency graph and watch as it explodes. Teams that should be really fast suddenly look slow because of a web of other slow teams (usually built to “support” them).</p>
+
+<p><img src="http://ryber.github.com/assets/images/viscosity.png" align="right" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[So What Do We Do With The Architects?]]></title>
+    <link href="http://ryber.github.com/blog/2015/08/04/so-what-do-we-do-with-the-architects/"/>
+    <updated>2015-08-04T14:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2015/08/04/so-what-do-we-do-with-the-architects</id>
+    <content type="html"><![CDATA[<p>Here is the deck from my Agile 2015 presentation on Architects:</p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/11jAnJwOLOS6RoRzGYkz7Qy6QOBNFCa3U5lx4fD_DuNo/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How we saved $200,000 per year with a hackathon]]></title>
+    <link href="http://ryber.github.com/blog/2015/03/28/how-we-saved-00/"/>
+    <updated>2015-03-28T07:09:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2015/03/28/how-we-saved-00</id>
+    <content type="html"><![CDATA[<p>At my current gig we have a fairly large Java web application. It has a Fitnesse suite of around 2000 tests that until recently took about 12-13 minutes to run on a good machine.</p>
+
+<p>One of our developers (<a href="https://twitter.com/briandanenhauer">@briandanenhauer</a>) felt the there was something wrong with that time and used one of our hackathons to do something about it. He ran the tests under a profiler and found a significant problem with the way we (and Fitnesse) were wiring in fixtures.</p>
+
+<p>Fitnesse has a Import fixture which can be used to import the java packages containing your fixtures. For example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>|Import|
+</span><span class='line'>|info.fitnesse.fixturegallery|
+</span><span class='line'>|info.fitnesse.anotherPackage|</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Our project had attempted to package our fixtures into feature specific packages. Over time this had left us with over 50 fixture sub-packages.</p>
+
+<p>Whenever Fitnesse needed to find a fixture it would loop over the list of imports and look in each package for the fixture. If it didn’t find it it would throw an exception up and then continue looking until it found it. This was resulting in literally millions of exceptions being thrown throughout the run of the main suite.</p>
+
+<p>@briandanenhauer did the simple thing and flattened all of our fixtures into one package and one corresponding row in the import fixture.</p>
+
+<p>The the result was dramatic. A full build of our system went from 13-14 minutes to 6-7! The team was floored and there was much rejoycing! <img src="http://ryber.github.com/assets/images/rejoicing.gif" align="right" />
+I did a very quick and dirty calculation on the savings in dev time and came up with $200,000 per year for our staff. That would be if every developer ran verify only once per workday (and we know it’s more).
+That’s a powerful argument for hackathons or just letting your developers have time to make their projects better.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Are Programmers Engineers?]]></title>
+    <link href="http://ryber.github.com/blog/2015/03/22/are-programmers-engineers/"/>
+    <updated>2015-03-22T09:15:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2015/03/22/are-programmers-engineers</id>
+    <content type="html"><![CDATA[<p>Last week at O&#8217;Reilly’s Software Architecture Conference Glenn Vanderburg from LivingSocial referenced (anonymously) <a href="https://twitter.com/ryber/status/562310762979655680">something I tweeted</a> a few months back about software engineering. It’s a very good presentation and I think Glenn makes a very strong argument that programming is engineering. Go ahead and watch it. My tweet comes in early around 1:07</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zDEpeWQHtFU" frameborder="0" allowfullscreen></iframe>
+
+
+<p>I can remember when I made that tweet and I was thinking less about if programming itself was engineering and more about if programmers were engineers. My father was an architect who designed prisons, schools and shopping malls (ok, all prisons). My father-in-law is a mechanical engineer who worked for the US Army Corps of Engineers on top secret projects like the stealth bomber. So I am loath to call myself an architect or an engineer in their presence.</p>
+
+<p>As my father once said when I told him I was considering taking a job as a software architect: “pssh, you’re not an architect until you prove to the state that your work isn’t going to kill someone”</p>
+
+<p>That’s an important point. Architects and engineers (at least structural, mechanical and civil) are required to go through a rigorous education, licensing and accreditation systems. They are legally liable for their work and they are keenly aware that they have the public’s lives in their hands.</p>
+
+<p>In software development you can take a 3 week Node.js bootcamp from a 22 year old and get a job writing financial systems.</p>
+
+<p>If programming is engineering. How do we get programmers to act like engineers (i.e. professionals)?</p>
+
+<p>There is an almost unlimited demand for programmers that need to write everything from missile guidance systems to cheap Candy Crush knock-offs and we seem to have almost no control at all over how these developers are educated. The universities don&#8217;t teach the art of programming. Most employers don&#8217;t either. I love the craftsman movement but so far it only exists in it&#8217;s own little alternate reality bubble.</p>
+
+<p>It occurred to me while watching Glenn that the attitude I (and many others) have had of deriding programming as engineering serves to feed into the idea that writing crap software is ok. Perhaps if we reorient a little towards calling our practice engineering it would help foster the professionalism many of us long for.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Developers In Wonderland]]></title>
+    <link href="http://ryber.github.com/blog/2015/02/22/developers-in-wonderland/"/>
+    <updated>2015-02-22T12:12:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2015/02/22/developers-in-wonderland</id>
+    <content type="html"><![CDATA[<p>Last week I posted a fun little troll of Java on the Twitters and it kind of blew up.</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>Everyone enjoys trolling JavaScript for it&#39;s weirdness but everyone has something. Here&#39;s Java <a href="http://t.co/SszNlbefLP">pic.twitter.com/SszNlbefLP</a></p>&mdash; Ryan Bergman (@ryber) <a href="https://twitter.com/ryber/status/567681894662164480">February 17, 2015</a></blockquote>
+
+
+<script async src="http://ryber.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>What I got in response (besides the retweets and favs) was a lot of people who felt the need to inform me of why each line was the way it was (and in some cases how stupid I was for not knowing it). I started to experience a phenomenon that is quite common amongst software developers that I like to call “Wonderland Syndrome”.</p>
+
+<blockquote style="font-size:110%">
+“But I don’t want to go among mad people,&#8221; Alice remarked.<br/>
+&#8220;Oh, you can’t help that,&#8221; said the Cat: &#8220;we’re all mad here. I’m mad. You’re mad.&#8221;<br/>
+&#8220;How do you know I’m mad?&#8221; said Alice.<br/>
+&#8220;You must be,&#8221; said the Cat, &#8220;or you wouldn’t have come here.”<br/>
+― Lewis Carroll, Alice in Wonderland<br/>
+</blockquote>
+
+
+<p>Apart from Alice and the Cheshire Cat nobody in Wonderland knew that they were mad. This attitude, to simply accept the rules a system has given to you whether they are logical and good or not is actually a strength in computer programming. In a <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">paper from Middlesex University</a> it was found that successful CS majors were better able to accept and understand the sometimes odd rules of computers.</p>
+
+<blockquote style="font-size:110%">
+“To write a computer program you have to come to terms with this, to accept that whatever you might want the program to mean, the machine will blindly follow its meaningless rules and come to some meaningless conclusion”
+</blockquote>
+
+
+<p> It&#8217;s also why we all love puns so much. The problem comes when this understanding moves into an orthodoxy around how it should be. None of the examples in the tweet show this more than the response to the last item. Some people seemed incensed that I apparently didn’t understand that prefixing a number with 0 indicated an octal number and that this is how it was in C and many other languages. <a href="https://www.gnu.org/fun/jokes/ed-msg.html">&#8220;0 is the standard!&#8221;</a></p>
+
+<p>0 is a horrible thing to use to indicate octal. My 3rd grader can tell you that leading zeros are not significant and so <code>022 - 2 = 20</code>. Why must we surprise everyone with something different? Maybe 43 years ago when C was being created on PDP-8s with 12 bit words it was the only thing to do. I tend to think that even then anything else would have been better.</p>
+
+<p>Fast forward to 1995 and Java had no reason at all to continue with it. I believe they did so simply because of Wonderland Syndrome. &#8220;Of course octals start with 0, and hedgehogs make perfect croquet balls.&#8221;</p>
+
+<p>Yet here we are, running caucus-races to get dry and fixing bugs because of the limitations of a 43 year old computer. THAT my friends, is the WTF.</p>
+
+<hr />
+
+<p>I should note that most modern languages are moving away from 0 for octal. C#, Python 3, ECMAScript 5, etc. Alas, it is probably too late for Java as changing it might break the .0000001% of programs that did it on purpose.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Microservices as Jars]]></title>
+    <link href="http://ryber.github.com/blog/2014/12/04/microservices-as-jars/"/>
+    <updated>2014-12-04T06:30:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2014/12/04/microservices-as-jars</id>
+    <content type="html"><![CDATA[<p>A couple of months ago Uncle Bob Matrin wrote about <a href="http://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html">microservices as jars</a> (or gems or dlls etc). I’ve been harboring the same idea for a while so I was encouraged to see him talking about it. I’ve also seen both positive and downright hostile responses to him. I’ve been honing in on a way to do this and I think I see where the hostility comes from.</p>
+
+<p><img src="http://ryber.github.com/assets/images/Kim_Cheese.jpg" align="right" /> You see there are two rules about microservices. 1) They need to be isolated and 2) They need to be more isolated than that. In fact they need to be Kim Jong-un isolated. When you run a microservice as it’s own deployable behind it’s own REST interface then it’s easy. You can use whatever libraries, languages, even operating systems you want. However, when deploying a jar inside of another application you are suddenly no longer free. The runtime will demand only one version of your orgs favorite MVC for example, and everyone better be on the same page.</p>
+
+<p>So when crafting a jar you need to be dependent on as little as possible. I personally find freedom from frameworks liberating. Besides it’s a “MICRO” service, you don’t need an IOC framework or an ORM at all. In practice I can see many organizations having problems with this, Green developers like glueing frameworks together. Things like Spring make it look like it would be easy to just add yet another jar into the component scan. You need to stop! Because that leads to the dark side….dependency, coupling, and weeks spent upgrading 20 jars at once to Spring 4.1.X when just one of them needs to go.</p>
+
+<p>I know Uncle Bob knows all this already. I’m not sure he emphasized it enough or appreciates how many people will attempt to implement his idea in completely wrong ways.</p>
+
+<p>But I’m going to do it anyway.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trolling Technology]]></title>
+    <link href="http://ryber.github.com/blog/2014/10/21/trolling-technology/"/>
+    <updated>2014-10-21T19:26:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2014/10/21/trolling-technology</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve been upgrading frameworks in a number of projects lately and I felt the need to rant about frameworks I really dislike.</p>
+
+<h3>HAML</h3>
+
+<p><img src="http://ryber.github.com/assets/images/hipster_cat.jpg" align="right" /> Several years ago some hipster programmers were frustrated by HTML. Since dogs and babies were qualified to write HTML they weren&#8217;t able to let everyone else know how awesome they were on 100% of a project. So they invented HAML to protect their smartypants status.</p>
+
+<p>The main battle cry of HAML seems to be that you can write HTML “faster”. As if writing HTML was the bottleneck of programming. If your main bottleneck is writing HTML then either you are the the most awesome programmer on the face of the planet and you need to quit writing web sites and start finding a cure for ebola or you don’t work on anything remotely difficult (lucky you). Thankfully <a href="https://docs.oseems.com/general/application/vim/auto-complete-html">every</a> <a href="http://web-mode.org/">text editor</a> <a href="https://www.sublimetext.com/docs/2/auto_complete.html">on earth</a> <a href="http://superuser.com/questions/131542/html-tag-auto-complete-in-notepad">autocompletes</a> <a href="http://www.barebones.com/support/bbedit/arch_bbedit9.html">HTML</a>. Which means HAML is a problem disguised as a solution to a problem that doesn’t exist.</p>
+
+<p>(note that I don’t feel the same about SAAS or LESS which at least help to fix some of the major problems with the W3C’s <a href="https://infrequently.org/2007/09/css-3-a-giant-serving-of-fail/">biggest failure</a>: CSS)</p>
+
+<h3>ORM&#8217;s</h3>
+
+<p>Hibernate, Rails, iBatis, whatever. ORMs do two things: 1) Save you from writing a bunch of mundane crap early in a project and 2) Guarantee you will spend oodles of time trying to debug a labyrinthian hellhole later in the project. This is the root of what I like to call the the &#8220;Law Of Frameworks&#8221; which states</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Any framework designed to keep you from
+</span><span class='line'>thinking about a thing will force you to
+</span><span class='line'>have to think about that thing in more
+</span><span class='line'>difficult ways than if you had not used it.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I&#8217;ve seen team after team, project after project waste weeks to months fighting ORM&#8217;s. Stop the madness!</p>
+
+<h3>YAML</h3>
+
+<p>See HAML. Use JSON.</p>
+
+<h3>Apache HttpClient (any version)</h3>
+
+<p>Try to think of the most convoluted and stupid way to make a web request. Then make it dumber than that and require at least eight classes to do it. This is HttpClient. This is why people hate Java.</p>
+
+<h3>AOP</h3>
+
+<p>There is nothing worse than a method suddenly working differently in your production code than it does in tests. This is what AOP does. Making it the antithesis of the <a href="http://en.wikipedia.org/wiki/Principle_of_least_astonishment">Principle of least astonishment</a>. ORM’s often make use of AOP which should be a sign. As does the last item.</p>
+
+<h3>Spring</h3>
+
+<p>Spring is the most cargo-culted software framework in the world. Almost nobody understands the entire thing. At best people learn a small bit for a little while. Then they leave it alone for 6 months and forget. The framework itself it a giant magical mudball that configures itself with annotations and XML (yes I know about the Java configs but those are not 100%, nor are they really much better). Almost nothing is obvious or simple.   StackOverflow is <a href="http://stackoverflow.com/questions/18022571/aspect-tag-on-spring-is-not-recognized">littered</a> with questions about <a href="http://stackoverflow.com/questions/26281715/is-spring-startup-impacted-by-order-on-disk">completely obscure</a>, <a href="http://stackoverflow.com/questions/3896013/no-adapter-for-handler-exception/3896018">unhelpful</a>, and <a href="http://stackoverflow.com/questions/1468657/spring-weird-error-in-bean-creation">downright weird</a> errors. The answers (if they have one) are often something along the lines of “oh you forgot to implement and register the AbstractSingletonProxyFactoryBean: (which is a convenient proxy factory bean superclass for proxy factory beans that create only singletons of course). The answer almost never explains what the hell any of this means. Just worship the coke bottle correctly and the bean will show up with candy on the spring equinox!</p>
+
+<p>If ever you choose to upgrade Spring you will find that half the classes you used before have been replaced by other classes that don’t do the same things.</p>
+
+<p>This is the other reason people hate Java.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building an Airplane While Flying]]></title>
+    <link href="http://ryber.github.com/blog/2014/08/02/building-an-airplane-while-flying/"/>
+    <updated>2014-08-02T06:30:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2014/08/02/building-an-airplane-while-flying</id>
+    <content type="html"><![CDATA[<p>Here is the deck from my <a href="http://agile2014.sched.org/event/e1fccc9283f8fa229f154da3f7eb63f6#.U9zLm41dVy8">Agile 2014</a> presentation.
+If you would like to see it live I&#8217;ll be presenting it again at <a href="http://dsmagile.agileiowa.org/">dsmAgile</a></p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/13ykd_jO18gOzQZ9zvwsCQI78nygWVwoyUjHdhINX9sA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="484" height="288" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Real Options For Technical Debt]]></title>
+    <link href="http://ryber.github.com/blog/2014/06/21/real-options-for-technical-debt/"/>
+    <updated>2014-06-21T06:01:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2014/06/21/real-options-for-technical-debt</id>
+    <content type="html"><![CDATA[<p>The other night I gave a presentation on real options and technical debt to the <a href="http://www.agileiowa.org/2014/06/12/real-options-for-technical-debt/">Agile Iowa</a> group. We had a great conversation about it afterwards. I was asked to post the deck so here it is.</p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/1QPx8ufyPb3Qnh2fnq7m8cLIhS_dfcTRGQVsOioQl6Ng/embed?start=false&loop=false&delayms=5000"" frameborder="0" width="484" height="288"   allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Case Of The Lost Commits]]></title>
+    <link href="http://ryber.github.com/blog/2014/03/22/the-case-of-the-lost-commits/"/>
+    <updated>2014-03-22T17:16:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2014/03/22/the-case-of-the-lost-commits</id>
+    <content type="html"><![CDATA[<p>Recently at my gig we converted a large project from HG to Git. There are a lot of developers on this project; many who have never worked on Git so I expected a few bumps. So far it’s actually been pretty smooth sailing but yesterday I was contacted by a dev with a Git problem I had never seen.</p>
+
+<p>The day before he had made a commit and pushed it to the server but now the content of the commit was gone. Not reverted mind you, just gone, like it had never happened even though the commit was clearly still in history.</p>
+
+<p>To be clear, looking at the history of the entire repo showed the commit and it’s changes as something that happened. But looking at any of the individual files in the commits didn’t show the commit at all. WTF?!</p>
+
+<p>This turned out to be the result of a bad merge by another developer. I was able to recreate the scenario, take a look at the weird history:</p>
+
+<pre><code>ryber$ git log --graph --oneline --all
+*   1b4cd92 Bad merge by dev B
+|\  
+| * e879eb6 This is the missing commit by dev A
+* | 93933b9 commit by dev B
+|/  
+* 6baed99 root commit
+</code></pre>
+
+<p>Here we can see that e879eb6 is in history. You can see that part of that commit was a change to foo:</p>
+
+<pre><code>ryber$ git whatchanged e879eb6
+commit e879eb6007ddef2a955a71651bcf31a25727b510
+Author: ryber
+Date:   Sat Mar 22 16:37:28 2014 -0500
+
+    This is the missing commit by dev A
+
+:100644 100644 eb314de... e3525a0... M  baz
+:100644 100644 ae3cab0... cf561bd... M  foo
+</code></pre>
+
+<p>Yet, if we look at the history of foo that e879eb6 is missing!</p>
+
+<pre><code>ryber$ git log --pretty=oneline --abbrev-commit -- foo
+6baed99 root commit
+</code></pre>
+
+<p>What happened here? Where did e879eb6 go in the history of foo? I can understand if the change was reverted but shouldn&#8217;t we see some history of that revert? This is where we get into the bad merge</p>
+
+<p>You may have notice that the missing commit includes another change to the “baz” file. It turns out that the second dev also changed baz in 93933b9 and was forced to go into a merge conflict when he pulled. To someone new to git the merge process might be a bit shocking. This is because you see all of the changes impacted by the merge. This includes your own changes as well as all of the changes to files in the tree you are merging in that happened after your last common ancestor. Developer B was presented with something like this when he was merging:</p>
+
+<pre><code>ryber$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Changes to be committed:
+
+    modified:   foo
+
+Unmerged paths:
+  (use "git add &lt;file&gt;..." to mark resolution)
+
+    both modified:      baz
+</code></pre>
+
+<p>You might think “What the hell? I didn’t change foo?! Why is foo here?”. You might even attempt to get rid of the foo changes … which is exactly what happened. It’s actually kind of hard to do from the shell but fairly easy to do from some gui tools like SourceTree. From the shell you just have to issue a checkout of a previous version like this:</p>
+
+<pre><code>ryber$ git checkout HEAD^ -- foo
+</code></pre>
+
+<p>Then an add, and a commit and voilà! The file has now been reverted to it’s previous state as part of a merge and it’s individual content history no longer contains the missing commit.</p>
+
+<p>You may be wondering how we got out of this mess? We simply cherry-picked the commits back into the head. Not very subtle but it worked.</p>
+
+<pre><code>ryber$ git cherry-pick e879eb6
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Music For Coding]]></title>
+    <link href="http://ryber.github.com/blog/2014/01/05/music-for-coding/"/>
+    <updated>2014-01-05T18:43:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2014/01/05/music-for-coding</id>
+    <content type="html"><![CDATA[<p>A short list of my favorite coding music:</p>
+
+<h2>Information Society <img alt="Hack" align="right" src="http://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Hack_InSoc_cover.jpg/220px-Hack_InSoc_cover.jpg" width="220" height="218" /></h2>
+
+<p>In the late 80’s and early 90’s as I was getting into hacker culture InSoc was a major influence for me and my friends. They have everything: songs inspired by William Gibson’s cyberpunk novels, love songs to Nikola Tesla and IBM, samples from Star Trek, and a sound that gave the impression it was made on an Amega at 3:00 am after they left a rave. Best of all they regularly encoded messages and hacker challenges into analog data-sound tracks at the end of their albums. The minute a band has you wiring your CD player into an old handset modem they’ve won.</p>
+
+<h2>Kraftwerk: The Mix <img alt="The Mix" align="right" src="http://upload.wikimedia.org/wikipedia/en/thumb/0/00/The_Mix.jpg/220px-The_Mix.jpg" width="220" height="219" /></h2>
+
+<p>It may be cliche for a programmer to love Kraftwerk, but I don’t care. More than just a best-of “The Mix” is rare in the world of electronic re-mix albums in that it’s mostly better than the originals. I particularly find the version of “Computer Love” to be the best out there.</p>
+
+<br /><br />
+
+
+<h2>Robyn: Body Talk <img alt="Body Talk"  align="right" src="http://upload.wikimedia.org/wikipedia/en/thumb/7/70/Body_Talk.jpg/220px-Body_Talk.jpg" width="220" height="220" class="thumbborder" /></h2>
+
+<p>Don’t chalk up Robyn as just another disposable  dance club act. The electronic music she produces is impeccably produced and well crafted. It has numerous interesting patterns and layers that pay back on repeated plays. The Body Talk series is by far the best. For something even more abstract check out her work with Röyksopp.</p>
+
+<h2>Santigold <img alt="Santigold" align="right" src="http://ryber.github.com//upload.wikimedia.org/wikipedia/en/thumb/d/db/Santogoldalbum.jpg/220px-Santogoldalbum.jpg" width="220" height="220" /></h2>
+
+<p>Whenever I listen to Santigold I imagine this is the music the the rastafarian hackers from space station Zion are listening to in Neuromancer.</p>
+
+<br /><br /><br /><br />
+
+
+<h2>The Soundtrack to Conan the Barbarian <img align="right" alt="A man, wearing nothing but a loincloth and a horned helm, strides forth, holding a sword aloft in his left hand. A blond woman kneels in front of him, holding a curved blade with both hands." src="http:////upload.wikimedia.org/wikipedia/en/thumb/8/81/Conan_the_Barbarian_by_Renato_Casaro.jpg/220px-Conan_the_Barbarian_by_Renato_Casaro.jpg" width="220" height="312" /></h2>
+
+<p>The soundtrack was made first, and then the movie was basically a giant music video for a remix of Carmina Burana. Perfect background music for epic coding.</p>
+
+<h2>A few others</h2>
+
+<p>
+<ul>
+<li>Gary Numan</li>
+<li>The KLF aka The Justified Ancients of Mu Mu aka The Timelords</li>
+<li>The Orb</li>
+<li>Aphex Twin </li>
+<li>Brian Eno</li>
+<li>Daivd Bowie’s Berlin trilogy (Low, Heroes, Lodger)</li>
+</ul>
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Get Off My Lawn]]></title>
+    <link href="http://ryber.github.com/blog/2013/12/27/get-off-my-lawn/"/>
+    <updated>2013-12-27T08:32:00-06:00</updated>
+    <id>http://ryber.github.com/blog/2013/12/27/get-off-my-lawn</id>
+    <content type="html"><![CDATA[<p>Back when I first learned to program we didn’t have fancy “IDEs” or “text editors” that let you scroll through “files”. Hell we didn’t even have files. We wrote our code directly into a terminal one line at a time and if we needed to edit that line we rewrote it entirely. We could only see about 20 lines of our programs at any given time and that was all we needed. We didn’t have a dozen other windows for “file explorers” or “unit test runners” or any of the other useless crap kids these days fit on their screens.</p>
+
+<p>The reason we didn’t have any of that is because our computers could only do one thing and that was run a BASIC interpreter. We didn’t have “hard drives” and only the fancy pants kids had disk drives of any kind. On my block you turned on your computer, you programmed it to do something, and then you turned it off, and when you did your program went away. I used to program games and then keep my computer running for weeks so I could keep playing it. Eventually I did get a cassette tape recorder that could save data. It saved my games sometimes and would load the ones it did save&#8230;sometimes. I’d say it had about a 30% success rate at doing anything successfully.  The rest of the time you just re-wrote the program again.</p>
+
+<p>Back in those days we didn’t have the “internet”, so there was no “Stack Overflow” or “GitHub” where you could find out how to code. You had to subscribe to a magazine like <a href="http://en.wikipedia.org/wiki/Byte_(magazine)">Byte</a> that had programs written into the back of it. You would copy the entire program by hand and then spend several hours trying to figure out where you copied it wrong. Then once you finally had something that worked you could experiment by changing lines. That&#8217;s how we learned.</p>
+
+<p>If you did want to program anything more complicated than printing your name over and over you had to plan how many lines you thought a section would take beforehand. You see we didn’t have “classes” or “functions”. We just had blocks of code that took up a section of numbered lines. You thought “I think the code necessary to draw this sprite will take up 10 lines”. So you set aside lines 500-599 because you knew you were always wrong my at least a factor of 10. And if you needed more after that you had to keep the rest of the lines somewhere else because 600 was probably already taken. You couldn’t just lazily hit return 20 times and have everything move for you. It just didn’t work that way and besides, we couldn’t waste valuable bytes on luxuries like carriage returns!</p>
+
+<p>You always kept a notebook next to you where you documented where the lines of various subroutines were because the computer sure as hell wasn’t going to help you. All you could do was list the program, or list a range of line numbers. “But why don’t you just pipe it through grep” you say? Because I ain’t some damn college professor that’s why! These are home computers dag-nabbit not some million dollar Unix server from Ma Bell. We didn’t have “grep” or “sed” or “pipes”. We had LIST&#8230;and we liked it!</p>
+
+<p><img src="http://ryber.github.com/assets/images/TImainscreen.gif" alt="TI 99/4a homescreen" align="left" hspace="10" />My first computer was a TI 99/4a. It had a 16 bit 3 MHz processor and came with 256 bytes of RAM and 16kb of extended VRAM. That was more than enough for any of the programs I wrote at home. I made my own knock offs of games like Centipede, Pong and Bezerk. Just let that sink in for a moment. Centipede, written in BASIC, in under 16kb of RAM. When Bill Gates supposedly said that nobody would ever need more than 640kb of ram we all believed him because that was an INSANE amount of memory. At the time I couldn’t even fathom what I would possibly use that much memory for. You can only run one program at a time anyway.</p>
+
+<p>We take for granted how luxurious software development is today. We have endless supplies of ram and disk. It’s easy to forget that not long ago we had almost nothing and yet we did amazing things, and made amazing messes of our code. Some things never change. Happy New Year and GET OFF MY LAWN!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What Developers Want]]></title>
+    <link href="http://ryber.github.com/blog/2013/10/07/what-developers-want/"/>
+    <updated>2013-10-07T09:00:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2013/10/07/what-developers-want</id>
+    <content type="html"><![CDATA[<p>The other day I got a email from a recruiter. Now, I get stuff from recruiters all the time but this one stuck out a bit because it didn’t follow the standard line. I hope she doesn’t mind but I decided I wanted to answer her questions here on my blog because I think they are important.</p>
+
+<p>Her main question was: “What do developers really want out of professional opportunities that they might not be getting with their current employers? To put it another way, what are the things that entice you guys?”</p>
+
+<p>That’s an interesting question. What DO we want? Why do some employers have a bad rap in town while others seem to have their pick of the top developers?</p>
+
+<p>First off I want to dispel one myth. The recruiter followed her question up with “My inclination is that money is a secondary factor when seeking out new grounds for professional growth”. Yes and no. Money is not the ONLY factor but it certainly is a large factor and it can easily disqualify an employer from a job search. Especially for the top talent in town who may be accustomed to a certain lifestyle. We all live in this same economy. We have families and children we want to send to college. We want to take that trip to New Zealand. We want a nice home. Money is a factor. Your job as an employer is to make sure that it’s not a negative when I’m considering you. It’s quite insulting and sad when you meet someone who thinks a beer fridge and a foosball table somehow makes up for low salaries. It doesn’t.</p>
+
+<p>That said, while pay is a factor for why we might NOT take a job it’s not an indicator of why I might take a job, or stay at a job. As long as the pay is in a competitive range the other factors come to the front. So what are those factors?</p>
+
+<p>1) “Self-Determination”. People want to feel like they are contributing to solutions. They want to bring value to their clients. The absolute last thing they want is to feel like some cog responsible for implementing someone else&#8217;s design. This is why top-down architecture is so detrimental to good teams. I want some amount of influence over the design, the architecture, and the tools. I want to feel like when I come to work people want me to be there because they value my contributions, opinions and the code I write. Most importantly, if something is in my way, or is inefficient, and I have a better way to solve it, I want the power to solve it. Nothing is more frustrating than being told. “Yea, we know it sucks, but we have to do it that way because [corporate policy, Joffrey the “Architect” said so, we always did it that way, derp].”</p>
+
+<p>2) Customer feedback: I want to know that the work I’m doing matters. Make sure developers have the opportunity to interact with customers, even if that is part of market research or trade conferences. Ideally I want constant feedback from a product owner who works with the development staff every day and makes sure we are working on the right things.</p>
+
+<p>3) A cool project with cool technologies: As developers we like cool things and cool toys. I realize sometimes you’re an insurance company and there is little you can do to make your app more exciting. That just means you need to get creative. Sorry but nobody wants to work on a legacy struts app running on Websphere.</p>
+
+<p>4) XP: I can’t speak for everyone on this but I think I speak for a growing majority. I will not consider a job where XP practices are not followed and embraced. Particularly BDD/TDD and CI. I’m also cool if you’re not there yet and you want me to help you get there. Just don’t be wishy washy about it. XP is the one exception to rule #1. Everyone needs to get on board. We are professionals, act like it and take your craft seriously.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java 8 Lambda Expressions]]></title>
+    <link href="http://ryber.github.com/blog/2013/09/03/java-8-lambda-expressions/"/>
+    <updated>2013-09-03T20:14:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2013/09/03/java-8-lambda-expressions</id>
+    <content type="html"><![CDATA[<p>Here is the deck from tonights Java 8 lambda expression presentation at <a href="http://cijug.net/meeting/2013/08/26/september-meeting/">CIJUG</a> meeting. Also <a href="https://github.com/ryber/J8Lambda">here is the code on GitHub.</a></p>
+
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/1YNzJQzEgNswN3420OsVIXn-xYZtnR5M7jrcHfR65dog/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="389"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ATDD vs xUnit Frameworks]]></title>
+    <link href="http://ryber.github.com/blog/2013/08/27/atdd-vs-xunit-frameworks/"/>
+    <updated>2013-08-27T08:27:00-05:00</updated>
+    <id>http://ryber.github.com/blog/2013/08/27/atdd-vs-xunit-frameworks</id>
+    <content type="html"><![CDATA[<p>I’ve been in many debates about if acceptance testing should be done in a unit test framework or a “proper” ATDD tool like Cucumber or Fitnesse. Developers will change a unit test to do what they want in a heartbeat. They are more reluctant to change an acceptance test where the criteria is separated from the code. This is a very important distinction. I think a lot of developers think of unit tests as belonging to “them” and acceptance tests as belonging to “the business”.</p>
+
+<p>So yes, those test frameworks do suck, but they give you something that unit test frameworks just aren’t designed for. Whenever I see “acceptance tests” written in a unit test framework they just look like really poorly written unit tests, So take the extra time and use the right tool for the right job.</p>
+
+<p>I have seen one exception to this. At Agile 2012 I attended a talk from <a href="https://twitter.com/lunivore">Liz Keogh</a> about <a href="http://agile2012.sched.org/event/e459c95d5ffa604772181091d142cb22">writing BDD tests in a domain specific syntax from within a unit test framework</a>. I thought it was a excellent idea and I have used the style on my own personal projects. I want to emphasize that what Liz has done is not entirely dissimilar to traditional ATDD frameworks. Her data, and criteria are absolutely separate from the underlying code. Even going so far as to abstract away top level controllers and domain objects behind fixtures.</p>
+
+<p>Here is an example of the &#8220;Keogh Style&#8221; testing from the unit test class. Note that those are all static methods of an external fixture class. In many ways it is no different than the text file side of Cucumber. All of the work of dealing with the underlying classes is behind the fixture leaving the jUnit methods with nothing but simple asserts.</p>
+
+<pre><code>@Test
+public void canCountRegistrations() {
+    givenCourse("abc", "Underwater Basketweaving");
+
+    registerUserForCourse("abc", "barry");
+    registerUserForCourse("abc", "gary");
+
+    assertEquals(2, getRegistrationCount("abc"));
+
+    registerUserForCourse("abc", "larry");
+    registerUserForCourse("abc", "larry");
+
+    assertEquals(3, getRegistrationCount("abc"));
+}
+</code></pre>
+
+<p>You can find more examples in <a href="https://github.com/ryber/Halleck/blob/master/src/test/java/BDDTests/RegistrationTests.java">this project</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -21,14 +21,47 @@
             <version>0.9.10</version>
         </dependency>
         <dependency>
-            <groupId>info.picocli</groupId>
-            <artifactId>picocli</artifactId>
-            <version>4.6.2</version>
+            <groupId>com.atlassian.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>0.14.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.javalin</groupId>
+            <artifactId>javalin</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.32</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.13</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>ryber.generator.Generator</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <!-- Configured in pluginManagement instead of plugins, because we do not want a shaded parent POM -->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -53,8 +86,8 @@
                                     <shadedPattern>ryber.com.github.mustachejava.</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <pattern>picocli.</pattern>
-                                    <shadedPattern>ryber.picocli.</shadedPattern>
+                                    <pattern>org.commonmark.</pattern>
+                                    <shadedPattern>ryber.org.commonmark.</shadedPattern>
                                 </relocation>
                             </relocations>
 

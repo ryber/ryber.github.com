@@ -1,0 +1,98 @@
+<html>
+<head>
+   <title>Heavy Metalizr</title>
+
+<script type="text/javascript">
+	var exports = {}
+</script>
+
+<script type="text/javascript" src="/assets/js/HeavyMetalizr.js" ></script>
+<script type="text/javascript">
+	function smellTheGlove(){
+
+		 var result = document.getElementById("magik").value
+
+		document.getElementById("result").value = exports.HeavyMetalizr(result)
+	}
+</script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37146294-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <style>
+  
+    h1 {font-size:500%}
+
+    textarea {font-size:large}
+
+    ::-webkit-input-placeholder {
+       color: #333;
+       font-size: large;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #333;
+       font-size: large;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #333;
+       font-size: large;
+    }
+
+    :-ms-input-placeholder {
+       color: #333;
+       font-size: large;
+    }
+
+  </style>
+</head>
+<body bgcolor="black" text="silver" style="font-family: Impact;">
+
+
+
+<a href="https://github.com/ryber/HeavyMetalizr"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+<table border="6" cellspacing="2" align="center">
+ <tr>
+ 	<td colspan="3"><a href="/">&lt;=Soylent Code</a></td>
+ </tr>
+ <tr>
+    <td align="center"><img src="/assets/images/an_spinning_flaming_skull.gif" /></td>
+	  <td align="center"><h1>H&#235;&#228;vy M&#235;t&#228;lizr</h1></td>
+    <td align="center"><img src="/assets/images/an_spinning_flaming_skull.gif" /></td>
+</tr>
+
+<tr>
+ <td colspan="3"  style="font-family: 'Comic Sans';">
+    Welcome to H&#235;&#228;vy M&#235;t&#228;lizr. Have you every had some text that you needed to rock sooo much harder than it was but you just couldn't be bothered to figure out how to type a Umlaut? It happens to all of us right? Well now you can just turn to the H&#235;&#228;vy M&#235;t&#228;lizr. to do it for you. Enter some text and smell the glove to awesomeize your text.
+
+    <p>H&#235;&#228;vy M&#235;t&#228;lizr is also available as a <a href="https://github.com/ryber/HeavyMetalizr">node.js npm</a> for when you need to make things rock asynchronously.
+ </td>
+</tr>
+<tr>
+ <td colspan="3">
+
+<form>
+	<textarea placeholder="&#203;nt&#235;r T&#235;xt Y&#246;&#252; W&#228;nt T&#246; M&#228;k&#235; F&#252;cking &#196;w&#235;s&#246;m&#235;" name="magik" id="magik" cols="100" rows="10" style="background-color: silver"></textarea>
+	<br />
+	<input type="button" onclick="javascript:smellTheGlove()" value="Smell The Glove" />
+	<br />
+	<textarea name="result" id="result" cols="100" rows="10" style="background-color: silver"></textarea>
+</form>
+
+ </td>
+</tr>
+</table>
+<hr />
+<center>&copy; 2013 Ryan Bergman</center>
+</body>
+</html>

@@ -1,19 +1,23 @@
 package ryber.generator;
 
-import picocli.CommandLine;
 
-import java.util.concurrent.Callable;
+import java.util.Map;
 
-@CommandLine.Command(name = "checksum", mixinStandardHelpOptions = true, version = "checksum 4.0",
-        description = "Prints the checksum (MD5 by default) of a file to STDOUT.")
-public class Generator implements Callable<Integer> {
-    @Override
-    public Integer call() throws Exception {
-        return null;
-    }
+public class Generator {
+
+    private static final Map<String, Runnable> commands = Map.of(
+            "run", () -> Server.start(),
+            "stop", () -> Server.stop(),
+            "generate", () -> Make.make()
+    );
 
     public static void main(String... args) {
-        int exitCode = new CommandLine(new Generator()).execute(args);
-        System.exit(exitCode);
+        if(args.length == 0){
+            System.out.println("No Command");
+            return;
+        }
+        String command = args[0];
+        commands.getOrDefault(command, () -> System.out.println(" Unknown: " + command)).run();
+        return;
     }
 }
