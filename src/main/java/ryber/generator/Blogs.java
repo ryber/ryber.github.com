@@ -20,6 +20,13 @@ public class Blogs {
         }
 
         writeFrontPage(posts.stream().limit(10).collect(Collectors.toList()));
+        writeAtom(posts);
+    }
+
+    private static void writeAtom(List<Article> posts) {
+        File postFile = new File("./docs/atom.xml");
+        String page = stache.render(new Model(posts), "layouts/atom.mustache");
+        FileWriter.write(page, postFile);
     }
 
     private static void writeFrontPage(List<Article> collect) {
