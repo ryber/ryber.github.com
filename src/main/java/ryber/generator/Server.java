@@ -7,6 +7,11 @@ import java.util.Map;
 
 public class Server {
     private static Javalin app;
+
+    public static void main(String[] args){
+        start();
+    }
+
     public static void start() {
         app = Javalin.create(c -> {
             c.addStaticFiles(staticFiles -> {

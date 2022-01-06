@@ -16,14 +16,11 @@ public class Blogs {
     public static void write(List<Article> posts) throws Exception {
         for(Article p : posts){
             write(p);
-            return;
         }
     }
 
     private static void write(Article p) {
-        File dir = new File(base + p.getDirectory());
-        dir.mkdirs();
-        File postFile = new File(p.getLink());
+        File postFile = new File(base + p.getLink());
         String post = render(p);
         if(postFile.exists()){
             logs.info("update file: " + postFile);
@@ -34,7 +31,6 @@ public class Blogs {
     }
 
     private static String render(Article article) {
-        logs.info(article.getContent());
         return stache.render(new Model(Arrays.asList(article)), "layouts/main.mustache");
     }
 }
