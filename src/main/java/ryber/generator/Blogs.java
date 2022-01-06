@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Blogs {
     private static final Logger logs = LoggerFactory.getLogger(Blogs.class);
@@ -14,14 +14,23 @@ public class Blogs {
     private static final MustacheRenderer stache = new MustacheRenderer();
 
     public static void write(List<Article> posts) throws Exception {
+        Collections.sort(posts, Comparator.comparing(Article::getTime));
         for(Article p : posts){
-            write(p);
+            writeOnepost(p);
         }
+
+        writeFrontPage(posts.stream().limit(10).collect(Collectors.toList()));
     }
 
-    private static void write(Article p) {
+    private static void writeFrontPage(List<Article> collect) {
+        File postFile = new File("./docs/index.html");
+        String page = render(collect);
+        FileWriter.write(page, postFile);
+    }
+
+    private static void writeOnepost(Article p) {
         File postFile = new File(base + p.getLink());
-        String post = render(p);
+        String post = render(Arrays.asList(p));
         if(postFile.exists()){
             logs.info("update file: " + postFile);
         } else {
@@ -30,7 +39,7 @@ public class Blogs {
         FileWriter.write(post, postFile);
     }
 
-    private static String render(Article article) {
-        return stache.render(new Model(Arrays.asList(article)), "layouts/main.mustache");
+    private static String render(Collection<Article> article) {
+        return stache.render(new Model(article), "layouts/main.mustache");
     }
 }
