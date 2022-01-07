@@ -69,6 +69,14 @@ public class Article {
                 time.getYear(), pad(time.getMonthOfYear()), pad(time.getDayOfMonth()), name);
     }
 
+    public String getMonth(){
+        return  DateTimeFormat.forPattern("MMM").print(time);
+    }
+
+    public String getDay(){
+        return DateTimeFormat.forPattern("dd").print(time);
+    }
+
     private String pad(int d) {
         if(d < 10){
             return "0" + d;

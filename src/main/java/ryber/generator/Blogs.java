@@ -33,10 +33,11 @@ public class Blogs {
                 .entrySet()
                 .stream()
                 .map(e -> new Archive(e.getKey(), e.getValue()))
-                        .collect(Collectors.toList());
+                .sorted(Comparator.comparing(Archive::getYear).reversed())
+                .collect(Collectors.toList());
 
         String content = stache.render(Map.of("archives", archive,
-                "isIndex", true), "layouts/main.mustache");
+                "isArchive", true), "layouts/main.mustache");
         FileWriter.write(content, new File("./docs/blog/archives/index.html"));
     }
 
