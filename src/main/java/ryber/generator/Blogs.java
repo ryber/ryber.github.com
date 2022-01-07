@@ -19,29 +19,36 @@ public class Blogs {
         for(Article p : posts){
             writeOnepost(p);
         }
-
-        writeListPage(posts.stream().limit(10).collect(Collectors.toList()), "./docs/index.html");
         writePagedBlogs(posts);
         writeAtom(posts);
     }
 
     private static void writePagedBlogs(List<Article> posts) {
-        int no = 0;
-        for(List<Article> page : Lists.partition(posts, 10)){
+        List<List<Article>> partition = Lists.partition(posts, 10);
+        int no = 1;
+        int toalPages = posts.size();
+
+        for(List<Article> page : partition){
+            if(no == 1) {
+                writeListPage(page,
+                        "./docs/index.html", 1, toalPages);
+            }
+            writeListPage(page, "./docs/blog/page/" + no + "/index.html", no, toalPages);
             no++;
-            writeListPage(page, "./docs/blog/page/" + no + "/index.html");
         }
+    }
+
+    private static void writeListPage(List<Article> collect, String pathname, int page, int totalPages) {
+        File postFile = new File(pathname);
+        Map<String, Object> paging = new HashMap<>();
+        if(page < 2)
+        String page = render(collect);
+        FileWriter.write(page, postFile);
     }
 
     private static void writeAtom(List<Article> posts) {
         File postFile = new File("./docs/atom.xml");
         String page = stache.render(new Model(posts), "layouts/atom.mustache");
-        FileWriter.write(page, postFile);
-    }
-
-    private static void writeListPage(List<Article> collect, String pathname) {
-        File postFile = new File(pathname);
-        String page = render(collect);
         FileWriter.write(page, postFile);
     }
 
@@ -56,7 +63,13 @@ public class Blogs {
         FileWriter.write(post, postFile);
     }
 
-    private static String render(Collection<Article> article) {
-        return stache.render(new Model(article), "layouts/main.mustache");
+    private static String render(Collection<Article> article){
+        return render(article, Map.of());
+    }
+
+    private static String render(Collection<Article> article, Map<String, Object> data) {
+        Model model = new Model(article);
+        data.putAll(data);
+        return stache.render(model, "layouts/main.mustache");
     }
 }
