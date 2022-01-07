@@ -26,7 +26,7 @@ public class Blogs {
     private static void writePagedBlogs(List<Article> posts) {
         List<List<Article>> partition = Lists.partition(posts, 10);
         int no = 1;
-        int toalPages = posts.size();
+        int toalPages = partition.size();
 
         for(List<Article> page : partition){
             if(no == 1) {
@@ -38,11 +38,17 @@ public class Blogs {
         }
     }
 
-    private static void writeListPage(List<Article> collect, String pathname, int page, int totalPages) {
+    private static void writeListPage(List<Article> collect, String pathname, int pageNo, int totalPages) {
         File postFile = new File(pathname);
         Map<String, Object> paging = new HashMap<>();
-        if(page < 2)
-        String page = render(collect);
+        paging.put("hasPaging", true);
+        if(pageNo < totalPages){
+            paging.put("older", pageNo + 1);
+        }
+        if(pageNo > 1) {
+            paging.put("newer", pageNo - 1);
+        }
+        String page = render(collect, paging);
         FileWriter.write(page, postFile);
     }
 
@@ -69,7 +75,7 @@ public class Blogs {
 
     private static String render(Collection<Article> article, Map<String, Object> data) {
         Model model = new Model(article);
-        data.putAll(data);
+        model.putAll(data);
         return stache.render(model, "layouts/main.mustache");
     }
 }

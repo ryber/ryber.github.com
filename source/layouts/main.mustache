@@ -102,6 +102,14 @@
 
             </article>
             {{/articles}}
+
+            {{#hasPaging}}
+            <div class="pagination">
+                {{#older}}<a class="prev" href="/blog/page/{{.}}/">&larr; Older</a>{{/older}}
+                <a href="/blog/archives">Blog Archives</a>
+                {{#newer}}<a class="next" href="/blog/page/{{.}}/">&larr; Newer</a>{{/newer}}
+            </div>
+            {{/hasPaging}}
         </div>
 
         <aside class="sidebar">
