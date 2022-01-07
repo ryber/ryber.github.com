@@ -1,5 +1,6 @@
 package ryber.generator;
 
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,8 +20,17 @@ public class Blogs {
             writeOnepost(p);
         }
 
-        writeFrontPage(posts.stream().limit(10).collect(Collectors.toList()));
+        writeListPage(posts.stream().limit(10).collect(Collectors.toList()), "./docs/index.html");
+        writePagedBlogs(posts);
         writeAtom(posts);
+    }
+
+    private static void writePagedBlogs(List<Article> posts) {
+        int no = 0;
+        for(List<Article> page : Lists.partition(posts, 10)){
+            no++;
+            writeListPage(page, "./docs/blog/page/" + no + "/index.html");
+        }
     }
 
     private static void writeAtom(List<Article> posts) {
@@ -29,8 +39,8 @@ public class Blogs {
         FileWriter.write(page, postFile);
     }
 
-    private static void writeFrontPage(List<Article> collect) {
-        File postFile = new File("./docs/index.html");
+    private static void writeListPage(List<Article> collect, String pathname) {
+        File postFile = new File(pathname);
         String page = render(collect);
         FileWriter.write(page, postFile);
     }
