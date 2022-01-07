@@ -1,0 +1,36 @@
+<div class="blog-index">
+    {{#articles}}
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="{{link}}">{{title}}</a></h1>
+                <p class="meta">
+                    <time datetime="{{time}}" pubdate data-updated="true">{{formattedDate}}</time>
+                </p>
+            </header>
+
+            {{{content}}}
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="{{time}}" pubdate data-updated="true">{{formattedDate}}</time>
+                </p>
+
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
+
+        </article>
+    {{/articles}}
+
+    {{#hasPaging}}
+        <div class="pagination">
+            {{#older}}<a class="prev" href="/blog/page/{{.}}/">&larr; Older</a>{{/older}}
+            <a href="/blog/archives">Blog Archives</a>
+            {{#newer}}<a class="next" href="/blog/page/{{.}}/">&larr; Newer</a>{{/newer}}
+        </div>
+    {{/hasPaging}}
+</div>

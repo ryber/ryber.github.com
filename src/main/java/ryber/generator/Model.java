@@ -9,5 +9,7 @@ public class Model extends HashMap<String, Object> {
     public Model(Collection<Article> content){
         put("articles", content);
         put("today", new DateTime());
+        put("layout", "blog-index");
+        put("isIndex", true);
     }
 }

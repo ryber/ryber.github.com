@@ -13,7 +13,7 @@ import java.io.StringWriter;
 public class MustacheRenderer {
     private MustacheFactory mustacheFactory = new DefaultMustacheFactory(new File("./source"));
 
-    public String render(Model model, String layout) {
+    public String render(Object model, String layout) {
 
         Mustache mustache = this.mustacheFactory.compile(layout);
         StringWriter stringWriter = new StringWriter();

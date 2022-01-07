@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,16 +78,16 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">The Case Of The Lost Commits</h1>
-                    <p class="meta">
-                        <time datetime="2014-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2014</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2014/03/22/the-case-of-the-lost-commits/">The Case Of The Lost Commits</a></h1>
+                <p class="meta">
+                    <time datetime="2014-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2014</time>
+                </p>
+            </header>
 
-               <p>Recently at my gig we converted a large project from HG to Git. There are a lot of developers on this project; many who have never worked on Git so I expected a few bumps. So far it’s actually been pretty smooth sailing but yesterday I was contacted by a dev with a Git problem I had never seen.</p>
+            <p>Recently at my gig we converted a large project from HG to Git. There are a lot of developers on this project; many who have never worked on Git so I expected a few bumps. So far it’s actually been pretty smooth sailing but yesterday I was contacted by a dev with a Git problem I had never seen.</p>
 <p>The day before he had made a commit and pushed it to the server but now the content of the commit was gone. Not reverted mind you, just gone, like it had never happened even though the commit was clearly still in history.</p>
 <p>To be clear, looking at the history of the entire repo showed the commit and it’s changes as something that happened. But looking at any of the individual files in the commits didn’t show the commit at all. WTF?!</p>
 <p>This turned out to be the result of a bad merge by another developer. I was able to recreate the scenario, take a look at the weird history:</p>
@@ -141,21 +144,21 @@ Unmerged paths:
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2014-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2014</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2014-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2014</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
 
-        </div>
+</div>
 
         <aside class="sidebar">
 
@@ -221,6 +224,8 @@ Unmerged paths:
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -253,6 +258,8 @@ Unmerged paths:
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>

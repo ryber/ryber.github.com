@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,16 +78,16 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">Night of the Undead Code</h1>
-                    <p class="meta">
-                        <time datetime="2011-10-20T00:00:00.000-05:00" pubdate data-updated="true">Oct 20, 2011</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2011/10/20/night-of-the-undead-code/">Night of the Undead Code</a></h1>
+                <p class="meta">
+                    <time datetime="2011-10-20T00:00:00.000-05:00" pubdate data-updated="true">Oct 20, 2011</time>
+                </p>
+            </header>
 
-               <p>I’ve <a href="http://ryber.tumblr.com/2011/04/19/the-big-book-of-dead-code">written before about dead code</a> and how it can gunk up you system, slow you down, and cause all kinds of problems. So with Halloween on its way I wanted to muse on something even worse than dead code&#8230;.undead code. You see most of the code you end up killing in a dead code hunt is not dead yet, its only mostly dead. You have to find out if it’s really holding on for true love or planning on eating your face. So how do you tell? Lets find out.</p>
+            <p>I’ve <a href="http://ryber.tumblr.com/2011/04/19/the-big-book-of-dead-code">written before about dead code</a> and how it can gunk up you system, slow you down, and cause all kinds of problems. So with Halloween on its way I wanted to muse on something even worse than dead code&#8230;.undead code. You see most of the code you end up killing in a dead code hunt is not dead yet, its only mostly dead. You have to find out if it’s really holding on for true love or planning on eating your face. So how do you tell? Lets find out.</p>
 <p><strong>Dead-Parrot Dead</strong>: This is the easy stuff. The class or method that is never invoked. The library that’s only imported but never used. This kind of code is easy to remove, it’s very low risk. Don’t listen to the people who tell you that the code is just resting or stunned. It’s kicked the bucket, shuffled off it’s mortal coil, run down the curtain and joined the bleedin&#8217; choir invisibile!! THIS IS EX-CODE!! Clean up the body.  Kill Satisfaction: <em>1 Zombie head</em></p>
 <p><img src="/assets/images/tumblr_lte7e4nuW21qhdwsd.jpg" alt=""/></p>
 <p><strong>Ghost Code</strong>: Ghost code is actually the most common. You probably have it all over your code base and you don’t even know it.  I’ve known developers who have spent their entire careers on projects writing code nobody asked for. Unless you can tie code to a specific business case and it’s bringing value right now (NOT “maybe someday”) then all it’s doing is getting in the way and sucking away your time. Exorcise it now and put it out of it’s misery. Kill Satisfaction: <em>3 Zombie Heads</em></p>
@@ -95,21 +98,21 @@
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2011-10-20T00:00:00.000-05:00" pubdate data-updated="true">Oct 20, 2011</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2011-10-20T00:00:00.000-05:00" pubdate data-updated="true">Oct 20, 2011</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
 
-        </div>
+</div>
 
         <aside class="sidebar">
 
@@ -175,6 +178,8 @@
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -207,6 +212,8 @@
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>

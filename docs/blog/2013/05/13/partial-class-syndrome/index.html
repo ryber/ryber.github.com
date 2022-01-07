@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,16 +78,16 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">Partial Class Syndrome</h1>
-                    <p class="meta">
-                        <time datetime="2013-05-13T00:00:00.000-05:00" pubdate data-updated="true">May 13, 2013</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2013/05/13/partial-class-syndrome/">Partial Class Syndrome</a></h1>
+                <p class="meta">
+                    <time datetime="2013-05-13T00:00:00.000-05:00" pubdate data-updated="true">May 13, 2013</time>
+                </p>
+            </header>
 
-               <p>The other day I ran into a smelly code scenario. Not only was it smelly, it was eerily familiar. I've run into this several times in this particular codebase and I finally put a name on it. &quot;Partial Class Syndrome&quot;.</p>
+            <p>The other day I ran into a smelly code scenario. Not only was it smelly, it was eerily familiar. I've run into this several times in this particular codebase and I finally put a name on it. &quot;Partial Class Syndrome&quot;.</p>
 <p>Now anyone familiar with C# knows that you can split one class over several different files by using the <a href="http://msdn.microsoft.com/en-us/library/wa80x488(v=vs.80).aspx" >partial</a> keyword. It's really a pretty horrible thing to do there is a very very limited scope for it being a good idea. Generated code like web service stubs are often partial so you can add to them without extending them. Other than that partials are super crappy. They make code hard to read and understand and they encourage classes to get way too big. In fact a partial sometimes shows up in code when a class gets so big that people want a quick and dirty way to make it <em>look</em> smaller.</p>
 <img src="http://upload.wikimedia.org/wikipedia/en/b/b8/Three_Stooges_Intro_Card_1936.jpg" alt="The Boys" />
 <p>Anyway this project is Java and so can't do partials. At least you would hope not. Yet there I was looking at three classes. We can call them Larry, Moe and Curly. These three were all basically the same class with some different methods. They had the same dependencies, they took and returned the same classes, did similar things and even had similar names. On top of that they were all held by a big model class that used them interchangeably calling one and passing it's data into the others.</p>
@@ -105,21 +108,21 @@
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2013-05-13T00:00:00.000-05:00" pubdate data-updated="true">May 13, 2013</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2013-05-13T00:00:00.000-05:00" pubdate data-updated="true">May 13, 2013</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
 
-        </div>
+</div>
 
         <aside class="sidebar">
 
@@ -185,6 +188,8 @@
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -217,6 +222,8 @@
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>

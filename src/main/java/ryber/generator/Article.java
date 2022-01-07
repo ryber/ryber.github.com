@@ -65,7 +65,7 @@ public class Article {
     }
 
     public String getDirectory() {
-        return String.format("/%s/%s/%s/%s/",
+        return String.format("/blog/%s/%s/%s/%s",
                 time.getYear(), pad(time.getMonthOfYear()), pad(time.getDayOfMonth()), name);
     }
 
@@ -81,7 +81,7 @@ public class Article {
     }
 
     public String getLink() {
-        return getDirectory() + "/index.html";
+        return getDirectory() + "/";
     }
 
     public String getTitle() {

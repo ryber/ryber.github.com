@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,74 +78,80 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">Walking Into Mordor</h1>
-                    <p class="meta">
-                        <time datetime="2019-09-30T00:00:00.000-05:00" pubdate data-updated="true">Sep 30, 2019</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2011/04/19/the-big-book-of-dead-code/">The Big Book Of Dead Code</a></h1>
+                <p class="meta">
+                    <time datetime="2011-04-19T00:00:00.000-05:00" pubdate data-updated="true">Apr 19, 2011</time>
+                </p>
+            </header>
 
-               <p>This is probably my favorite talk I've ever done. The video is from DevOpsDays -  Des Moines</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k6_xlRUNzF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="videoWrapper">
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMuwKDPIo7BEn3ftVW0CEFn9ixRxgwG7jebqrvYiMgDuWyGpmo9Rym4KRBV_V0dURIZIBFwOuciAs_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</div>
-
-
-
-                <footer>
-                    <p class="meta">
-                        <time datetime="2019-09-30T00:00:00.000-05:00" pubdate data-updated="true">Sep 30, 2019</time>
-                    </p>
-
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
-
-            </article>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">Software Engineering Daily</h1>
-                    <p class="meta">
-                        <time datetime="2020-02-06T00:00:00.000-06:00" pubdate data-updated="true">Feb 6, 2020</time>
-                    </p>
-                </header>
-
-               <p>I had the honor of appearing on <a href="https://softwareengineeringdaily.com/2020/02/03/john-deere-farm-software-with-ryan-bergman/">'Software Engineering Daily' podcast</a> to talk about practices at John Deere. Topics of discussion include autonomous vehicles, team autonomy and devops overload</p>
-<p>Subscribe: <a href="https://itunes.apple.com/us/podcast/software-engineering-daily/id1019576853?mt=2&amp;ls=1#episodeGuid=http%3A%2F%2Fsoftwareengineeringdaily.com%2F%3Fp%3D8700" title="Subscribe on Apple Podcasts" rel="nofollow">Apple Podcasts</a> | <a href="https://subscribeonandroid.com/softwareengineeringdaily.com/feed/podcast/" title="Subscribe on Android" rel="nofollow">Android</a> | <a href="https://softwareengineeringdaily.com/feed/podcast/" title="Subscribe via RSS" rel="nofollow">RSS</a></p>
-<audio controls>
-  <source src="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-<p><a href="http://traffic.libsyn.com/sedaily/John_Deere_Engineering.mp3" title="Download" rel="nofollow" download="John_Deere_Engineering.mp3">Download</a></p>
+            <p>Several years ago I became the inheritor of a rather large codebase that had been farmed out to an R&amp;D team of contractors. I could go on with a litany of grievances about the delivered product but I&#8217;ll leave most of those for other posts. Todays issue is about dead code. When we got the application it was quite bloated with unfinished and forgotten features. Imagine going to look into a bug only to find that there are 3 different modules that do the same thing; only one of which was actually used. There were entire assemblies that did nothing, or very little. Lots of modules were &#8220;flexible&#8221; but then configured to just work one (very simple) way.</p>
+<p>How it got this way could be a good masters thesis on the dangers of waterfall and cramming every possible requirement into a bloated spec at the begining, but regardless of that, the team had a problem.</p>
+<p>Extra and unnecessary code made building slow, made performance slow, and made testing slow and very difficult. It was confusing for developers to to have to deal with and it wasted all kinds of time with rabbit holes and marathon sessions in the debugger. Worst of all there were few tests to document the behavior.</p>
+<p>Finally after a particularly difficult weekend the team had had enough. We made some time, got out the machete and started to hack away at the dead flesh. The result was a faster, less confusing, less buggy system that performed all of the same duties as the original app. Dev velocity went up as build times and time in the debugger went down. Occasionally there would be second guessing, &#8220;What if we need that some day?&#8221;, &#8220;Well, that way IS more flexible&#8221;, but you know what? That&#8217;s what version control is for. To this day I have yet to go hunting back in time looking for some of that dead code.</p>
+<p>The other result was legend&#8230;&#8221;The Big Book of Dead Code&#8221;. The more and more code I hacked away the angrier I got. I watched as developers I knew from the R&amp;D team disappeared like they had never existed. It was never their fault that they were asked to write something the product never needed to begin with.</p>
+<p><img src="/assets/images/tumblr_ljwfsjJT9O1qhdwsd.jpg" alt=""/></p>
+<p>We needed to be able to show to management how much waste a gigantic 2 year waterfall project produced. So I took the diffs and wrote a little script (called &#8220;Bring Out Yer Dead&#8221;) that took the deleted code, removed all of the spaces, tabs and line breaks, formatted everything into a sigle block of raw text and then printed it all out in a 9pt font front and back. As the code was removed the book grew.</p>
+<p><img src="/assets/images/tumblr_ljwft3bUOZ1qhdwsd.jpg" alt=""/></p>
+<p>It ended up being easily over 500 pages. 500 pages of blood, sweat, yak hair and money. The book became famous, people would come from far and wide to gaze in wonder. I never saw the look on the owners faces when they were shown it, but I was told that it was very sobering. It ended up becoming a symbol of development black holes. Never again would management tolerate non-incremental development and gold plated specs. We would deliver small bits quickly, we would adjust requirements as needed. We would do only what needed to be done. Keep it simple! Yagni! &#8220;Bring out Yer Dead!&#8221;</p>
+<p><img src="/assets/images/tumblr_ljwftmvV0B1qhdwsd.jpg" alt=""/></p>
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2020-02-06T00:00:00.000-06:00" pubdate data-updated="true">Feb 6, 2020</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2011-04-19T00:00:00.000-05:00" pubdate data-updated="true">Apr 19, 2011</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2011/04/18/c-build-times/">C# Build Times</a></h1>
+                <p class="meta">
+                    <time datetime="2011-04-18T00:00:00.000-05:00" pubdate data-updated="true">Apr 18, 2011</time>
+                </p>
+            </header>
 
-            <div class="pagination">
-                
-                <a href="/blog/archives">Blog Archives</a>
-                <a class="next" href="/blog/page/4/">&larr; Newer</a>
-            </div>
+            <p>Today a friend was expressing concern about C# test loop times. Even going so far as comparing it to <em>gasp</em> C++</p>
+<p>He challenged me to &#8221; please see if you can get a smallish project, maybe 1K unit tests (ignore other tests) to build and run in &lt;45s &amp; blog it!!&#8221;</p>
+<p>Well, lately I&#8217;ve been working on setting up a integration test suite for Ninject, so I was familiar with it as not just a small, fast C# library, But one that is quite popular.</p>
+<p>So here is the result. For just the build/test of the core project total time from the command line is between 4-5 seconds. 2 of that is running the 223 unit and integration tests.</p>
+<p><img src="/assets/images/tumblr_ljvimpibdW1qhdwsd.png" alt=""/></p>
+<p>For a total CI package/build including generating packages for .Net 2.0, 3.5, 4.0, 3.5 compact, and silverlight 2, 3 and 4 which adds up to 669 tests takes around 1:45 - 2 minutes.</p>
+<p>So I&#8217;d say that shows that .net is at least capable of having fast cycle times. The thing that&#8217;s still missing are good autotest tools. IntelliJ and Eclipse smoke VS in terms of testing and refactoring. ReSharper&#8230;as good as it is&#8230;does nothing for the rest of the bloat in studio.</p>
+<p>Now, if only we could get JetBrains to make a ReSharper for MonoDevelop we would be all set.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2011-04-18T00:00:00.000-05:00" pubdate data-updated="true">Apr 18, 2011</time>
+                </p>
+
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
+
+        </article>
+
+        <div class="pagination">
+            
+            <a href="/blog/archives">Blog Archives</a>
+            <a class="next" href="/blog/page/4/">&larr; Newer</a>
         </div>
+</div>
 
         <aside class="sidebar">
 
@@ -208,6 +217,8 @@ Your browser does not support the audio element.
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -240,6 +251,8 @@ Your browser does not support the audio element.
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>

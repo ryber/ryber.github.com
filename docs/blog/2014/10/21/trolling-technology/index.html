@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,16 +78,16 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">Trolling Technology</h1>
-                    <p class="meta">
-                        <time datetime="2014-10-21T00:00:00.000-05:00" pubdate data-updated="true">Oct 21, 2014</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2014/10/21/trolling-technology/">Trolling Technology</a></h1>
+                <p class="meta">
+                    <time datetime="2014-10-21T00:00:00.000-05:00" pubdate data-updated="true">Oct 21, 2014</time>
+                </p>
+            </header>
 
-               <p>I've been upgrading frameworks in a number of projects lately and I felt the need to rant about frameworks I really dislike.</p>
+            <p>I've been upgrading frameworks in a number of projects lately and I felt the need to rant about frameworks I really dislike.</p>
 <h3>HAML</h3>
 <p><img src="/assets/images/hipster_cat.jpg" align="right" /> Several years ago some hipster programmers were frustrated by HTML. Since dogs and babies were qualified to write HTML they weren't able to let everyone else know how awesome they were on 100% of a project. So they invented HAML to protect their smartypants status.</p>
 <p>The main battle cry of HAML seems to be that you can write HTML “faster”. As if writing HTML was the bottleneck of programming. If your main bottleneck is writing HTML then either you are the the most awesome programmer on the face of the planet and you need to quit writing web sites and start finding a cure for ebola or you don’t work on anything remotely difficult (lucky you). Thankfully <a href="https://docs.oseems.com/general/application/vim/auto-complete-html">every</a> <a href="http://web-mode.org/">text editor</a> <a href="https://www.sublimetext.com/docs/2/auto_complete.html">on earth</a> <a href="http://superuser.com/questions/131542/html-tag-auto-complete-in-notepad">autocompletes</a> <a href="http://www.barebones.com/support/bbedit/arch_bbedit9.html">HTML</a>. Which means HAML is a problem disguised as a solution to a problem that doesn’t exist.</p>
@@ -110,21 +113,21 @@ difficult ways than if you had not used it.
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2014-10-21T00:00:00.000-05:00" pubdate data-updated="true">Oct 21, 2014</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2014-10-21T00:00:00.000-05:00" pubdate data-updated="true">Oct 21, 2014</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
 
-        </div>
+</div>
 
         <aside class="sidebar">
 
@@ -190,6 +193,8 @@ difficult ways than if you had not used it.
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -222,6 +227,8 @@ difficult ways than if you had not used it.
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>

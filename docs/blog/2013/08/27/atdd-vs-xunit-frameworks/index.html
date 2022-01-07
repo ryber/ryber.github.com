@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,16 +78,16 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">ATDD vs xUnit Frameworks</h1>
-                    <p class="meta">
-                        <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2013/08/27/atdd-vs-xunit-frameworks/">ATDD vs xUnit Frameworks</a></h1>
+                <p class="meta">
+                    <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
+                </p>
+            </header>
 
-               <p>I’ve been in many debates about if acceptance testing should be done in a unit test framework or a “proper” ATDD tool like Cucumber or Fitnesse. Developers will change a unit test to do what they want in a heartbeat. They are more reluctant to change an acceptance test where the criteria is separated from the code. This is a very important distinction. I think a lot of developers think of unit tests as belonging to “them” and acceptance tests as belonging to “the business”.</p>
+            <p>I’ve been in many debates about if acceptance testing should be done in a unit test framework or a “proper” ATDD tool like Cucumber or Fitnesse. Developers will change a unit test to do what they want in a heartbeat. They are more reluctant to change an acceptance test where the criteria is separated from the code. This is a very important distinction. I think a lot of developers think of unit tests as belonging to “them” and acceptance tests as belonging to “the business”.</p>
 <p>So yes, those test frameworks do suck, but they give you something that unit test frameworks just aren’t designed for. Whenever I see “acceptance tests” written in a unit test framework they just look like really poorly written unit tests, So take the extra time and use the right tool for the right job.</p>
 <p>I have seen one exception to this. At Agile 2012 I attended a talk from <a href="https://twitter.com/lunivore">Liz Keogh</a> about <a href="http://agile2012.sched.org/event/e459c95d5ffa604772181091d142cb22">writing BDD tests in a domain specific syntax from within a unit test framework</a>. I thought it was a excellent idea and I have used the style on my own personal projects. I want to emphasize that what Liz has done is not entirely dissimilar to traditional ATDD frameworks. Her data, and criteria are absolutely separate from the underlying code. Even going so far as to abstract away top level controllers and domain objects behind fixtures.</p>
 <p>Here is an example of the &quot;Keogh Style&quot; testing from the unit test class. Note that those are all static methods of an external fixture class. In many ways it is no different than the text file side of Cucumber. All of the work of dealing with the underlying classes is behind the fixture leaving the jUnit methods with nothing but simple asserts.</p>
@@ -107,21 +110,21 @@ public void canCountRegistrations() {
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
 
-        </div>
+</div>
 
         <aside class="sidebar">
 
@@ -187,6 +190,8 @@ public void canCountRegistrations() {
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -219,6 +224,8 @@ public void canCountRegistrations() {
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>

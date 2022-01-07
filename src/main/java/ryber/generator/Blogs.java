@@ -1,6 +1,8 @@
 package ryber.generator;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,16 +13,59 @@ import java.util.stream.Collectors;
 
 public class Blogs {
     private static final Logger logs = LoggerFactory.getLogger(Blogs.class);
-    private static final Path base = new File("./docs/blog/").toPath();
+    private static final Path base = new File("./docs/").toPath();
     private static final MustacheRenderer stache = new MustacheRenderer();
 
     public static void write(List<Article> posts) throws Exception {
-        Collections.sort(posts, Comparator.comparing(Article::getTime));
+        Collections.sort(posts, Comparator.comparing(Article::getTime).reversed());
         for(Article p : posts){
             writeOnepost(p);
         }
         writePagedBlogs(posts);
         writeAtom(posts);
+        writeArchive(posts);
+    }
+
+    private static void writeArchive(List<Article> posts) {
+        Multimap<Integer, Article> grouped = HashMultimap.create();
+        posts.forEach(p -> grouped.put(p.getTime().getYear(), p));
+        List<Archive> archive = grouped.asMap()
+                .entrySet()
+                .stream()
+                .map(e -> new Archive(e.getKey(), e.getValue()))
+                        .collect(Collectors.toList());
+
+        String content = stache.render(Map.of("archives", archive,
+                "isIndex", true), "layouts/main.mustache");
+        FileWriter.write(content, new File("./docs/blog/archives/index.html"));
+    }
+
+    public static class Archive {
+        private int year;
+        private List<Article> articles;
+
+        public Archive(int Year, Collection<Article> articles){
+            year = Year;
+            this.articles = Lists.newArrayList(articles);
+            Collections.sort(this.articles, Comparator.comparing(Article::getTime).reversed());
+        }
+
+
+        public int getYear() {
+            return year;
+        }
+
+        public void setYear(int year) {
+            this.year = year;
+        }
+
+        public List<Article> getArticles() {
+            return articles;
+        }
+
+        public void setArticles(List<Article> articles) {
+            this.articles = articles;
+        }
     }
 
     private static void writePagedBlogs(List<Article> posts) {
@@ -59,7 +104,7 @@ public class Blogs {
     }
 
     private static void writeOnepost(Article p) {
-        File postFile = new File(base + p.getLink());
+        File postFile = new File(base + p.getLink() + "index.html");
         String post = render(Arrays.asList(p));
         if(postFile.exists()){
             logs.info("update file: " + postFile);

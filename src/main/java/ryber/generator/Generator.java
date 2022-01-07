@@ -6,7 +6,7 @@ import java.util.Map;
 public class Generator {
 
     private static final Map<String, Runnable> commands = Map.of(
-            "run", () -> Server.start(),
+            "start", () -> Server.start(),
             "stop", () -> Server.stop(),
             "generate", () -> Make.make()
     );

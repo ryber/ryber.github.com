@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <title>- Soylent Code</title>
     <meta name="author" content="Ryan Bergman">
-    <meta name="description" content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
+    <meta name="description"
+          content="About Me Mar 15th, 2013 Hi! My name is Ryan Bergman and I&#8217;m a software developer in Des Moines Iowa.">
 
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
+    <!--    <link rel="canonical" href="http://ryber.github.io/about/">-->
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="/stylesheets/video.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -38,6 +39,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+
 
     </script>
 
@@ -75,16 +78,16 @@
 
 <div id="main">
     <div id="content">
-        <div>
-            <article role="article">
-                <header>
-                    <h1 class="entry-title">Microservices as Jars</h1>
-                    <p class="meta">
-                        <time datetime="2014-12-04T00:00:00.000-06:00" pubdate data-updated="true">Dec 4, 2014</time>
-                    </p>
-                </header>
+            <div class="blog-index">
+        <article role="article">
+            <header>
+                <h1 class="entry-title"><a href="/blog/2014/12/04/microservices-as-jars/">Microservices as Jars</a></h1>
+                <p class="meta">
+                    <time datetime="2014-12-04T00:00:00.000-06:00" pubdate data-updated="true">Dec 4, 2014</time>
+                </p>
+            </header>
 
-               <p>A couple of months ago Uncle Bob Matrin wrote about <a href="http://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html">microservices as jars</a> (or gems or dlls etc). I’ve been harboring the same idea for a while so I was encouraged to see him talking about it. I’ve also seen both positive and downright hostile responses to him. I’ve been honing in on a way to do this and I think I see where the hostility comes from.</p>
+            <p>A couple of months ago Uncle Bob Matrin wrote about <a href="http://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html">microservices as jars</a> (or gems or dlls etc). I’ve been harboring the same idea for a while so I was encouraged to see him talking about it. I’ve also seen both positive and downright hostile responses to him. I’ve been honing in on a way to do this and I think I see where the hostility comes from.</p>
 <p><img src="/assets/images/Kim_Cheese.jpg" align="right" /> You see there are two rules about microservices. 1) They need to be isolated and 2) They need to be more isolated than that. In fact they need to be Kim Jong-un isolated. When you run a microservice as it’s own deployable behind it’s own REST interface then it’s easy. You can use whatever libraries, languages, even operating systems you want. However, when deploying a jar inside of another application you are suddenly no longer free. The runtime will demand only one version of your orgs favorite MVC for example, and everyone better be on the same page.</p>
 <p>So when crafting a jar you need to be dependent on as little as possible. I personally find freedom from frameworks liberating. Besides it’s a “MICRO” service, you don’t need an IOC framework or an ORM at all. In practice I can see many organizations having problems with this, Green developers like glueing frameworks together. Things like Spring make it look like it would be easy to just add yet another jar into the component scan. You need to stop! Because that leads to the dark side….dependency, coupling, and weeks spent upgrading 20 jars at once to Spring 4.1.X when just one of them needs to go.</p>
 <p>I know Uncle Bob knows all this already. I’m not sure he emphasized it enough or appreciates how many people will attempt to implement his idea in completely wrong ways.</p>
@@ -92,21 +95,21 @@
 
 
 
-                <footer>
-                    <p class="meta">
-                        <time datetime="2014-12-04T00:00:00.000-06:00" pubdate data-updated="true">Dec 4, 2014</time>
-                    </p>
+            <footer>
+                <p class="meta">
+                    <time datetime="2014-12-04T00:00:00.000-06:00" pubdate data-updated="true">Dec 4, 2014</time>
+                </p>
 
-                    <div class="sharing">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                           data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                    </div>
-                </footer>
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
 
-            </article>
+        </article>
 
-        </div>
+</div>
 
         <aside class="sidebar">
 
@@ -172,6 +175,8 @@
         });
     });
 
+
+
                 </script>
                 <script src="/javascripts/github.js" type="text/javascript"></script>
             </section>
@@ -204,6 +209,8 @@
       twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
+
+
 
 </script>
 </body>
