@@ -4,7 +4,7 @@
     <title><![CDATA[Soylent Code]]></title>
     <link href="http://ryber.github.com/atom.xml" rel="self"/>
     <link href="http://ryber.github.com/"/>
-    <updated>2022-01-07T13:30:38.095-06:00</updated>
+    <updated>2022-01-10T13:01:29.527-06:00</updated>
     <id>http://ryber.github.com/</id>
     <author>
         <name><![CDATA[Ryan Bergman]]></name>
@@ -12,6 +12,15 @@
     </author>
     <generator uri="http://octopress.org/">Octopress</generator>
 
+        <entry>
+            <title type="html"><![CDATA[Developer Journey Podcast]]></title>
+            <link href="/blog/2020/04/07/Developer-Journey-Podcast/"/>
+            <updated>&lt;p&gt;I had the honor of appearing on the Developer Journey Podcast. Check it out here: &lt;a href&#61;&quot;https://devjourney.info/Guests/150-RyanBergman&quot;&gt;https://devjourney.info/Guests/150-RyanBergman&lt;/a&gt;&lt;/p&gt;&#10;</updated>
+            <id>/blog/2020/04/07/Developer-Journey-Podcast/</id>
+            <content type="html"><![CDATA[<p>I had the honor of appearing on the Developer Journey Podcast. Check it out here: <a href="https://devjourney.info/Guests/150-RyanBergman">https://devjourney.info/Guests/150-RyanBergman</a></p>
+]]>
+            </content>
+        </entry>
         <entry>
             <title type="html"><![CDATA[Software Engineering Daily]]></title>
             <link href="/blog/2020/02/06/software-engineering-daily/"/>

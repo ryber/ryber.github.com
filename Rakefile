@@ -31,3 +31,14 @@ task :new_post, :title do |t, args|
   end
 end
 	
+desc "Generate Site"
+task :generate do
+  system("mvn package && java -jar target/generator-1-standalone.jar generate")
+end
+
+	
+desc "Generate Site"
+task :start do
+  system("java -jar target/generator-1-standalone.jar start")
+end
+

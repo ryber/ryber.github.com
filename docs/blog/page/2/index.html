@@ -76,6 +76,49 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2015/02/22/developers-in-wonderland/">Developers In Wonderland</a></h1>
+                <p class="meta">
+                    <time datetime="2015-02-22T00:00:00.000-06:00" pubdate data-updated="true">Feb 22, 2015</time>
+                </p>
+            </header>
+
+            <p>Last week I posted a fun little troll of Java on the Twitters and it kind of blew up.</p>
+<blockquote class="twitter-tweet" lang="en"><p>Everyone enjoys trolling JavaScript for it&#39;s weirdness but everyone has something. Here&#39;s Java <a href="http://t.co/SszNlbefLP">pic.twitter.com/SszNlbefLP</a></p>&mdash; Ryan Bergman (@ryber) <a href="https://twitter.com/ryber/status/567681894662164480">February 17, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>What I got in response (besides the retweets and favs) was a lot of people who felt the need to inform me of why each line was the way it was (and in some cases how stupid I was for not knowing it). I started to experience a phenomenon that is quite common amongst software developers that I like to call “Wonderland Syndrome”.</p>
+<blockquote style="font-size:110%">
+“But I don’t want to go among mad people," Alice remarked.<br/>
+"Oh, you can’t help that," said the Cat: "we’re all mad here. I’m mad. You’re mad."<br/>
+"How do you know I’m mad?" said Alice.<br/>
+"You must be," said the Cat, "or you wouldn’t have come here.”<br/>
+― Lewis Carroll, Alice in Wonderland<br/>
+</blockquote>
+<p>Apart from Alice and the Cheshire Cat nobody in Wonderland knew that they were mad. This attitude, to simply accept the rules a system has given to you whether they are logical and good or not is actually a strength in computer programming. In a <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">paper from Middlesex University</a> it was found that successful CS majors were better able to accept and understand the sometimes odd rules of computers.</p>
+<blockquote style="font-size:110%">
+“To write a computer program you have to come to terms with this, to accept that whatever you might want the program to mean, the machine will blindly follow its meaningless rules and come to some meaningless conclusion”
+</blockquote>
+<p>It's also why we all love puns so much. The problem comes when this understanding moves into an orthodoxy around how it should be. None of the examples in the tweet show this more than the response to the last item. Some people seemed incensed that I apparently didn’t understand that prefixing a number with 0 indicated an octal number and that this is how it was in C and many other languages. <a href="https://www.gnu.org/fun/jokes/ed-msg.html">&quot;0 is the standard!&quot;</a></p>
+<p>0 is a horrible thing to use to indicate octal. My 3rd grader can tell you that leading zeros are not significant and so <code>022 - 2 = 20</code>. Why must we surprise everyone with something different? Maybe 43 years ago when C was being created on PDP-8s with 12 bit words it was the only thing to do. I tend to think that even then anything else would have been better.</p>
+<p>Fast forward to 1995 and Java had no reason at all to continue with it. I believe they did so simply because of Wonderland Syndrome. &quot;Of course octals start with 0, and hedgehogs make perfect croquet balls.&quot;</p>
+<p>Yet here we are, running caucus-races to get dry and fixing bugs because of the limitations of a 43 year old computer. THAT my friends, is the WTF.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2015-02-22T00:00:00.000-06:00" pubdate data-updated="true">Feb 22, 2015</time>
+                </p>
+
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2014/12/04/microservices-as-jars/">Microservices as Jars</a></h1>
                 <p class="meta">
                     <time datetime="2014-12-04T00:00:00.000-06:00" pubdate data-updated="true">Dec 4, 2014</time>
@@ -425,50 +468,6 @@ Unmerged paths:
             <footer>
                 <p class="meta">
                     <time datetime="2013-09-03T00:00:00.000-05:00" pubdate data-updated="true">Sep 3, 2013</time>
-                </p>
-
-                <div class="sharing">
-                    <a href="http://twitter.com/share" class="twitter-share-button"
-                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                </div>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2013/08/27/atdd-vs-xunit-frameworks/">ATDD vs xUnit Frameworks</a></h1>
-                <p class="meta">
-                    <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
-                </p>
-            </header>
-
-            <p>I’ve been in many debates about if acceptance testing should be done in a unit test framework or a “proper” ATDD tool like Cucumber or Fitnesse. Developers will change a unit test to do what they want in a heartbeat. They are more reluctant to change an acceptance test where the criteria is separated from the code. This is a very important distinction. I think a lot of developers think of unit tests as belonging to “them” and acceptance tests as belonging to “the business”.</p>
-<p>So yes, those test frameworks do suck, but they give you something that unit test frameworks just aren’t designed for. Whenever I see “acceptance tests” written in a unit test framework they just look like really poorly written unit tests, So take the extra time and use the right tool for the right job.</p>
-<p>I have seen one exception to this. At Agile 2012 I attended a talk from <a href="https://twitter.com/lunivore">Liz Keogh</a> about <a href="http://agile2012.sched.org/event/e459c95d5ffa604772181091d142cb22">writing BDD tests in a domain specific syntax from within a unit test framework</a>. I thought it was a excellent idea and I have used the style on my own personal projects. I want to emphasize that what Liz has done is not entirely dissimilar to traditional ATDD frameworks. Her data, and criteria are absolutely separate from the underlying code. Even going so far as to abstract away top level controllers and domain objects behind fixtures.</p>
-<p>Here is an example of the &quot;Keogh Style&quot; testing from the unit test class. Note that those are all static methods of an external fixture class. In many ways it is no different than the text file side of Cucumber. All of the work of dealing with the underlying classes is behind the fixture leaving the jUnit methods with nothing but simple asserts.</p>
-<pre><code>@Test
-public void canCountRegistrations() {
-    givenCourse(&quot;abc&quot;, &quot;Underwater Basketweaving&quot;);
-
-    registerUserForCourse(&quot;abc&quot;, &quot;barry&quot;);
-    registerUserForCourse(&quot;abc&quot;, &quot;gary&quot;);
-
-    assertEquals(2, getRegistrationCount(&quot;abc&quot;));
-
-    registerUserForCourse(&quot;abc&quot;, &quot;larry&quot;);
-    registerUserForCourse(&quot;abc&quot;, &quot;larry&quot;);
-
-    assertEquals(3, getRegistrationCount(&quot;abc&quot;));
-}
-</code></pre>
-<p>You can find more examples in <a href="https://github.com/ryber/Halleck/blob/master/src/test/java/BDDTests/RegistrationTests.java">this project</a>.</p>
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
                 </p>
 
                 <div class="sharing">

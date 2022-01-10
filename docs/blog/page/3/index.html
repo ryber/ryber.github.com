@@ -76,6 +76,50 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2013/08/27/atdd-vs-xunit-frameworks/">ATDD vs xUnit Frameworks</a></h1>
+                <p class="meta">
+                    <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
+                </p>
+            </header>
+
+            <p>I’ve been in many debates about if acceptance testing should be done in a unit test framework or a “proper” ATDD tool like Cucumber or Fitnesse. Developers will change a unit test to do what they want in a heartbeat. They are more reluctant to change an acceptance test where the criteria is separated from the code. This is a very important distinction. I think a lot of developers think of unit tests as belonging to “them” and acceptance tests as belonging to “the business”.</p>
+<p>So yes, those test frameworks do suck, but they give you something that unit test frameworks just aren’t designed for. Whenever I see “acceptance tests” written in a unit test framework they just look like really poorly written unit tests, So take the extra time and use the right tool for the right job.</p>
+<p>I have seen one exception to this. At Agile 2012 I attended a talk from <a href="https://twitter.com/lunivore">Liz Keogh</a> about <a href="http://agile2012.sched.org/event/e459c95d5ffa604772181091d142cb22">writing BDD tests in a domain specific syntax from within a unit test framework</a>. I thought it was a excellent idea and I have used the style on my own personal projects. I want to emphasize that what Liz has done is not entirely dissimilar to traditional ATDD frameworks. Her data, and criteria are absolutely separate from the underlying code. Even going so far as to abstract away top level controllers and domain objects behind fixtures.</p>
+<p>Here is an example of the &quot;Keogh Style&quot; testing from the unit test class. Note that those are all static methods of an external fixture class. In many ways it is no different than the text file side of Cucumber. All of the work of dealing with the underlying classes is behind the fixture leaving the jUnit methods with nothing but simple asserts.</p>
+<pre><code>@Test
+public void canCountRegistrations() {
+    givenCourse(&quot;abc&quot;, &quot;Underwater Basketweaving&quot;);
+
+    registerUserForCourse(&quot;abc&quot;, &quot;barry&quot;);
+    registerUserForCourse(&quot;abc&quot;, &quot;gary&quot;);
+
+    assertEquals(2, getRegistrationCount(&quot;abc&quot;));
+
+    registerUserForCourse(&quot;abc&quot;, &quot;larry&quot;);
+    registerUserForCourse(&quot;abc&quot;, &quot;larry&quot;);
+
+    assertEquals(3, getRegistrationCount(&quot;abc&quot;));
+}
+</code></pre>
+<p>You can find more examples in <a href="https://github.com/ryber/Halleck/blob/master/src/test/java/BDDTests/RegistrationTests.java">this project</a>.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2013-08-27T00:00:00.000-05:00" pubdate data-updated="true">Aug 27, 2013</time>
+                </p>
+
+                <div class="sharing">
+                    <a href="http://twitter.com/share" class="twitter-share-button"
+                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
+                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
+                </div>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2013/07/20/joda-time-presentation/">Joda Time Presentation</a></h1>
                 <p class="meta">
                     <time datetime="2013-07-20T00:00:00.000-05:00" pubdate data-updated="true">Jul 20, 2013</time>
@@ -472,46 +516,6 @@ rake deploy
             <footer>
                 <p class="meta">
                     <time datetime="2013-02-24T00:00:00.000-06:00" pubdate data-updated="true">Feb 24, 2013</time>
-                </p>
-
-                <div class="sharing">
-                    <a href="http://twitter.com/share" class="twitter-share-button"
-                       data-url="http://ryber.github.com/about/index.html" data-via="ryber"
-                       data-counturl="http://ryber.github.com/about/index.html">Tweet</a>
-                </div>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2012/12/30/my-life-as-a-cable-cutter/">My Life as a Cable Cutter</a></h1>
-                <p class="meta">
-                    <time datetime="2012-12-30T00:00:00.000-06:00" pubdate data-updated="true">Dec 30, 2012</time>
-                </p>
-            </header>
-
-            <p>About 8 months ago my family look the plunge and ditched DirectTV for a hodge-podge of Broadcast TV and streaming/download services. Like many people we realized that we were paying over $100 a month to watch House Hunters International and Spongebob Squarepants; it just didn’t seem worth it. We haven’t regretted it for a minute. Lots of people have asked me about our setup so here it is:</p>
-<h3>TV locations:</h3>
-<p>We have 3 TV’s. Two on the main level. The one in the “Front Room” is the primary entertainment TV where we do the majority of our TV and movie watching. There is another in the “Family Room” which is mostly the kids (I have 4 girls 10, 6, 3, 3). The third TV is in our bedroom on the second floor. All of the TV’s are modern flat screens that are digital ready.</p>
-<p>###Antenna:
-I went through several rounds of antennas before getting the right one. None of the smaller indoor ones would work. I ended up getting [this one] (http://goo.gl/0sD5Q) from Best Buy. It was on one of those tables of things that had been opened and returned so I think I got it for $90. I installed it in the attic. Lucky for me some former owner of my house ran a huge number of phone wires from the basement up to the attic...except they weren’t connected to anything. So I tied the coax to the end in the basement and then pulled it up into the attic. From the basement I ran the coax into a amplification splitter like [this one] (http://goo.gl/1opPD). Then I ran coax through the ceiling and up the floor close to air return registers. To get to the second floor bedroom I just reversed the line on the outside of the house that had previously been used by the satellite. I could have another splitter in the attic and send it down the wall and into a cable TV port that was never used but that’s for a future project.</p>
-<p>Overall reception is pretty good. I’m getting all the major networks plus their ”extra” channels. The picture seems better than it did with satellite and they don’t go out as much during storms.</p>
-<h3>Tivo and other boxes</h3>
-<p>One of the main things we used our DirectTV box for was DVRing shows. We realized that most of what we were DVRing were broadcast network shows and the few other things we were recording, (like Breaking Bad and The Walking Dead) were available the day after the broadcast on Amazon for a couple of bucks. We still wanted a DVR for broadcast and we also wanted something that would play purchased shows from Amazon or Apple. Since AppleTv does not yet have DVR abilities we got a Tivo.</p>
-<p>I have not been blown over by the Tivo. Supposedly this version was to be the magic device that brought together TV with all of the different online services. Yet right off the bat I had to buy a separate wireless card which seemed awkward in 2012. Then most of the online apps (Netflix, Hulu etc) are noticeably slower and crappier than their Roku counterparts. Still the DVR part is quite nice and it’s cool that it can download entire shows from Amazon. Boxee was not around here when I made the switch (or at least I was completely unaware of it). So I’d advise anyone to look at it before settling on a Tivo.</p>
-<p>For the family room we get Netflix and Hulu through the Nintendo Wii and in our bedroom we have a Roku. I have to say I really like the Roku. It’s super fast and easy and has by far the best experience of the group. If they would just throw a big old hard drive in there I would replace the Tivo in a heartbeat.</p>
-<p>For online services we have Netflix, Hulu and Amazon Prime. We don’t really watch Amazon Prime at all. My wife does quite a bit of our shopping from Amazon and we get prime as part of that but I think I’ve logged into it once. We do get Amazon season passes to our favorite AMC shows but that’s a separate service and they will only download to the Tivo. We also don’t use Hulu a great deal. We might get rid of that if we don’t start watching it more. Netflix streaming on the other hand is the bees knees. We love it and watch it all the time. It’s the secret sauce to the entire thing. The recent addition of Disney content only makes it better.</p>
-<p>Overall I can easily say that we really don’t miss Satellite/Cable at all. My only regret is that we didn’t do it sooner. I highly recommend it. Still I would like to petition the powers at be for the following:</p>
-<ul>
-<li>HBO Go without a satellite/cable subscription.</li>
-<li>A generic OSS way to stream recorded shows from one device to another. I should be able to watch DVR content on the Tivo from my Roku</li>
-</ul>
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2012-12-30T00:00:00.000-06:00" pubdate data-updated="true">Dec 30, 2012</time>
                 </p>
 
                 <div class="sharing">
