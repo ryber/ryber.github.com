@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title><![CDATA[Soylent Code]]></title>
+    <link href="http://ryber.github.com/atom.xml" rel="self"/>
+    <link href="http://ryber.github.com/"/>
+    <updated>{{today}}</updated>
+    <id>http://ryber.github.com/</id>
+    <author>
+        <name><![CDATA[Ryan Bergman]]></name>
+
+    </author>
+    <generator uri="http://octopress.org/">Octopress</generator>
+
+    {{#articles}}
+        <entry>
+            <title type="html"><![CDATA[{{title}}]]></title>
+            <link href="{{link}}"/>
+            <updated>{{content}}</updated>
+            <id>{{link}}</id>
+            <content type="html"><![CDATA[{{{content}}}]]>
+            </content>
+        </entry>
+    {{/articles}}
+</feed>
