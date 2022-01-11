@@ -4,7 +4,7 @@
     <title><![CDATA[Soylent Code]]></title>
     <link href="http://ryber.github.com/atom.xml" rel="self"/>
     <link href="http://ryber.github.com/"/>
-    <updated>2022-01-10T13:46:31.155-06:00</updated>
+    <updated>2022-01-11T08:49:20.467-06:00</updated>
     <id>http://ryber.github.com/</id>
     <author>
         <name><![CDATA[Ryan Bergman]]></name>
@@ -12,6 +12,16 @@
     </author>
     <generator uri="http://octopress.org/">Octopress</generator>
 
+        <entry>
+            <title type="html"><![CDATA[From Big Bangs To Crockpots]]></title>
+            <link href="/blog/2021/04/01/From-Big-Bangs-To-Crockpots/"/>
+            <updated>&lt;p&gt;My talk at the Philly ETE 2021 conference&lt;/p&gt;&#10;&lt;iframe width&#61;&quot;560&quot; height&#61;&quot;315&quot; src&#61;&quot;https://www.youtube.com/embed/TGs0YbAR_hs&quot; title&#61;&quot;YouTube video player&quot; frameborder&#61;&quot;0&quot; allow&#61;&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#10;</updated>
+            <id>/blog/2021/04/01/From-Big-Bangs-To-Crockpots/</id>
+            <content type="html"><![CDATA[<p>My talk at the Philly ETE 2021 conference</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TGs0YbAR_hs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]]>
+            </content>
+        </entry>
         <entry>
             <title type="html"><![CDATA[Developer Journey Podcast]]></title>
             <link href="/blog/2020/04/07/Developer-Journey-Podcast/"/>
