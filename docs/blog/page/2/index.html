@@ -76,6 +76,37 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2015/03/28/how-we-saved-00/">How we saved $200,000 per year with a hackathon</a></h1>
+                <p class="meta">
+                    <time datetime="2015-03-28T00:00:00.000-05:00" pubdate data-updated="true">Mar 28, 2015</time>
+                </p>
+            </header>
+
+            <p>At my current gig we have a fairly large Java web application. It has a Fitnesse suite of around 2000 tests that until recently took about 12-13 minutes to run on a good machine.</p>
+<p>One of our developers (<a href="https://twitter.com/briandanenhauer">@briandanenhauer</a>) felt the there was something wrong with that time and used one of our hackathons to do something about it. He ran the tests under a profiler and found a significant problem with the way we (and Fitnesse) were wiring in fixtures.</p>
+<p>Fitnesse has a Import fixture which can be used to import the java packages containing your fixtures. For example:</p>
+<pre><code>|Import|
+|info.fitnesse.fixturegallery|
+|info.fitnesse.anotherPackage|
+</code></pre>
+<p>Our project had attempted to package our fixtures into feature specific packages. Over time this had left us with over 50 fixture sub-packages.</p>
+<p>Whenever Fitnesse needed to find a fixture it would loop over the list of imports and look in each package for the fixture. If it didn’t find it it would throw an exception up and then continue looking until it found it. This was resulting in literally millions of exceptions being thrown throughout the run of the main suite.</p>
+<p>@briandanenhauer did the simple thing and flattened all of our fixtures into one package and one corresponding row in the import fixture.</p>
+<p>The the result was dramatic. A full build of our system went from 13-14 minutes to 6-7! The team was floored and there was much rejoycing! <img src="/assets/images/rejoicing.gif" align="right" />
+I did a very quick and dirty calculation on the savings in dev time and came up with $200,000 per year for our staff. That would be if every developer ran verify only once per workday (and we know it’s more).
+That’s a powerful argument for hackathons or just letting your developers have time to make their projects better.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2015-03-28T00:00:00.000-05:00" pubdate data-updated="true">Mar 28, 2015</time>
+                </p>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2015/03/22/are-programmers-engineers/">Are Programmers Engineers?</a></h1>
                 <p class="meta">
                     <time datetime="2015-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2015</time>
@@ -382,43 +413,6 @@ Unmerged paths:
             <footer>
                 <p class="meta">
                     <time datetime="2013-12-27T00:00:00.000-06:00" pubdate data-updated="true">Dec 27, 2013</time>
-                </p>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2013/10/07/what-developers-want/">What Developers Want</a></h1>
-                <p class="meta">
-                    <time datetime="2013-10-07T00:00:00.000-05:00" pubdate data-updated="true">Oct 7, 2013</time>
-                </p>
-            </header>
-
-            <p>The other day I got a email from a recruiter. Now, I get stuff from recruiters all the time but this one stuck out a bit because it didn’t follow the standard line. I hope she doesn’t mind but I decided I wanted to answer her questions here on my blog because I think they are important.</p>
-<p>Her main question was: “What do developers really want out of professional opportunities that they might not be getting with their current employers? To put it another way, what are the things that entice you guys?”</p>
-<p>That’s an interesting question. What DO we want? Why do some employers have a bad rap in town while others seem to have their pick of the top developers?</p>
-<p>First off I want to dispel one myth. The recruiter followed her question up with “My inclination is that money is a secondary factor when seeking out new grounds for professional growth”. Yes and no. Money is not the ONLY factor but it certainly is a large factor and it can easily disqualify an employer from a job search. Especially for the top talent in town who may be accustomed to a certain lifestyle. We all live in this same economy. We have families and children we want to send to college. We want to take that trip to New Zealand. We want a nice home. Money is a factor. Your job as an employer is to make sure that it’s not a negative when I’m considering you. It’s quite insulting and sad when you meet someone who thinks a beer fridge and a foosball table somehow makes up for low salaries. It doesn’t.</p>
-<p>That said, while pay is a factor for why we might NOT take a job it’s not an indicator of why I might take a job, or stay at a job. As long as the pay is in a competitive range the other factors come to the front. So what are those factors?</p>
-<ol>
-<li>
-<p>“Self-Determination”. People want to feel like they are contributing to solutions. They want to bring value to their clients. The absolute last thing they want is to feel like some cog responsible for implementing someone else's design. This is why top-down architecture is so detrimental to good teams. I want some amount of influence over the design, the architecture, and the tools. I want to feel like when I come to work people want me to be there because they value my contributions, opinions and the code I write. Most importantly, if something is in my way, or is inefficient, and I have a better way to solve it, I want the power to solve it. Nothing is more frustrating than being told. “Yea, we know it sucks, but we have to do it that way because [corporate policy, Joffrey the “Architect” said so, we always did it that way, derp].”</p>
-</li>
-<li>
-<p>Customer feedback: I want to know that the work I’m doing matters. Make sure developers have the opportunity to interact with customers, even if that is part of market research or trade conferences. Ideally I want constant feedback from a product owner who works with the development staff every day and makes sure we are working on the right things.</p>
-</li>
-<li>
-<p>A cool project with cool technologies: As developers we like cool things and cool toys. I realize sometimes you’re an insurance company and there is little you can do to make your app more exciting. That just means you need to get creative. Sorry but nobody wants to work on a legacy struts app running on Websphere.</p>
-</li>
-<li>
-<p>XP: I can’t speak for everyone on this but I think I speak for a growing majority. I will not consider a job where XP practices are not followed and embraced. Particularly BDD/TDD and CI. I’m also cool if you’re not there yet and you want me to help you get there. Just don’t be wishy washy about it. XP is the one exception to rule #1. Everyone needs to get on board. We are professionals, act like it and take your craft seriously.</p>
-</li>
-</ol>
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2013-10-07T00:00:00.000-05:00" pubdate data-updated="true">Oct 7, 2013</time>
                 </p>
             </footer>
 

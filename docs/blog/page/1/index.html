@@ -76,6 +76,43 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2022/01/23/Staying-DRY-with-Mocking-Frameworks/">Staying DRY with Mocking Frameworks</a></h1>
+                <p class="meta">
+                    <time datetime="2022-01-23T00:00:00.000-06:00" pubdate data-updated="true">Jan 23, 2022</time>
+                </p>
+            </header>
+
+            <img src="/images/800px-Alice_par_John_Tenniel_34.png" align="right" alt="Mock Turtle" hspace="10" vspace="10" width=300 />
+<p>Let me start by saying that I don’t hate mocking frameworks. They can be incredibly useful, and from an intellectual standpoint they’re some of the most amazing and interesting code you can look at. If you want a masters class on reflection and runtime manipulation go dig around in them.</p>
+<p>What I do dislike is how they’re misused. I consider myself a classicist or a member of the Chicago/Detroit school of mocking. That means I don’t mock often, and when I do I prefer to use hand rolled mocks because I find they’re better at letting me test state as opposed to interactions. Still, sometimes mocking frameworks can be damn handy and I’m not above using them. More often they’re part of an existing application that I’m working on. The main problem I see with them is when developers don’t stay SRY with their mocking. Every time you mock a method that’s a little dab of glue making it harder to change that method. I get sad when I come into a test and see a chunk of mocking repeated over and over in every test.</p>
+<pre><code class="language-java">User user = mock(User.class);
+when(userRepo.getUser()).thenReturn(user);
+when(result.getName()).thenReturn(“Stacy”);
+</code></pre>
+<p>You will often find that these same lines are repeated throughout the system in many different tests, sometimes many times the number of invocations in the production code. If you want to change <code>getUser()</code> or <code>getName()</code> you may find that difficult, not due to the prod code but due to the mocker. I've litterally spent days refactoring tests and mocking statements so I could change some method automatically.</p>
+<p>We can get around this the same way we stay DRY in our production code, through encapsulation and creating common utilities. In the above example, if this happens in one test we can easily extract a method for it. If it’s in many tests we can do the same but put it outside. I sometimes end up with a set of utilities for common methods. Something like this:</p>
+<pre><code class="language-java">public class UserExpects {
+     public static User expectUser(UserRepo userRepo, String name){
+        User user = mock(User.class);
+        when(userRepo.getUser()).thenReturn(user);
+        when(result.getName()).thenReturn(name);
+	    return user;
+     }
+}
+</code></pre>
+<p>Now we can have only one place where these methods are called and if we need to change them it should be a lot easier. We also maintain the existing tests and other usages of the mocking framework. So it’s really low risk, low change, all we are doing is not repeating ourselves, which seems simple, and yet, maybe not obvious.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2022-01-23T00:00:00.000-06:00" pubdate data-updated="true">Jan 23, 2022</time>
+                </p>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2021/04/01/From-Big-Bangs-To-Crockpots/">From Big Bangs To Crockpots</a></h1>
                 <p class="meta">
                     <time datetime="2021-04-01T00:00:00.000-05:00" pubdate data-updated="true">Apr 1, 2021</time>
@@ -287,37 +324,6 @@ Your browser does not support the audio element.
             <footer>
                 <p class="meta">
                     <time datetime="2015-08-04T00:00:00.000-05:00" pubdate data-updated="true">Aug 4, 2015</time>
-                </p>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2015/03/28/how-we-saved-00/">How we saved $200,000 per year with a hackathon</a></h1>
-                <p class="meta">
-                    <time datetime="2015-03-28T00:00:00.000-05:00" pubdate data-updated="true">Mar 28, 2015</time>
-                </p>
-            </header>
-
-            <p>At my current gig we have a fairly large Java web application. It has a Fitnesse suite of around 2000 tests that until recently took about 12-13 minutes to run on a good machine.</p>
-<p>One of our developers (<a href="https://twitter.com/briandanenhauer">@briandanenhauer</a>) felt the there was something wrong with that time and used one of our hackathons to do something about it. He ran the tests under a profiler and found a significant problem with the way we (and Fitnesse) were wiring in fixtures.</p>
-<p>Fitnesse has a Import fixture which can be used to import the java packages containing your fixtures. For example:</p>
-<pre><code>|Import|
-|info.fitnesse.fixturegallery|
-|info.fitnesse.anotherPackage|
-</code></pre>
-<p>Our project had attempted to package our fixtures into feature specific packages. Over time this had left us with over 50 fixture sub-packages.</p>
-<p>Whenever Fitnesse needed to find a fixture it would loop over the list of imports and look in each package for the fixture. If it didn’t find it it would throw an exception up and then continue looking until it found it. This was resulting in literally millions of exceptions being thrown throughout the run of the main suite.</p>
-<p>@briandanenhauer did the simple thing and flattened all of our fixtures into one package and one corresponding row in the import fixture.</p>
-<p>The the result was dramatic. A full build of our system went from 13-14 minutes to 6-7! The team was floored and there was much rejoycing! <img src="/assets/images/rejoicing.gif" align="right" />
-I did a very quick and dirty calculation on the savings in dev time and came up with $200,000 per year for our staff. That would be if every developer ran verify only once per workday (and we know it’s more).
-That’s a powerful argument for hackathons or just letting your developers have time to make their projects better.</p>
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2015-03-28T00:00:00.000-05:00" pubdate data-updated="true">Mar 28, 2015</time>
                 </p>
             </footer>
 
