@@ -76,6 +76,122 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2013/03/02/migrating-jekyll-bootstrap-to-octopress/">Migrating Jekyll Bootstrap to Octopress</a></h1>
+                <p class="meta">
+                    <time datetime="2013-03-02T00:00:00.000-06:00" pubdate data-updated="true">Mar 2, 2013</time>
+                </p>
+            </header>
+
+            <p>Even though Octopres uses Jekyll for generating pages it's layout and the way they expect you to use it with Github Pages is actually quite different. This is my recipe for migrating:</p>
+<h3>Layout Overview</h3>
+<p>Now with Jekyll-Bootstrap your directory structure probably looks something like this:</p>
+<pre><code>Hal9000:ryber.github.com ryber$ ls
+404.html	_includes	archive.html	changelog.md	sitemap.txt
+README.md	_layouts	assets		index.md	tags.html
+Rakefile	_plugins	atom.xml	pages.html
+_config.yml	_posts		categories.html	rss.xml
+</code></pre>
+<p>Your site and the Jekyll code are interwoven. You probably have it all on one branch, and when you push you push the entire thing.</p>
+<p>This is not the case with the standard Octopress layout. It looks more like this:</p>
+<pre><code>Hal9000:ryber.github.com ryber$ ls
+CHANGELOG.markdown	_config.yml		public
+Gemfile			  	_deploy			sass
+config.rb		    source
+README.markdown		config.ru
+Rakefile			plugins
+</code></pre>
+<p>Everything you see here with the exception of the <code>_deploy</code> folder (which is listed in the <code>.gitignore</code> will be kept on a <code>source</code> branch in git. The contents of the <code>_deploy</code> folder will be your production branch. Almost all of your work will go into the <code>source</code> folder.</p>
+<p>In order to get to the right state we are going to be a little sneaky as we move things around.</p>
+<h2>Pre-reqs</h2>
+<p>You will need at least version 1.9.3 of ruby. If you don't have it yet I suggest <a href="https://rvm.io/rvm/install/">installing RVM</a>.</p>
+<p>After installing make sure you have 1.9.3 like this:</p>
+<pre><code>rvm install 1.9.3
+rvm use 1.9.3
+rvm rubygems latest
+</code></pre>
+<h2>The old switcheroo</h2>
+<p>OK, so what we need to do now in order to get everything into the right place is to move the &quot;main&quot; directory into a branch and keep the master in a subdirectory.</p>
+<p>So first make a backup copy of our current state. and then go into the original.</p>
+<pre><code>cp -r ryber.github.com/ old.ryber.github.com
+cd ryber.github.com
+</code></pre>
+<p>next we need to make a <code>source</code> branch where our Jekyll is going to live. After doing that delete all of the content from the branch.</p>
+<pre><code>git checkout -b source
+Switched to a new branch 'source'
+
+git rm -r *
+git commit -m &quot;clearned out everything from branch&quot;
+</code></pre>
+<p>Next we are going to get the octopress content and copy it into our directory without the git history.</p>
+<pre><code>cd ..
+git clone https://github.com/imathis/octopress.git octopress
+cd octopress
+git archive master | tar -x -C ../ryber.github.com 
+cd ../ryber.github.com
+git add . 
+git commit -m &quot;added octopress content&quot;
+</code></pre>
+<p>Now lets make sure we have a working octopress directory. When you CD'd into the dir rvm probably asked you if you want to trust the rvmc file. Do so. Now set up the app:</p>
+<pre><code>gem install bundler
+rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+bundle install
+rake install
+</code></pre>
+<p>Now we are going to clone your original master branch into the <code>_deploy</code> dir. Yes this is kind of weird. The outer directory will be on the <code>source</code> branch and the <code>_deploy</code> dir will be on the <code>master</code> branch.</p>
+<pre><code>git clone https://github.com/ryber/ryber.github.com.git _deploy
+</code></pre>
+<h2>Migrating content</h2>
+<p>This is the hard part. Copy your content over from the <code>/_deploy</code> directory to the <code>/source</code> directory. This is not going to be an exact science. Take a look at what you've got and migrate as neccessary. Your milage may vary.</p>
+<p>You can probably get 90% of what you need with these two:</p>
+<pre><code>cp _deploy/_posts source/posts
+cp _deploy/assets source/assets
+</code></pre>
+<h2>The _config.yml file</h2>
+<p>The two config files are a bit different. You can't just copy the boostrap file over so open them both and copy the individual settings over that you need.</p>
+<h2>Preview</h2>
+<p>Run the site and check it out. Make sure everything is what you want it to be. When you do a <code>preview</code> Jekyll will place your files in the <code>public</code> directory (which is also ignored by git)</p>
+<pre><code>rake preview
+</code></pre>
+<h2>Final Steps</h2>
+<p>Before you do this check the Octopress rake file and change the <code>deploy_default</code> method to &quot;push&quot;. You will find it in a section at the top that looks like this;</p>
+<pre><code>## -- Rsync Deploy config -- ##
+# Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
+ssh_user       = &quot;user@domain.com&quot;
+ssh_port       = &quot;22&quot;
+document_root  = &quot;~/website.com/&quot;
+rsync_delete   = true
+rsync_args     = &quot;&quot;  # Any extra arguments to pass to rsync
+deploy_default = &quot;push&quot; 
+</code></pre>
+<p>Now we are going to replace your old site with the new site (at last!)</p>
+<p>We need to clear out all of the files on the master branch to make way for the new content.</p>
+<pre><code>cd _deploy
+git rm -r *
+git commit -m &quot;cleaning house&quot;
+cd ..
+rake deploy
+</code></pre>
+<p>When you do the deploy it's going to:</p>
+<ul>
+<li>generate the site and place the contents into the <code>_deploy</code> directory (your master branch)</li>
+<li>add and commit everything present to git's origin master.</li>
+<li>push the master branch to github.</li>
+</ul>
+<p>Last don't forget to push your source branch to github!</p>
+<pre><code>git push origin source
+</code></pre>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2013-03-02T00:00:00.000-06:00" pubdate data-updated="true">Mar 2, 2013</time>
+                </p>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2013/02/26/programmers-wanted/">Programmers Wanted</a></h1>
                 <p class="meta">
                     <time datetime="2013-02-26T00:00:00.000-06:00" pubdate data-updated="true">Feb 26, 2013</time>
@@ -312,29 +428,6 @@ request.Params ...
             <footer>
                 <p class="meta">
                     <time datetime="2011-10-20T00:00:00.000-05:00" pubdate data-updated="true">Oct 20, 2011</time>
-                </p>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2011/08/17/natural-selection-in-code/">Natural Selection in Code</a></h1>
-                <p class="meta">
-                    <time datetime="2011-08-17T00:00:00.000-05:00" pubdate data-updated="true">Aug 17, 2011</time>
-                </p>
-            </header>
-
-            <p>Your code is not your child. It’s not a sculpture or a painting. It’s not a hand crafted table and chair set. It’s not going to be around in 5 years, hell it’s not going to be around in 2 months if it ever sees the light of day at all. Eventually you will move on to another project, someone else is going to work on your code, they will have their own ideas, their own needs. They will use your code in ways you never intended, or wanted. They will change your code, for the better, and for the worse. There is nothing you can or should do about any of this. It’s the circle of life. Don’t get attached.</p>
-<p>Like nature, code in a large project with many developers undergoes Darwinian pressures of natural selection.  If you write truly great and clean code. If the purpose is obvious. If there are simple, easy to understand examples of it’s use in both production code and tests then your code will grow and get used. Other developers will start to use it as a pattern, they will use your classes in unexpected and surprising ways counter to your original design. Code that is ugly, hard to understand and use, or that does not provide benefit over other code (even new code) will not get used and eventually will be killed off. If you are an “architect” or “tech lead” the most damage you can do to a project is to interfere with natural selection and force other developers to do things a certain way. Particularly when the classes you wrote suck.</p>
-<p><img src="/assets/images/tumblr_lq2zdp8yD81qhdwsd.jpg" alt=""/></p>
-<p>Forcing people to use your magical “flexible” framework will only prolong hardships in your app. Despite your best attempts, new mini-frameworks will crop up like weeds as developers either try to get around your bad code or simply don’t understand that it “already does that”. The fact is if your code had been good to begin with people would have happily extended and used it.</p>
-<p>So don’t worry when nobody is using the divine classes you spent so much time on. Figure out why, make improvements, compete. Developers are like water and will always follow the path of least resistance. Make your code that path. Make it the yellow freakin’ brick road. Encourage your own bad code to die, kill off others without worrying about upsetting them. It’s for the greater good after all. Most of all don’t fall in love with your code. It’s not long for this world.</p>
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2011-08-17T00:00:00.000-05:00" pubdate data-updated="true">Aug 17, 2011</time>
                 </p>
             </footer>
 

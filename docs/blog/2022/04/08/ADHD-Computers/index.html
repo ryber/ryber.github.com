@@ -76,37 +76,27 @@
             <div class="blog-index">
         <article role="article">
             <header>
-                <h1 class="entry-title"><a href="/blog/2022/01/23/Staying-DRY-with-Mocking-Frameworks/">Staying DRY with Mocking Frameworks</a></h1>
+                <h1 class="entry-title"><a href="/blog/2022/04/08/ADHD-Computers/">ADHD Computers</a></h1>
                 <p class="meta">
-                    <time datetime="2022-01-23T00:00:00.000-06:00" pubdate data-updated="true">Jan 23, 2022</time>
+                    <time datetime="2022-04-08T00:00:00.000-05:00" pubdate data-updated="true">Apr 8, 2022</time>
                 </p>
             </header>
 
-            <img src="/images/800px-Alice_par_John_Tenniel_34.png" align="right" alt="Mock Turtle" hspace="10" vspace="10" width=300 />
-<p>Let me start by saying that I don’t hate mocking frameworks. They can be incredibly useful, and from an intellectual standpoint they’re some of the most amazing and interesting code you can look at. If you want a masters class on reflection and runtime manipulation go dig around in them.</p>
-<p>What I do dislike is how they’re misused. I consider myself a classicist or a member of the Chicago/Detroit school of mocking. That means I don’t mock often, and when I do I prefer to use hand rolled mocks because I find they’re better at letting me test state as opposed to interactions. Still, sometimes mocking frameworks can be damn handy and I’m not above using them. More often they’re part of an existing application that I’m working on. The main problem I see with them is when developers don’t stay SRY with their mocking. Every time you mock a method that’s a little dab of glue making it harder to change that method. I get sad when I come into a test and see a chunk of mocking repeated over and over in every test.</p>
-<pre><code class="language-java">User user = mock(User.class);
-when(session.getUser()).thenReturn(user);
-when(result.getName()).thenReturn(“Stacy”);
-</code></pre>
-<p>You will often find that these same lines are repeated throughout the system in many different tests, sometimes many times the number of invocations in the production code. If you want to change <code>getUser()</code> or <code>getName()</code> you may find that difficult, not due to the prod code but due to the mocker. I've litterally spent days refactoring tests and mocking statements so I could change some method automatically.</p>
-<p>We can get around this the same way we stay DRY in our production code, through encapsulation and creating common utilities. In the above example, if this happens in one test we can easily extract a method for it. If it’s in many tests we can do the same but put it outside. I sometimes end up with a set of utilities for common methods. Something like this:</p>
-<pre><code class="language-java">public class SessionExpects {
-     public static User currentUser(UserRepo userRepo, String name){
-        User user = mock(User.class);
-        when(session.getUser()).thenReturn(user);
-        when(result.getName()).thenReturn(name);
-	    return user;
-     }
-}
-</code></pre>
-<p>Now we can have only one place where these methods are called and if we need to change them it should be a lot easier. We also maintain the existing tests and other usages of the mocking framework. So it’s really low risk, low change, all we are doing is not repeating ourselves, which seems simple, and yet, maybe not obvious.</p>
+            <img src="/images/System7.png" style="margin: 10px;" align="right" alt="System 7" hspace="10" vspace="10" width=400 />
+<p>I'm going to attempt a small 🧵 to explain ADHD in computer terms. Imagine your brain is a computer; you have working memory (RAM), long term memory (hard drive), processors (frontal cortex) and an operating system.
+<p>The operating system has a process manager which takes care of all the things. Some are daemons and run constantly on dedicated chips like breathing and sensory processing. Others need to be managed to interact with the CPU (the frontal cortex) to be active.
+<p>Most humans perform a type of preemptive multitasking where processes can interrupted and scheduled based on I/O waits, CPU needs, and timeslices. You can work on something until you have to go to the bathroom, or you need to eat, or just because it's time to stop.
+<p>In ADHD brains the interrupt mechanism is different. It wants to do something, anything really, and when it sees CPU and I/O dipping it assumes a new process needs to be spawned and given priority. It also will randomly terminate processes.
+<p>Most computers will defer to the user for what process has priority, the ADHD manager attempts to round robin task switch across all the processes without regard for what the user wants or needs.
+<p>Imaging you're using a email app and suddenly out of nowhere minesweeper opens and moves to the front. You didn't ask for it, but here it is, then as soon as you finish one level it opens a new browser tab and navigates to the wikipedia article about the Ottoman Empire.
+<p>There are also times when the interrupt mechanism will hand all priority to a single process and refuse to send scheduled processes to the CPU, need to eat? pee? sleep? No! Link can't save Zelda on his own, he needs me!
+<p>This style of processing isn't broken, it's just a different pattern. There are times when this task switching is beneficial as not all tasks really need to be given priority. Which is why ADHD folk tend to thrive in chaotic environments that stress out others.
 
 
 
             <footer>
                 <p class="meta">
-                    <time datetime="2022-01-23T00:00:00.000-06:00" pubdate data-updated="true">Jan 23, 2022</time>
+                    <time datetime="2022-04-08T00:00:00.000-05:00" pubdate data-updated="true">Apr 8, 2022</time>
                 </p>
             </footer>
 
