@@ -115,11 +115,11 @@ public class Blogs {
         FileWriter.write(post, postFile);
     }
 
-    private static String render(Collection<Article> article){
+    private static String render(List<Article> article){
         return render(article, Map.of());
     }
 
-    private static String render(Collection<Article> article, Map<String, Object> data) {
+    private static String render(List<Article> article, Map<String, Object> data) {
         Model model = new Model(article);
         model.putAll(data);
         return stache.render(model, "layouts/main.mustache");

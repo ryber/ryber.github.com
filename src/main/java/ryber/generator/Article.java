@@ -20,6 +20,8 @@ public class Article {
     private final DateTime time;
     private final String name;
     private final String title;
+    private final String description;
+    private final String image;
 
     public Article(String name, String content) {
         try {
@@ -31,6 +33,8 @@ public class Article {
             String[] page = content.trim().split("---");
             String[] headers = page[1].split("\n");
             this.title = tryFind("title", headers, name.replace("-", ""));
+            this.description = tryFind("description", headers, "");
+            this.image = tryFind("image",  headers, "/assets/images/me.jpeg");
             this.content = render(page[2]);
         }catch (Exception e){
             throw new RuntimeException("Error Creating " + name, e);
@@ -98,5 +102,13 @@ public class Article {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
