@@ -22,15 +22,19 @@ public class Article {
     private final String title;
 
     public Article(String name, String content) {
-        this.rawPostName = name;
-        String[] parts = name.split("-");
-        this.time = new DateTime(parseInt(parts[0]), parseInt(parts[1]), parseInt(parts[2]), 0, 0);
-        this.name = Stream.of(parts).skip(3).collect(Collectors.joining("-"))
-                .replace(".md","").replace(".markdown", "");
-        String[] page = content.trim().split("---");
-        String[] headers = page[1].split("\n");
-        this.title = tryFind("title", headers, name.replace("-", ""));
-        this.content = render(page[2]);
+        try {
+            this.rawPostName = name;
+            String[] parts = name.split("-");
+            this.time = new DateTime(parseInt(parts[0]), parseInt(parts[1]), parseInt(parts[2]), 0, 0);
+            this.name = Stream.of(parts).skip(3).collect(Collectors.joining("-"))
+                    .replace(".md", "").replace(".markdown", "");
+            String[] page = content.trim().split("---");
+            String[] headers = page[1].split("\n");
+            this.title = tryFind("title", headers, name.replace("-", ""));
+            this.content = render(page[2]);
+        }catch (Exception e){
+            throw new RuntimeException("Error Creating " + name, e);
+        }
     }
 
     private static String render(String content) {

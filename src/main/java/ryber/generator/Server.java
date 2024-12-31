@@ -23,7 +23,7 @@ public class Server {
                 staticFiles.headers = Map.of();              // headers that will be set for the files
                 staticFiles.skipFileFunction = req -> false;
             });
-        }).start(7000);
+        }).start(7777);
     }
 
     public static void stop(){

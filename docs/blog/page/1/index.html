@@ -76,6 +76,59 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2024/12/31/programming-meditation/">Programming Meditation</a></h1>
+                <p class="meta">
+                    <time datetime="2024-12-31T00:00:00.000-06:00" pubdate data-updated="true">Dec 31, 2024</time>
+                </p>
+            </header>
+
+            <p>After receiving a formal diagnosis of ADHD as an adult, it was recommended that I try mindful meditation. Initially, I was skeptical, but I soon learned that meditation has been scientifically shown to help with anxiety, depression, clear thinking, and overall health. What I did not expect was how useful it would be in programming. Software development is full of distractions and challenges, and even determining what we are trying to achieve can sometimes be a struggle.</p>
+<p>Over the past few years, I’ve been developing what I call “Programming Meditation,” and I’m excited to share it. The foundation of this practice is regular mindful meditation. This involves sitting quietly and focusing on your breath and body to achieve a state of peace. Thoughts will inevitably arise, but the key is to acknowledge them, let them go, and return to your breath. For beginners, I highly recommend using a guided meditation app like Headspace or Calm and practicing daily.</p>
+<h2>Bringing Meditation into Programming</h2>
+<p>Programming Meditation integrates mindfulness directly into a coding session. Here’s how you can practice it:</p>
+<h4>Set Up Your Environment:</h4>
+<ul>
+<li>Sit at your computer with your development environment and code fully loaded in full-screen mode.</li>
+<li>Close any potentially distracting applications (e.g., email, Slack, Teams).</li>
+</ul>
+<h4>Meditate with Your Code:</h4>
+<ul>
+<li>Spend at least 10 minutes meditating with the computer and code as part of your environment, no different from the floor beneath your feet or the chair you are sitting on.</li>
+<li>Towards the end of your session, open your eyes and transition directly into reading the code.</li>
+</ul>
+<h2>Steps for Mindful Coding</h2>
+<p>Before writing any code, take the following steps:</p>
+<h4>Orient Yourself:</h4>
+<ul>
+<li>Become aware of where you are in the code. Imagine the code as a vast garden; take time to explore it and orient yourself without getting bogged down in details. Approach it with curiosity.</li>
+</ul>
+<h4>Understand the Code:</h4>
+<ul>
+<li>If your task involves modifying an existing file, read through the entire file to orient yourself. Consider what the code does and why it was written that way. Assume the original authors had reasons for every line. Do those reasons still apply?</li>
+</ul>
+<h4>Code Intentionally:</h4>
+<ul>
+<li>Write code in small, incremental, and intentional steps. Coding should feel natural and unlabored, much like healthy breathing.</li>
+</ul>
+<h4>Incorporate TDD (Optional):</h4>
+<ul>
+<li>Test-driven development (TDD) pairs well with meditation as it encourages small, deliberate steps. Even without TDD, keep changes minimal, commit often, and remain mindful of each change.</li>
+</ul>
+<h2>Benefits of Programming Meditation</h2>
+<p>Using this technique, I’ve found that I can induce a state of flow (distinct from hyperfocusing, which can be unhealthy). This practice has improved the quality of my code, making it easier to read and understand later. More importantly, it has enhanced my overall experience with programming, helping me feel better about my work and its outcomes.</p>
+<p>Programming Meditation is a powerful tool for improving focus and cultivating a mindful approach to coding. I encourage you to give it a try and see how it transforms your development process.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2024-12-31T00:00:00.000-06:00" pubdate data-updated="true">Dec 31, 2024</time>
+                </p>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2022/04/08/ADHD-Computers/">ADHD Computers</a></h1>
                 <p class="meta">
                     <time datetime="2022-04-08T00:00:00.000-05:00" pubdate data-updated="true">Apr 8, 2022</time>
@@ -298,37 +351,6 @@ Your browser does not support the audio element.
             <footer>
                 <p class="meta">
                     <time datetime="2017-08-24T00:00:00.000-05:00" pubdate data-updated="true">Aug 24, 2017</time>
-                </p>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2016/08/22/viscosity-vs-velocity/">Viscosity vs Velocity</a></h1>
-                <p class="meta">
-                    <time datetime="2016-08-22T00:00:00.000-05:00" pubdate data-updated="true">Aug 22, 2016</time>
-                </p>
-            </header>
-
-            <p>Velocity is a largely meaningless “measurement”. It’s relative, it’s based on estimation (which we are all horrible at), and it’s subject to all kinds of external forces that impact teams.</p>
-<p>A much better thing to measure are the forces hampering our teams from delivering. I like to think of this as viscosity. In science, viscosity is a measurement for how fluid a liquid is.  Water flows faster and easier than honey. Similarly, our teams will go as fast as they are capable of. The real issue is finding what is slowing them down.</p>
-<p>I came up with an entirely unscientific method for calculating a team’s viscosity. In the course of a team delivering something to their customer:</p>
-<ol>
-<li><strong>Start with 1 point</strong></li>
-<li><strong>Add 1 Point</strong> for each external team or person (not on the team) you are dependent on in order to deliver. This could be DBA’s architects, operations, security, marketing, etc etc. It could also be another team responsible for some other part of a feature. Maybe your teams are split between “back end” and “UI” for example.</li>
-<li><strong>Add 1 Point</strong> for each required technology needed that your team is not proficient in.</li>
-</ol>
-<p>Easy huh? Your goal is a value of <strong>1</strong>. Obviously not all values of 1 are equal but it should give you a target to work on. You are free to play with the point system. Maybe dependencies outside of your company or area cost more?</p>
-<p>Teams that are self sufficient are going to be faster or at least be more responsible for their own speed. What would it take to get a team with all of the skills and people needed to deliver?</p>
-<p>Of course teams impact other teams. Viscosity is all about how a liquid moves in relation to itself. What’s really fun is to take all of the viscosity points for an organization and cross them together. So rather than just run the points of each team, inherit the points from your dependencies. So if your team is dependent on a team with a viscosity of 5 then you now also have 5 as well (plus whatever else).</p>
-<p>Map this out and you will start to see the big bottlenecks of your organization. You could create a nice dependency graph and watch as it explodes. Teams that should be really fast suddenly look slow because of a web of other slow teams (usually built to “support” them).</p>
-<img src="/assets/images/viscosity.png" align="right" />
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2016-08-22T00:00:00.000-05:00" pubdate data-updated="true">Aug 22, 2016</time>
                 </p>
             </footer>
 
