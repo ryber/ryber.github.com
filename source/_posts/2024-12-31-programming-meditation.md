@@ -4,7 +4,7 @@ title: "Programming Meditation"
 date: 2024-12-31 08:08
 comments: true
 description: Programming Meditation is a powerful tool for improving focus and cultivating a mindful approach to coding in order to induce flow and improve quality.
-image: /assets/mind-meme.jpg
+image: assets/images/mind-meme.jpg
 ---
 
 After receiving a formal diagnosis of ADHD as an adult, it was recommended that I try mindful meditation. Initially, I was skeptical, but I soon learned that meditation has been scientifically shown to help with anxiety, depression, clear thinking, and overall health. What I did not expect was how useful it would be in programming. Software development is full of distractions and challenges, and even determining what we are trying to achieve can sometimes be a struggle.
