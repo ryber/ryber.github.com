@@ -82,6 +82,39 @@
             <div class="blog-index">
         <article role="article">
             <header>
+                <h1 class="entry-title"><a href="/blog/2017/08/24/the-nature-of-programming/">The Nature Of Programming</a></h1>
+                <p class="meta">
+                    <time datetime="2017-08-24T00:00:00.000-05:00" pubdate data-updated="true">Aug 24, 2017</time>
+                </p>
+            </header>
+
+            <p>In the weeks since the google manifesto I’ve been thinking about what I see as a fundamental misunderstanding the nature of software development I wanted to get it off my chest.</p>
+<h4>Is Programming Math and Engineering?</h4>
+<p>Yes! Of course it is. Where the author fails is in narrowly defining math and engineering to traditionally male dominated professions. Historically and across cultures women have dominated domestic crafts. Weaving, knitting, embroidery, tailoring, basket and pottery making are all forms of “thing thinking” that require high-level problem solving, mathematics and a deep understanding of materials. Yet we do not value them at the same level of men’s work. This is partially due to the more temporal and replaceable nature of these crafts but it’s also because we do not value women at the same level we value men. So we call the things men do “engineering” and the work women do “crafts”. The fact that men’s traditional crafts involve stone and metal, and women’s involve clay and yarn is irrelevant to the skills needed or women’s interest in them. Just ask Hobby Lobby.</p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Loomwork.jpg#/media/File:Loomwork.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Loomwork.jpg" alt="Loomwork.jpg" height="480" width="640"></a><div style="font-size:8px">photo by <a href="https://en.wikipedia.org/wiki/User:Randyoo" class="extiw" title="en:User:Randyoo">Randy Oostdyk</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1314700">Link</a><br /></div>
+<i>Weaving involves configuring complex repeating patterns of information into a machine that renders that information to new forms. (Sound familiar?)</i></p>
+  </p>
+<h4>Is Programming Human Language?</h4>
+<p>Yes! Of course it is. When we program we have several different audiences. The compiler or runtime is one. Other developers that must read and understand our program is another. Some of the worst code I’ve ever worked on was written by coders with poor communication skills. Naming things is hard, composing code into a readable flow is hard. By applying basic composition skills to our code we can help those that come after us.</p>
+<p>Larry Wall, the creator of the massively influential Perl programming language has spoken and written extensively on the connection between human linguistics and programming. Perl itself was informed and designed with linguistic principles.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ju1IMxGSuNE" frameborder="0" allowfullscreen></iframe>
+<h4>Is Programming Applied Sociology?</h4>
+<p>Yes! Of course it is. As all programmers who have been around a while will tell you. Writing the right code is much harder than writing the code right. Programmers must be part of the process of gathering requirements and empathising with customers. We have to work hard to ask the right questions, give meaningful critiques, and understand the problems that need to be solved.</p>
+<h4>Is Programming STEM?</h4>
+<p>Maybe? My personal feeling is that part of the problem of getting women and men who do not conform to stereotypical “Big Bang Theory” nerdom is in the public perception and marketing of the career. We are working against a harmful and counterproductive vision of the coder as a socially awkward genius sitting in a dark room. Most programming isn’t writing router software or physics engines.  Developing software for humans requires a high degree of general purpose problem solving, teamwork and empathy. Many of the best programmers I’ve worked with did not come into programming through traditional educational paths and I’m not convinced that grouping programming with math and engineering is beneficial to it from a marketing perspective. Perhaps it should be in business, design, or even on it’s own.</p>
+<p>We are also working against a toxic and misogynistic culture that drives the women who do want to engage out. The most baffling thing about the manifesto is it’s choice to basically ignore the voices of women who will tell you why they left. It’s not a mystery we need brain scans to find out. Just ask.</p>
+
+
+
+            <footer>
+                <p class="meta">
+                    <time datetime="2017-08-24T00:00:00.000-05:00" pubdate data-updated="true">Aug 24, 2017</time>
+                </p>
+            </footer>
+
+        </article>
+        <article role="article">
+            <header>
                 <h1 class="entry-title"><a href="/blog/2016/08/22/viscosity-vs-velocity/">Viscosity vs Velocity</a></h1>
                 <p class="meta">
                     <time datetime="2016-08-22T00:00:00.000-05:00" pubdate data-updated="true">Aug 22, 2016</time>
@@ -333,78 +366,6 @@ If you would like to see it live I'll be presenting it again at <a href="http://
             <footer>
                 <p class="meta">
                     <time datetime="2014-06-21T00:00:00.000-05:00" pubdate data-updated="true">Jun 21, 2014</time>
-                </p>
-            </footer>
-
-        </article>
-        <article role="article">
-            <header>
-                <h1 class="entry-title"><a href="/blog/2014/03/22/the-case-of-the-lost-commits/">The Case Of The Lost Commits</a></h1>
-                <p class="meta">
-                    <time datetime="2014-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2014</time>
-                </p>
-            </header>
-
-            <p>Recently at my gig we converted a large project from HG to Git. There are a lot of developers on this project; many who have never worked on Git so I expected a few bumps. So far it’s actually been pretty smooth sailing but yesterday I was contacted by a dev with a Git problem I had never seen.</p>
-<p>The day before he had made a commit and pushed it to the server but now the content of the commit was gone. Not reverted mind you, just gone, like it had never happened even though the commit was clearly still in history.</p>
-<p>To be clear, looking at the history of the entire repo showed the commit and it’s changes as something that happened. But looking at any of the individual files in the commits didn’t show the commit at all. WTF?!</p>
-<p>This turned out to be the result of a bad merge by another developer. I was able to recreate the scenario, take a look at the weird history:</p>
-<pre><code>ryber$ git log --graph --oneline --all
-*   1b4cd92 Bad merge by dev B
-|\  
-| * e879eb6 This is the missing commit by dev A
-* | 93933b9 commit by dev B
-|/  
-* 6baed99 root commit
-</code></pre>
-<p>Here we can see that e879eb6 is in history. You can see that part of that commit was a change to foo:</p>
-<pre><code>ryber$ git whatchanged e879eb6
-commit e879eb6007ddef2a955a71651bcf31a25727b510
-Author: ryber
-Date:   Sat Mar 22 16:37:28 2014 -0500
-
-    This is the missing commit by dev A
-
-:100644 100644 eb314de... e3525a0... M  baz
-:100644 100644 ae3cab0... cf561bd... M  foo
-</code></pre>
-<p>Yet, if we look at the history of foo that e879eb6 is missing!</p>
-<pre><code>ryber$ git log --pretty=oneline --abbrev-commit -- foo
-6baed99 root commit
-</code></pre>
-<p>What happened here? Where did e879eb6 go in the history of foo? I can understand if the change was reverted but shouldn't we see some history of that revert? This is where we get into the bad merge</p>
-<p>You may have notice that the missing commit includes another change to the “baz” file. It turns out that the second dev also changed baz in 93933b9 and was forced to go into a merge conflict when he pulled. To someone new to git the merge process might be a bit shocking. This is because you see all of the changes impacted by the merge. This includes your own changes as well as all of the changes to files in the tree you are merging in that happened after your last common ancestor. Developer B was presented with something like this when he was merging:</p>
-<pre><code>ryber$ git status
-On branch master
-Your branch and 'origin/master' have diverged,
-and have 1 and 1 different commit each, respectively.
-  (use &quot;git pull&quot; to merge the remote branch into yours)
-
-You have unmerged paths.
-  (fix conflicts and run &quot;git commit&quot;)
-
-Changes to be committed:
-
-	modified:   foo
-
-Unmerged paths:
-  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
-
-	both modified:      baz
-</code></pre>
-<p>You might think “What the hell? I didn’t change foo?! Why is foo here?”. You might even attempt to get rid of the foo changes … which is exactly what happened. It’s actually kind of hard to do from the shell but fairly easy to do from some gui tools like SourceTree. From the shell you just have to issue a checkout of a previous version like this:</p>
-<pre><code>ryber$ git checkout HEAD^ -- foo
-</code></pre>
-<p>Then an add, and a commit and voilà! The file has now been reverted to it’s previous state as part of a merge and it’s individual content history no longer contains the missing commit.</p>
-<p>You may be wondering how we got out of this mess? We simply cherry-picked the commits back into the head. Not very subtle but it worked.</p>
-<pre><code>ryber$ git cherry-pick e879eb6
-</code></pre>
-
-
-
-            <footer>
-                <p class="meta">
-                    <time datetime="2014-03-22T00:00:00.000-05:00" pubdate data-updated="true">Mar 22, 2014</time>
                 </p>
             </footer>
 

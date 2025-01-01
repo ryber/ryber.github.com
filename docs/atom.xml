@@ -4,7 +4,7 @@
     <title><![CDATA[Soylent Code]]></title>
     <link href="http://ryber.github.com/atom.xml" rel="self"/>
     <link href="http://ryber.github.com/"/>
-    <updated>2024-12-31T10:55:45.173-06:00</updated>
+    <updated>2025-01-01T06:54:20.975-06:00</updated>
     <id>http://ryber.github.com/</id>
     <author>
         <name><![CDATA[Ryan Bergman]]></name>
@@ -52,6 +52,18 @@
 <h2>Benefits of Programming Meditation</h2>
 <p>Using this technique, I’ve found that I can induce a state of flow (distinct from hyperfocusing, which can be unhealthy). This practice has improved the quality of my code, making it easier to read and understand later. More importantly, it has enhanced my overall experience with programming, helping me feel better about my work and its outcomes.</p>
 <p>Programming Meditation is a powerful tool for improving focus and cultivating a mindful approach to coding. I encourage you to give it a try and see how it transforms your development process.</p>
+]]>
+            </content>
+        </entry>
+        <entry>
+            <title type="html"><![CDATA[The Nature Of Systems]]></title>
+            <link href="/blog/2024/10/10/devops-days/"/>
+            <updated>&lt;p&gt;Here is the deck from my lighting talk on the nature of computer systems at Agile + DevOpsDays Des Moines 2024&lt;/p&gt;&#10;&lt;div class&#61;&quot;videoWrapper&quot;&gt;&#10;&lt;iframe src&#61;&quot;https://docs.google.com/presentation/d/e/2PACX-1vTwMUPoe8qsrYXv10ZZPNrebTozbvf1Q4okLOtDP1HYqQH_RjiAaKe5_MTsf-IpdVx5ttnd1EgCX9L1/embed?start&#61;false&amp;loop&#61;false&amp;delayms&#61;3000&quot; frameborder&#61;&quot;0&quot; width&#61;&quot;480&quot; height&#61;&quot;299&quot; allowfullscreen&#61;&quot;true&quot; mozallowfullscreen&#61;&quot;true&quot; webkitallowfullscreen&#61;&quot;true&quot;&gt;&lt;/iframe&gt;&#10;&lt;/div&gt;&#10;</updated>
+            <id>/blog/2024/10/10/devops-days/</id>
+            <content type="html"><![CDATA[<p>Here is the deck from my lighting talk on the nature of computer systems at Agile + DevOpsDays Des Moines 2024</p>
+<div class="videoWrapper">
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTwMUPoe8qsrYXv10ZZPNrebTozbvf1Q4okLOtDP1HYqQH_RjiAaKe5_MTsf-IpdVx5ttnd1EgCX9L1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
 ]]>
             </content>
         </entry>
